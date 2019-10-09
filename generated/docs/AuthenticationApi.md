@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_authentication_request_post**](AuthenticationApi.md#api_authentication_request_post) | **POST** /api/authentication/request | 
+[**api_authentication_request_post**](AuthenticationApi.md#api_authentication_request_post) | **POST** /api/authentication/request | Returns a JWT (JSON Web Token).
 
 
 # **api_authentication_request_post**
-> api_authentication_request_post(token_request=token_request)
+> str api_authentication_request_post(token_request=token_request)
 
-
+Returns a JWT (JSON Web Token).
 
 ### Example
 
@@ -26,7 +26,9 @@ api_instance = openapi_client.AuthenticationApi()
 token_request = openapi_client.TokenRequest() # TokenRequest |  (optional)
 
 try:
-    api_instance.api_authentication_request_post(token_request=token_request)
+    # Returns a JWT (JSON Web Token).
+    api_response = api_instance.api_authentication_request_post(token_request=token_request)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthenticationApi->api_authentication_request_post: %s\n" % e)
 ```
@@ -39,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -48,7 +50,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

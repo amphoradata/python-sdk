@@ -56,9 +56,10 @@ from pprint import pprint
 configuration.host = "http://localhost"
 # Create an instance of the API class
 api_instance = openapi_client.AmphoraeApi(openapi_client.ApiClient(configuration))
-id = '' # str |  (default to '')
+id = '' # str | Amphora Id (default to '')
 
 try:
+    # Deletes an Amphora
     api_instance.api_amphorae_id_delete(id)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->api_amphorae_id_delete: %s\n" % e)
@@ -71,52 +72,70 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AmphoraeApi* | [**api_amphorae_id_delete**](docs/AmphoraeApi.md#api_amphorae_id_delete) | **DELETE** /api/amphorae/{id} | 
-*AmphoraeApi* | [**api_amphorae_id_files_file_get**](docs/AmphoraeApi.md#api_amphorae_id_files_file_get) | **GET** /api/amphorae/{id}/files/{file} | 
-*AmphoraeApi* | [**api_amphorae_id_files_file_put**](docs/AmphoraeApi.md#api_amphorae_id_files_file_put) | **PUT** /api/amphorae/{id}/files/{file} | 
-*AmphoraeApi* | [**api_amphorae_id_files_get**](docs/AmphoraeApi.md#api_amphorae_id_files_get) | **GET** /api/amphorae/{id}/files | 
-*AmphoraeApi* | [**api_amphorae_id_get**](docs/AmphoraeApi.md#api_amphorae_id_get) | **GET** /api/amphorae/{id} | 
-*AmphoraeApi* | [**api_amphorae_id_put**](docs/AmphoraeApi.md#api_amphorae_id_put) | **PUT** /api/amphorae/{id} | 
-*AmphoraeApi* | [**api_amphorae_post**](docs/AmphoraeApi.md#api_amphorae_post) | **POST** /api/amphorae | 
-*AuthenticationApi* | [**api_authentication_request_post**](docs/AuthenticationApi.md#api_authentication_request_post) | **POST** /api/authentication/request | 
-*AuthorizationsApi* | [**api_authoriations_post**](docs/AuthorizationsApi.md#api_authoriations_post) | **POST** /api/authoriations | 
-*HealthzApi* | [**healthz_get**](docs/HealthzApi.md#healthz_get) | **GET** /healthz | 
-*ImagesApi* | [**api_organisations_id_profile_jpg_get**](docs/ImagesApi.md#api_organisations_id_profile_jpg_get) | **GET** /api/organisations/{id}/profile.jpg | 
-*MarketApi* | [**api_location_fuzzy_get**](docs/MarketApi.md#api_location_fuzzy_get) | **GET** /api/location/fuzzy | 
-*MarketApi* | [**api_market_get**](docs/MarketApi.md#api_market_get) | **GET** /api/market | 
-*MarketApi* | [**api_market_purchase_post**](docs/MarketApi.md#api_market_purchase_post) | **POST** /api/market/purchase | 
-*OrganisationsApi* | [**api_organisations_id_delete**](docs/OrganisationsApi.md#api_organisations_id_delete) | **DELETE** /api/organisations/{id} | 
-*OrganisationsApi* | [**api_organisations_id_get**](docs/OrganisationsApi.md#api_organisations_id_get) | **GET** /api/organisations/{id} | 
-*OrganisationsApi* | [**api_organisations_id_invitations_get**](docs/OrganisationsApi.md#api_organisations_id_invitations_get) | **GET** /api/organisations/{id}/invitations | 
-*OrganisationsApi* | [**api_organisations_id_invitations_post**](docs/OrganisationsApi.md#api_organisations_id_invitations_post) | **POST** /api/organisations/{id}/invitations | 
-*OrganisationsApi* | [**api_organisations_id_put**](docs/OrganisationsApi.md#api_organisations_id_put) | **PUT** /api/organisations/{id} | 
-*OrganisationsApi* | [**api_organisations_post**](docs/OrganisationsApi.md#api_organisations_post) | **POST** /api/organisations | 
-*SearchApi* | [**api_search_amphorae_by_creator_get**](docs/SearchApi.md#api_search_amphorae_by_creator_get) | **GET** /api/search/amphorae/byCreator | 
-*SearchApi* | [**api_search_amphorae_by_location_get**](docs/SearchApi.md#api_search_amphorae_by_location_get) | **GET** /api/search/amphorae/byLocation | 
-*SearchApi* | [**api_search_amphorae_by_organisation_get**](docs/SearchApi.md#api_search_amphorae_by_organisation_get) | **GET** /api/search/amphorae/byOrganisation | 
-*SearchApi* | [**api_search_amphorae_post**](docs/SearchApi.md#api_search_amphorae_post) | **POST** /api/search/amphorae | 
-*SignalApi* | [**api_amphorae_id_signals_post**](docs/SignalApi.md#api_amphorae_id_signals_post) | **POST** /api/amphorae/{id}/signals | 
-*TsiProxyApi* | [**tsi_timeseries_query_post**](docs/TsiProxyApi.md#tsi_timeseries_query_post) | **POST** /tsi/timeseries/query | 
-*UsersApi* | [**api_users_post**](docs/UsersApi.md#api_users_post) | **POST** /api/users | 
-*UsersApi* | [**api_users_self_get**](docs/UsersApi.md#api_users_self_get) | **GET** /api/users/self | 
-*UsersApi* | [**api_users_username_delete**](docs/UsersApi.md#api_users_username_delete) | **DELETE** /api/users/{username} | 
+*AmphoraeApi* | [**api_amphorae_id_delete**](docs/AmphoraeApi.md#api_amphorae_id_delete) | **DELETE** /api/amphorae/{id} | Deletes an Amphora
+*AmphoraeApi* | [**api_amphorae_id_files_file_get**](docs/AmphoraeApi.md#api_amphorae_id_files_file_get) | **GET** /api/amphorae/{id}/files/{file} | Get&#39;s the contents of a file. Returns application/octet-stream
+*AmphoraeApi* | [**api_amphorae_id_files_file_put**](docs/AmphoraeApi.md#api_amphorae_id_files_file_put) | **PUT** /api/amphorae/{id}/files/{file} | Set&#39;s the contents of a file. The request body becomes the content.
+*AmphoraeApi* | [**api_amphorae_id_files_get**](docs/AmphoraeApi.md#api_amphorae_id_files_get) | **GET** /api/amphorae/{id}/files | Get&#39;s a list of an Amphora&#39;s files
+*AmphoraeApi* | [**api_amphorae_id_get**](docs/AmphoraeApi.md#api_amphorae_id_get) | **GET** /api/amphorae/{id} | Get&#39;s details of an Amphora by Id
+*AmphoraeApi* | [**api_amphorae_id_put**](docs/AmphoraeApi.md#api_amphorae_id_put) | **PUT** /api/amphorae/{id} | Updates the details of an Amphora by Id
+*AmphoraeApi* | [**api_amphorae_id_signals_get**](docs/AmphoraeApi.md#api_amphorae_id_signals_get) | **GET** /api/amphorae/{id}/signals | Get&#39;s the signals associated with an Amphora.
+*AmphoraeApi* | [**api_amphorae_id_signals_post**](docs/AmphoraeApi.md#api_amphorae_id_signals_post) | **POST** /api/amphorae/{id}/signals | Associates a signal with an Amphora. Signal is created if not existing.
+*AmphoraeApi* | [**api_amphorae_id_signals_values_post**](docs/AmphoraeApi.md#api_amphorae_id_signals_values_post) | **POST** /api/amphorae/{id}/signals/values | Get&#39;s the signals associated with an Amphora.
+*AmphoraeApi* | [**api_amphorae_post**](docs/AmphoraeApi.md#api_amphorae_post) | **POST** /api/amphorae | Creates a new empty Amphora in the user&#39;s organisation
+*AuthenticationApi* | [**api_authentication_request_post**](docs/AuthenticationApi.md#api_authentication_request_post) | **POST** /api/authentication/request | Returns a JWT (JSON Web Token).
+*HealthzApi* | [**healthz_get**](docs/HealthzApi.md#healthz_get) | **GET** /healthz | Health endpoint.
+*ImagesApi* | [**api_organisations_id_profile_jpg_get**](docs/ImagesApi.md#api_organisations_id_profile_jpg_get) | **GET** /api/organisations/{id}/profile.jpg | Gets an organisations profile picture
+*MarketApi* | [**api_location_fuzzy_get**](docs/MarketApi.md#api_location_fuzzy_get) | **GET** /api/location/fuzzy | Executes a fuzzy location search.
+*MarketApi* | [**api_market_get**](docs/MarketApi.md#api_market_get) | **GET** /api/market | Finds Amphora using a fuzzy search
+*MarketApi* | [**api_market_purchase_post**](docs/MarketApi.md#api_market_purchase_post) | **POST** /api/market/purchase | Purchases an Amphora as the logged in user.
+*OrganisationsApi* | [**api_organisations_id_delete**](docs/OrganisationsApi.md#api_organisations_id_delete) | **DELETE** /api/organisations/{id} | Deletes an organisation.
+*OrganisationsApi* | [**api_organisations_id_get**](docs/OrganisationsApi.md#api_organisations_id_get) | **GET** /api/organisations/{id} | Gets an organisation&#39;s details.
+*OrganisationsApi* | [**api_organisations_id_invitations_get**](docs/OrganisationsApi.md#api_organisations_id_invitations_get) | **GET** /api/organisations/{id}/invitations | Accept an invitation to an organisation.
+*OrganisationsApi* | [**api_organisations_id_invitations_post**](docs/OrganisationsApi.md#api_organisations_id_invitations_post) | **POST** /api/organisations/{id}/invitations | Invite a user/ email address to your organisation.
+*OrganisationsApi* | [**api_organisations_id_put**](docs/OrganisationsApi.md#api_organisations_id_put) | **PUT** /api/organisations/{id} | Updates an organisation.
+*OrganisationsApi* | [**api_organisations_post**](docs/OrganisationsApi.md#api_organisations_post) | **POST** /api/organisations | Creates a new Organisation. This will assign the logged in user to the organisation.
+*SearchApi* | [**api_search_amphorae_by_creator_get**](docs/SearchApi.md#api_search_amphorae_by_creator_get) | **GET** /api/search/amphorae/byCreator | Searches for Amphorae by creator.
+*SearchApi* | [**api_search_amphorae_by_location_get**](docs/SearchApi.md#api_search_amphorae_by_location_get) | **GET** /api/search/amphorae/byLocation | Searches for Amphorae by loction.
+*SearchApi* | [**api_search_amphorae_by_organisation_get**](docs/SearchApi.md#api_search_amphorae_by_organisation_get) | **GET** /api/search/amphorae/byOrganisation | Searches for Amphorae in an Organisation.
+*SearchApi* | [**api_search_amphorae_post**](docs/SearchApi.md#api_search_amphorae_post) | **POST** /api/search/amphorae | Searches for Amphorae.
+*UsersApi* | [**api_users_post**](docs/UsersApi.md#api_users_post) | **POST** /api/users | Creates a new User. Returns the password.
+*UsersApi* | [**api_users_self_get**](docs/UsersApi.md#api_users_self_get) | **GET** /api/users/self | Get&#39;s logged in users information.
+*UsersApi* | [**api_users_username_delete**](docs/UsersApi.md#api_users_username_delete) | **DELETE** /api/users/{username} | Deletes a user
 
 
 ## Documentation For Models
 
+ - [Address](docs/Address.md)
+ - [AmphoraDto](docs/AmphoraDto.md)
  - [AmphoraExtendedDto](docs/AmphoraExtendedDto.md)
+ - [CategorySet](docs/CategorySet.md)
+ - [Classification](docs/Classification.md)
+ - [CreateAmphoraDto](docs/CreateAmphoraDto.md)
+ - [EntryPoint](docs/EntryPoint.md)
+ - [FuzzySearchResponse](docs/FuzzySearchResponse.md)
  - [Invitation](docs/Invitation.md)
- - [Membership](docs/Membership.md)
+ - [Name](docs/Name.md)
  - [OrganisationDto](docs/OrganisationDto.md)
- - [OrganisationModel](docs/OrganisationModel.md)
+ - [Poi](docs/Poi.md)
+ - [Position](docs/Position.md)
+ - [Result](docs/Result.md)
  - [SearchParameters](docs/SearchParameters.md)
+ - [SignalDto](docs/SignalDto.md)
+ - [Summary](docs/Summary.md)
  - [TokenRequest](docs/TokenRequest.md)
  - [UserDto](docs/UserDto.md)
+ - [Viewport](docs/Viewport.md)
 
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## token
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
 
 ## Author
 

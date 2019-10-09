@@ -31,18 +31,21 @@ class TestMarketApi(unittest.TestCase):
     def test_api_location_fuzzy_get(self):
         """Test case for api_location_fuzzy_get
 
+        Executes a fuzzy location search.  # noqa: E501
         """
         pass
 
     def test_api_market_get(self):
         """Test case for api_market_get
 
+        Finds Amphora using a fuzzy search  # noqa: E501
         """
         pass
 
     def test_api_market_purchase_post(self):
         """Test case for api_market_purchase_post
 
+        Purchases an Amphora as the logged in user.  # noqa: E501
         """
         pass
 

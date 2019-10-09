@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**healthz_get**](HealthzApi.md#healthz_get) | **GET** /healthz | 
+[**healthz_get**](HealthzApi.md#healthz_get) | **GET** /healthz | Health endpoint.
 
 
 # **healthz_get**
 > healthz_get()
 
-
+Health endpoint.
 
 ### Example
 
@@ -25,6 +25,7 @@ from pprint import pprint
 api_instance = openapi_client.HealthzApi()
 
 try:
+    # Health endpoint.
     api_instance.healthz_get()
 except ApiException as e:
     print("Exception when calling HealthzApi->healthz_get: %s\n" % e)

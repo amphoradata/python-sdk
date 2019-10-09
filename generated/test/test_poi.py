@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import openapi_client
-from openapi_client.models.organisation_model import OrganisationModel  # noqa: E501
+from openapi_client.models.poi import Poi  # noqa: E501
 from openapi_client.rest import ApiException
 
 
-class TestOrganisationModel(unittest.TestCase):
-    """OrganisationModel unit test stubs"""
+class TestPoi(unittest.TestCase):
+    """Poi unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestOrganisationModel(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testOrganisationModel(self):
-        """Test OrganisationModel"""
+    def testPoi(self):
+        """Test Poi"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = openapi_client.models.organisation_model.OrganisationModel()  # noqa: E501
+        # model = openapi_client.models.poi.Poi()  # noqa: E501
         pass
 
 

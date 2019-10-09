@@ -31,6 +31,7 @@ class TestHealthzApi(unittest.TestCase):
     def test_healthz_get(self):
         """Test case for healthz_get
 
+        Health endpoint.  # noqa: E501
         """
         pass
 

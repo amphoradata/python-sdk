@@ -15,23 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import openapi_client
-from openapi_client.api.signal_api import SignalApi  # noqa: E501
+from openapi_client.models.category_set import CategorySet  # noqa: E501
 from openapi_client.rest import ApiException
 
 
-class TestSignalApi(unittest.TestCase):
-    """SignalApi unit test stubs"""
+class TestCategorySet(unittest.TestCase):
+    """CategorySet unit test stubs"""
 
     def setUp(self):
-        self.api = openapi_client.api.signal_api.SignalApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_api_amphorae_id_signals_post(self):
-        """Test case for api_amphorae_id_signals_post
-
-        """
+    def testCategorySet(self):
+        """Test CategorySet"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = openapi_client.models.category_set.CategorySet()  # noqa: E501
         pass
 
 

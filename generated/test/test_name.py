@@ -15,23 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import openapi_client
-from openapi_client.api.tsi_proxy_api import TsiProxyApi  # noqa: E501
+from openapi_client.models.name import Name  # noqa: E501
 from openapi_client.rest import ApiException
 
 
-class TestTsiProxyApi(unittest.TestCase):
-    """TsiProxyApi unit test stubs"""
+class TestName(unittest.TestCase):
+    """Name unit test stubs"""
 
     def setUp(self):
-        self.api = openapi_client.api.tsi_proxy_api.TsiProxyApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_tsi_timeseries_query_post(self):
-        """Test case for tsi_timeseries_query_post
-
-        """
+    def testName(self):
+        """Test Name"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = openapi_client.models.name.Name()  # noqa: E501
         pass
 
 

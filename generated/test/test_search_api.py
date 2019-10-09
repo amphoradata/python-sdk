@@ -31,24 +31,28 @@ class TestSearchApi(unittest.TestCase):
     def test_api_search_amphorae_by_creator_get(self):
         """Test case for api_search_amphorae_by_creator_get
 
+        Searches for Amphorae by creator.  # noqa: E501
         """
         pass
 
     def test_api_search_amphorae_by_location_get(self):
         """Test case for api_search_amphorae_by_location_get
 
+        Searches for Amphorae by loction.  # noqa: E501
         """
         pass
 
     def test_api_search_amphorae_by_organisation_get(self):
         """Test case for api_search_amphorae_by_organisation_get
 
+        Searches for Amphorae in an Organisation.  # noqa: E501
         """
         pass
 
     def test_api_search_amphorae_post(self):
         """Test case for api_search_amphorae_post
 
+        Searches for Amphorae.  # noqa: E501
         """
         pass
 

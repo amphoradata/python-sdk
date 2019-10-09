@@ -19,14 +19,11 @@ __version__ = "1.0.0"
 # import apis into sdk package
 from openapi_client.api.amphorae_api import AmphoraeApi
 from openapi_client.api.authentication_api import AuthenticationApi
-from openapi_client.api.authorizations_api import AuthorizationsApi
 from openapi_client.api.healthz_api import HealthzApi
 from openapi_client.api.images_api import ImagesApi
 from openapi_client.api.market_api import MarketApi
 from openapi_client.api.organisations_api import OrganisationsApi
 from openapi_client.api.search_api import SearchApi
-from openapi_client.api.signal_api import SignalApi
-from openapi_client.api.tsi_proxy_api import TsiProxyApi
 from openapi_client.api.users_api import UsersApi
 
 # import ApiClient
@@ -38,12 +35,24 @@ from openapi_client.exceptions import ApiValueError
 from openapi_client.exceptions import ApiKeyError
 from openapi_client.exceptions import ApiException
 # import models into sdk package
+from openapi_client.models.address import Address
+from openapi_client.models.amphora_dto import AmphoraDto
 from openapi_client.models.amphora_extended_dto import AmphoraExtendedDto
+from openapi_client.models.category_set import CategorySet
+from openapi_client.models.classification import Classification
+from openapi_client.models.create_amphora_dto import CreateAmphoraDto
+from openapi_client.models.entry_point import EntryPoint
+from openapi_client.models.fuzzy_search_response import FuzzySearchResponse
 from openapi_client.models.invitation import Invitation
-from openapi_client.models.membership import Membership
+from openapi_client.models.name import Name
 from openapi_client.models.organisation_dto import OrganisationDto
-from openapi_client.models.organisation_model import OrganisationModel
+from openapi_client.models.poi import Poi
+from openapi_client.models.position import Position
+from openapi_client.models.result import Result
 from openapi_client.models.search_parameters import SearchParameters
+from openapi_client.models.signal_dto import SignalDto
+from openapi_client.models.summary import Summary
 from openapi_client.models.token_request import TokenRequest
 from openapi_client.models.user_dto import UserDto
+from openapi_client.models.viewport import Viewport
 

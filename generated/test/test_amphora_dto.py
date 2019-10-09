@@ -15,23 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import openapi_client
-from openapi_client.api.authorizations_api import AuthorizationsApi  # noqa: E501
+from openapi_client.models.amphora_dto import AmphoraDto  # noqa: E501
 from openapi_client.rest import ApiException
 
 
-class TestAuthorizationsApi(unittest.TestCase):
-    """AuthorizationsApi unit test stubs"""
+class TestAmphoraDto(unittest.TestCase):
+    """AmphoraDto unit test stubs"""
 
     def setUp(self):
-        self.api = openapi_client.api.authorizations_api.AuthorizationsApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_api_authoriations_post(self):
-        """Test case for api_authoriations_post
-
-        """
+    def testAmphoraDto(self):
+        """Test AmphoraDto"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = openapi_client.models.amphora_dto.AmphoraDto()  # noqa: E501
         pass
 
 

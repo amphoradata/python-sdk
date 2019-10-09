@@ -37,7 +37,7 @@ class HealthzApi(object):
         self.api_client = api_client
 
     def healthz_get(self, **kwargs):  # noqa: E501
-        """healthz_get  # noqa: E501
+        """Health endpoint.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -60,7 +60,7 @@ class HealthzApi(object):
         return self.healthz_get_with_http_info(**kwargs)  # noqa: E501
 
     def healthz_get_with_http_info(self, **kwargs):  # noqa: E501
-        """healthz_get  # noqa: E501
+        """Health endpoint.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

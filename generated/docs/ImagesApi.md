@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_organisations_id_profile_jpg_get**](ImagesApi.md#api_organisations_id_profile_jpg_get) | **GET** /api/organisations/{id}/profile.jpg | 
+[**api_organisations_id_profile_jpg_get**](ImagesApi.md#api_organisations_id_profile_jpg_get) | **GET** /api/organisations/{id}/profile.jpg | Gets an organisations profile picture
 
 
 # **api_organisations_id_profile_jpg_get**
 > api_organisations_id_profile_jpg_get(id)
 
-
+Gets an organisations profile picture
 
 ### Example
 
@@ -23,9 +23,10 @@ from pprint import pprint
 
 # Create an instance of the API class
 api_instance = openapi_client.ImagesApi()
-id = '' # str |  (default to '')
+id = '' # str | Amphora Id (default to '')
 
 try:
+    # Gets an organisations profile picture
     api_instance.api_organisations_id_profile_jpg_get(id)
 except ApiException as e:
     print("Exception when calling ImagesApi->api_organisations_id_profile_jpg_get: %s\n" % e)
@@ -35,7 +36,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | [default to &#39;&#39;]
+ **id** | **str**| Amphora Id | [default to &#39;&#39;]
 
 ### Return type
 

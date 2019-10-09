@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_location_fuzzy_get**](MarketApi.md#api_location_fuzzy_get) | **GET** /api/location/fuzzy | 
-[**api_market_get**](MarketApi.md#api_market_get) | **GET** /api/market | 
-[**api_market_purchase_post**](MarketApi.md#api_market_purchase_post) | **POST** /api/market/purchase | 
+[**api_location_fuzzy_get**](MarketApi.md#api_location_fuzzy_get) | **GET** /api/location/fuzzy | Executes a fuzzy location search.
+[**api_market_get**](MarketApi.md#api_market_get) | **GET** /api/market | Finds Amphora using a fuzzy search
+[**api_market_purchase_post**](MarketApi.md#api_market_purchase_post) | **POST** /api/market/purchase | Purchases an Amphora as the logged in user.
 
 
 # **api_location_fuzzy_get**
-> api_location_fuzzy_get(query=query)
+> FuzzySearchResponse api_location_fuzzy_get(query=query)
 
-
+Executes a fuzzy location search.
 
 ### Example
 
@@ -25,10 +25,12 @@ from pprint import pprint
 
 # Create an instance of the API class
 api_instance = openapi_client.MarketApi()
-query = '' # str |  (optional) (default to '')
+query = '' # str | Search Text (optional) (default to '')
 
 try:
-    api_instance.api_location_fuzzy_get(query=query)
+    # Executes a fuzzy location search.
+    api_response = api_instance.api_location_fuzzy_get(query=query)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MarketApi->api_location_fuzzy_get: %s\n" % e)
 ```
@@ -37,11 +39,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **str**|  | [optional] [default to &#39;&#39;]
+ **query** | **str**| Search Text | [optional] [default to &#39;&#39;]
 
 ### Return type
 
-void (empty response body)
+[**FuzzySearchResponse**](FuzzySearchResponse.md)
 
 ### Authorization
 
@@ -50,7 +52,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -60,9 +62,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_market_get**
-> api_market_get(query=query)
+> list[AmphoraDto] api_market_get(query=query)
 
-
+Finds Amphora using a fuzzy search
 
 ### Example
 
@@ -75,10 +77,12 @@ from pprint import pprint
 
 # Create an instance of the API class
 api_instance = openapi_client.MarketApi()
-query = '' # str |  (optional) (default to '')
+query = '' # str | Amphora Id (optional) (default to '')
 
 try:
-    api_instance.api_market_get(query=query)
+    # Finds Amphora using a fuzzy search
+    api_response = api_instance.api_market_get(query=query)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling MarketApi->api_market_get: %s\n" % e)
 ```
@@ -87,11 +91,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **str**|  | [optional] [default to &#39;&#39;]
+ **query** | **str**| Amphora Id | [optional] [default to &#39;&#39;]
 
 ### Return type
 
-void (empty response body)
+[**list[AmphoraDto]**](AmphoraDto.md)
 
 ### Authorization
 
@@ -100,7 +104,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -112,7 +116,7 @@ No authorization required
 # **api_market_purchase_post**
 > api_market_purchase_post(id=id)
 
-
+Purchases an Amphora as the logged in user.
 
 ### Example
 
@@ -125,9 +129,10 @@ from pprint import pprint
 
 # Create an instance of the API class
 api_instance = openapi_client.MarketApi()
-id = '' # str |  (optional) (default to '')
+id = '' # str | Amphora Id (optional) (default to '')
 
 try:
+    # Purchases an Amphora as the logged in user.
     api_instance.api_market_purchase_post(id=id)
 except ApiException as e:
     print("Exception when calling MarketApi->api_market_purchase_post: %s\n" % e)
@@ -137,7 +142,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | [optional] [default to &#39;&#39;]
+ **id** | **str**| Amphora Id | [optional] [default to &#39;&#39;]
 
 ### Return type
 

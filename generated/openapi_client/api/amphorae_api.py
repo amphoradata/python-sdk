@@ -37,7 +37,7 @@ class AmphoraeApi(object):
         self.api_client = api_client
 
     def api_amphorae_id_delete(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_delete  # noqa: E501
+        """Deletes an Amphora  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -45,7 +45,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -61,7 +61,7 @@ class AmphoraeApi(object):
         return self.api_amphorae_id_delete_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_amphorae_id_delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_delete  # noqa: E501
+        """Deletes an Amphora  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -69,7 +69,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -139,7 +139,7 @@ class AmphoraeApi(object):
             collection_formats=collection_formats)
 
     def api_amphorae_id_files_file_get(self, id, file, **kwargs):  # noqa: E501
-        """api_amphorae_id_files_file_get  # noqa: E501
+        """Get's the contents of a file. Returns application/octet-stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -147,8 +147,8 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
-        :param str file: (required)
+        :param str id: Amphora Id (required)
+        :param str file: The name of the file (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -164,7 +164,7 @@ class AmphoraeApi(object):
         return self.api_amphorae_id_files_file_get_with_http_info(id, file, **kwargs)  # noqa: E501
 
     def api_amphorae_id_files_file_get_with_http_info(self, id, file, **kwargs):  # noqa: E501
-        """api_amphorae_id_files_file_get  # noqa: E501
+        """Get's the contents of a file. Returns application/octet-stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -172,8 +172,8 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
-        :param str file: (required)
+        :param str id: Amphora Id (required)
+        :param str file: The name of the file (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -249,7 +249,7 @@ class AmphoraeApi(object):
             collection_formats=collection_formats)
 
     def api_amphorae_id_files_file_put(self, id, file, **kwargs):  # noqa: E501
-        """api_amphorae_id_files_file_put  # noqa: E501
+        """Set's the contents of a file. The request body becomes the content.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -257,8 +257,8 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
-        :param str file: (required)
+        :param str id: Amphora Id (required)
+        :param str file: The name of the file (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -274,7 +274,7 @@ class AmphoraeApi(object):
         return self.api_amphorae_id_files_file_put_with_http_info(id, file, **kwargs)  # noqa: E501
 
     def api_amphorae_id_files_file_put_with_http_info(self, id, file, **kwargs):  # noqa: E501
-        """api_amphorae_id_files_file_put  # noqa: E501
+        """Set's the contents of a file. The request body becomes the content.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -282,8 +282,8 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
-        :param str file: (required)
+        :param str id: Amphora Id (required)
+        :param str file: The name of the file (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -359,7 +359,7 @@ class AmphoraeApi(object):
             collection_formats=collection_formats)
 
     def api_amphorae_id_files_get(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_files_get  # noqa: E501
+        """Get's a list of an Amphora's files  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -367,7 +367,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -375,7 +375,7 @@ class AmphoraeApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -383,7 +383,7 @@ class AmphoraeApi(object):
         return self.api_amphorae_id_files_get_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_amphorae_id_files_get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_files_get  # noqa: E501
+        """Get's a list of an Amphora's files  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -391,7 +391,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -401,7 +401,7 @@ class AmphoraeApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(list[str], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -441,6 +441,10 @@ class AmphoraeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -452,7 +456,7 @@ class AmphoraeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -461,7 +465,7 @@ class AmphoraeApi(object):
             collection_formats=collection_formats)
 
     def api_amphorae_id_get(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_get  # noqa: E501
+        """Get's details of an Amphora by Id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -469,7 +473,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -477,7 +481,7 @@ class AmphoraeApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: AmphoraExtendedDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -485,7 +489,7 @@ class AmphoraeApi(object):
         return self.api_amphorae_id_get_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_amphorae_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_get  # noqa: E501
+        """Get's details of an Amphora by Id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -493,7 +497,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -503,7 +507,7 @@ class AmphoraeApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(AmphoraExtendedDto, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -543,6 +547,10 @@ class AmphoraeApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -554,7 +562,7 @@ class AmphoraeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='AmphoraExtendedDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -563,7 +571,7 @@ class AmphoraeApi(object):
             collection_formats=collection_formats)
 
     def api_amphorae_id_put(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_put  # noqa: E501
+        """Updates the details of an Amphora by Id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -571,7 +579,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param AmphoraExtendedDto amphora_extended_dto:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -580,7 +588,7 @@ class AmphoraeApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: AmphoraExtendedDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -588,7 +596,7 @@ class AmphoraeApi(object):
         return self.api_amphorae_id_put_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_amphorae_id_put_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_amphorae_id_put  # noqa: E501
+        """Updates the details of an Amphora by Id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -596,7 +604,7 @@ class AmphoraeApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param AmphoraExtendedDto amphora_extended_dto:
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -607,7 +615,7 @@ class AmphoraeApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(AmphoraExtendedDto, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -649,6 +657,10 @@ class AmphoraeApi(object):
         body_params = None
         if 'amphora_extended_dto' in local_var_params:
             body_params = local_var_params['amphora_extended_dto']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -664,7 +676,7 @@ class AmphoraeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='AmphoraExtendedDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -672,16 +684,237 @@ class AmphoraeApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_amphorae_post(self, **kwargs):  # noqa: E501
-        """api_amphorae_post  # noqa: E501
+    def api_amphorae_id_signals_get(self, id, **kwargs):  # noqa: E501
+        """Get's the signals associated with an Amphora.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_amphorae_post(async_req=True)
+        >>> thread = api.api_amphorae_id_signals_get(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AmphoraExtendedDto amphora_extended_dto:
+        :param str id: Amphora Id (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: list[SignalDto]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.api_amphorae_id_signals_get_with_http_info(id, **kwargs)  # noqa: E501
+
+    def api_amphorae_id_signals_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get's the signals associated with an Amphora.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.api_amphorae_id_signals_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: Amphora Id (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[SignalDto], status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method api_amphorae_id_signals_get" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in local_var_params or
+                local_var_params['id'] is None):
+            raise ApiValueError("Missing the required parameter `id` when calling `api_amphorae_id_signals_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/amphorae/{id}/signals', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SignalDto]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def api_amphorae_id_signals_post(self, id, **kwargs):  # noqa: E501
+        """Associates a signal with an Amphora. Signal is created if not existing.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.api_amphorae_id_signals_post(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: Amphora Id (required)
+        :param SignalDto signal_dto:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SignalDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.api_amphorae_id_signals_post_with_http_info(id, **kwargs)  # noqa: E501
+
+    def api_amphorae_id_signals_post_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Associates a signal with an Amphora. Signal is created if not existing.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.api_amphorae_id_signals_post_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: Amphora Id (required)
+        :param SignalDto signal_dto:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SignalDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['id', 'signal_dto']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method api_amphorae_id_signals_post" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in local_var_params or
+                local_var_params['id'] is None):
+            raise ApiValueError("Missing the required parameter `id` when calling `api_amphorae_id_signals_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'signal_dto' in local_var_params:
+            body_params = local_var_params['signal_dto']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/amphorae/{id}/signals', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SignalDto',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def api_amphorae_id_signals_values_post(self, id, **kwargs):  # noqa: E501
+        """Get's the signals associated with an Amphora.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.api_amphorae_id_signals_values_post(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: Amphora Id (required)
+        :param dict(str, object) request_body:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -694,18 +927,19 @@ class AmphoraeApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.api_amphorae_post_with_http_info(**kwargs)  # noqa: E501
+        return self.api_amphorae_id_signals_values_post_with_http_info(id, **kwargs)  # noqa: E501
 
-    def api_amphorae_post_with_http_info(self, **kwargs):  # noqa: E501
-        """api_amphorae_post  # noqa: E501
+    def api_amphorae_id_signals_values_post_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get's the signals associated with an Amphora.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_amphorae_post_with_http_info(async_req=True)
+        >>> thread = api.api_amphorae_id_signals_values_post_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param AmphoraExtendedDto amphora_extended_dto:
+        :param str id: Amphora Id (required)
+        :param dict(str, object) request_body:
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -722,7 +956,115 @@ class AmphoraeApi(object):
 
         local_var_params = locals()
 
-        all_params = ['amphora_extended_dto']  # noqa: E501
+        all_params = ['id', 'request_body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method api_amphorae_id_signals_values_post" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in local_var_params or
+                local_var_params['id'] is None):
+            raise ApiValueError("Missing the required parameter `id` when calling `api_amphorae_id_signals_values_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request_body' in local_var_params:
+            body_params = local_var_params['request_body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/amphorae/{id}/signals/values', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def api_amphorae_post(self, **kwargs):  # noqa: E501
+        """Creates a new empty Amphora in the user's organisation  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.api_amphorae_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateAmphoraDto create_amphora_dto:
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: AmphoraExtendedDto
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.api_amphorae_post_with_http_info(**kwargs)  # noqa: E501
+
+    def api_amphorae_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Creates a new empty Amphora in the user's organisation  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.api_amphorae_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param CreateAmphoraDto create_amphora_dto:
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(AmphoraExtendedDto, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['create_amphora_dto']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -749,8 +1091,12 @@ class AmphoraeApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'amphora_extended_dto' in local_var_params:
-            body_params = local_var_params['amphora_extended_dto']
+        if 'create_amphora_dto' in local_var_params:
+            body_params = local_var_params['create_amphora_dto']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -766,7 +1112,7 @@ class AmphoraeApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='AmphoraExtendedDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -31,6 +31,7 @@ class TestImagesApi(unittest.TestCase):
     def test_api_organisations_id_profile_jpg_get(self):
         """Test case for api_organisations_id_profile_jpg_get
 
+        Gets an organisations profile picture  # noqa: E501
         """
         pass
 

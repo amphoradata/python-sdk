@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import openapi_client
-from openapi_client.models.membership import Membership  # noqa: E501
+from openapi_client.models.create_amphora_dto import CreateAmphoraDto  # noqa: E501
 from openapi_client.rest import ApiException
 
 
-class TestMembership(unittest.TestCase):
-    """Membership unit test stubs"""
+class TestCreateAmphoraDto(unittest.TestCase):
+    """CreateAmphoraDto unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestMembership(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMembership(self):
-        """Test Membership"""
+    def testCreateAmphoraDto(self):
+        """Test CreateAmphoraDto"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = openapi_client.models.membership.Membership()  # noqa: E501
+        # model = openapi_client.models.create_amphora_dto.CreateAmphoraDto()  # noqa: E501
         pass
 
 

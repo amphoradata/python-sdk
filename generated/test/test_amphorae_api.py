@@ -31,42 +31,70 @@ class TestAmphoraeApi(unittest.TestCase):
     def test_api_amphorae_id_delete(self):
         """Test case for api_amphorae_id_delete
 
+        Deletes an Amphora  # noqa: E501
         """
         pass
 
     def test_api_amphorae_id_files_file_get(self):
         """Test case for api_amphorae_id_files_file_get
 
+        Get's the contents of a file. Returns application/octet-stream  # noqa: E501
         """
         pass
 
     def test_api_amphorae_id_files_file_put(self):
         """Test case for api_amphorae_id_files_file_put
 
+        Set's the contents of a file. The request body becomes the content.  # noqa: E501
         """
         pass
 
     def test_api_amphorae_id_files_get(self):
         """Test case for api_amphorae_id_files_get
 
+        Get's a list of an Amphora's files  # noqa: E501
         """
         pass
 
     def test_api_amphorae_id_get(self):
         """Test case for api_amphorae_id_get
 
+        Get's details of an Amphora by Id  # noqa: E501
         """
         pass
 
     def test_api_amphorae_id_put(self):
         """Test case for api_amphorae_id_put
 
+        Updates the details of an Amphora by Id  # noqa: E501
+        """
+        pass
+
+    def test_api_amphorae_id_signals_get(self):
+        """Test case for api_amphorae_id_signals_get
+
+        Get's the signals associated with an Amphora.  # noqa: E501
+        """
+        pass
+
+    def test_api_amphorae_id_signals_post(self):
+        """Test case for api_amphorae_id_signals_post
+
+        Associates a signal with an Amphora. Signal is created if not existing.  # noqa: E501
+        """
+        pass
+
+    def test_api_amphorae_id_signals_values_post(self):
+        """Test case for api_amphorae_id_signals_values_post
+
+        Get's the signals associated with an Amphora.  # noqa: E501
         """
         pass
 
     def test_api_amphorae_post(self):
         """Test case for api_amphorae_post
 
+        Creates a new empty Amphora in the user's organisation  # noqa: E501
         """
         pass
 

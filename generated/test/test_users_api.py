@@ -31,18 +31,21 @@ class TestUsersApi(unittest.TestCase):
     def test_api_users_post(self):
         """Test case for api_users_post
 
+        Creates a new User. Returns the password.  # noqa: E501
         """
         pass
 
     def test_api_users_self_get(self):
         """Test case for api_users_self_get
 
+        Get's logged in users information.  # noqa: E501
         """
         pass
 
     def test_api_users_username_delete(self):
         """Test case for api_users_username_delete
 
+        Deletes a user  # noqa: E501
         """
         pass
 

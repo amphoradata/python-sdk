@@ -37,7 +37,7 @@ class UsersApi(object):
         self.api_client = api_client
 
     def api_users_post(self, **kwargs):  # noqa: E501
-        """api_users_post  # noqa: E501
+        """Creates a new User. Returns the password.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -45,7 +45,6 @@ class UsersApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str onboarding_id:
         :param UserDto user_dto:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -54,7 +53,7 @@ class UsersApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -62,7 +61,7 @@ class UsersApi(object):
         return self.api_users_post_with_http_info(**kwargs)  # noqa: E501
 
     def api_users_post_with_http_info(self, **kwargs):  # noqa: E501
-        """api_users_post  # noqa: E501
+        """Creates a new User. Returns the password.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -70,7 +69,6 @@ class UsersApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str onboarding_id:
         :param UserDto user_dto:
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -81,14 +79,14 @@ class UsersApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(str, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['onboarding_id', 'user_dto']  # noqa: E501
+        all_params = ['user_dto']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -108,8 +106,6 @@ class UsersApi(object):
         path_params = {}
 
         query_params = []
-        if 'onboarding_id' in local_var_params:
-            query_params.append(('onboardingId', local_var_params['onboarding_id']))  # noqa: E501
 
         header_params = {}
 
@@ -119,6 +115,10 @@ class UsersApi(object):
         body_params = None
         if 'user_dto' in local_var_params:
             body_params = local_var_params['user_dto']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -134,7 +134,7 @@ class UsersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -143,7 +143,7 @@ class UsersApi(object):
             collection_formats=collection_formats)
 
     def api_users_self_get(self, **kwargs):  # noqa: E501
-        """api_users_self_get  # noqa: E501
+        """Get's logged in users information.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -158,7 +158,7 @@ class UsersApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: UserDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -166,7 +166,7 @@ class UsersApi(object):
         return self.api_users_self_get_with_http_info(**kwargs)  # noqa: E501
 
     def api_users_self_get_with_http_info(self, **kwargs):  # noqa: E501
-        """api_users_self_get  # noqa: E501
+        """Get's logged in users information.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -183,7 +183,7 @@ class UsersApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(UserDto, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -217,8 +217,12 @@ class UsersApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/users/self', 'GET',
@@ -228,7 +232,7 @@ class UsersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='UserDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -236,16 +240,16 @@ class UsersApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_users_username_delete(self, username, **kwargs):  # noqa: E501
-        """api_users_username_delete  # noqa: E501
+    def api_users_username_delete(self, user_name, **kwargs):  # noqa: E501
+        """Deletes a user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_users_username_delete(username, async_req=True)
+        >>> thread = api.api_users_username_delete(user_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str username: (required)
+        :param str user_name: UserName of user to delete. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -258,18 +262,18 @@ class UsersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.api_users_username_delete_with_http_info(username, **kwargs)  # noqa: E501
+        return self.api_users_username_delete_with_http_info(user_name, **kwargs)  # noqa: E501
 
-    def api_users_username_delete_with_http_info(self, username, **kwargs):  # noqa: E501
-        """api_users_username_delete  # noqa: E501
+    def api_users_username_delete_with_http_info(self, user_name, **kwargs):  # noqa: E501
+        """Deletes a user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_users_username_delete_with_http_info(username, async_req=True)
+        >>> thread = api.api_users_username_delete_with_http_info(user_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str username: (required)
+        :param str user_name: UserName of user to delete. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -286,7 +290,7 @@ class UsersApi(object):
 
         local_var_params = locals()
 
-        all_params = ['username']  # noqa: E501
+        all_params = ['user_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -300,16 +304,16 @@ class UsersApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'username' is set
-        if ('username' not in local_var_params or
-                local_var_params['username'] is None):
-            raise ApiValueError("Missing the required parameter `username` when calling `api_users_username_delete`")  # noqa: E501
+        # verify the required parameter 'user_name' is set
+        if ('user_name' not in local_var_params or
+                local_var_params['user_name'] is None):
+            raise ApiValueError("Missing the required parameter `user_name` when calling `api_users_username_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'username' in local_var_params:
-            path_params['username'] = local_var_params['username']  # noqa: E501
+        if 'user_name' in local_var_params:
+            path_params['userName'] = local_var_params['user_name']  # noqa: E501
 
         query_params = []
 
@@ -320,7 +324,7 @@ class UsersApi(object):
 
         body_params = None
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/users/{username}', 'DELETE',

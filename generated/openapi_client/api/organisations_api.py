@@ -37,7 +37,7 @@ class OrganisationsApi(object):
         self.api_client = api_client
 
     def api_organisations_id_delete(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_delete  # noqa: E501
+        """Deletes an organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -45,7 +45,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -53,7 +53,7 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: OrganisationDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -61,7 +61,7 @@ class OrganisationsApi(object):
         return self.api_organisations_id_delete_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_organisations_id_delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_delete  # noqa: E501
+        """Deletes an organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -69,7 +69,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -79,7 +79,7 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(OrganisationDto, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -119,6 +119,10 @@ class OrganisationsApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -130,7 +134,7 @@ class OrganisationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='OrganisationDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -139,7 +143,7 @@ class OrganisationsApi(object):
             collection_formats=collection_formats)
 
     def api_organisations_id_get(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_get  # noqa: E501
+        """Gets an organisation's details.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -147,7 +151,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -155,7 +159,7 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: OrganisationDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -163,7 +167,7 @@ class OrganisationsApi(object):
         return self.api_organisations_id_get_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_organisations_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_get  # noqa: E501
+        """Gets an organisation's details.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -171,7 +175,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -181,7 +185,7 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(OrganisationDto, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -221,6 +225,10 @@ class OrganisationsApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -232,7 +240,7 @@ class OrganisationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='OrganisationDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -241,7 +249,7 @@ class OrganisationsApi(object):
             collection_formats=collection_formats)
 
     def api_organisations_id_invitations_get(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_invitations_get  # noqa: E501
+        """Accept an invitation to an organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -249,7 +257,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -257,7 +265,7 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: OrganisationDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -265,7 +273,7 @@ class OrganisationsApi(object):
         return self.api_organisations_id_invitations_get_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_organisations_id_invitations_get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_invitations_get  # noqa: E501
+        """Accept an invitation to an organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -273,7 +281,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -283,7 +291,7 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(OrganisationDto, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -323,6 +331,10 @@ class OrganisationsApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -334,7 +346,7 @@ class OrganisationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='OrganisationDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -343,7 +355,7 @@ class OrganisationsApi(object):
             collection_formats=collection_formats)
 
     def api_organisations_id_invitations_post(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_invitations_post  # noqa: E501
+        """Invite a user/ email address to your organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -351,7 +363,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param Invitation invitation:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -368,7 +380,7 @@ class OrganisationsApi(object):
         return self.api_organisations_id_invitations_post_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_organisations_id_invitations_post_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_invitations_post  # noqa: E501
+        """Invite a user/ email address to your organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -376,7 +388,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param Invitation invitation:
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -453,7 +465,7 @@ class OrganisationsApi(object):
             collection_formats=collection_formats)
 
     def api_organisations_id_put(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_put  # noqa: E501
+        """Updates an organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -461,7 +473,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param OrganisationDto organisation_dto:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -478,7 +490,7 @@ class OrganisationsApi(object):
         return self.api_organisations_id_put_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_organisations_id_put_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_put  # noqa: E501
+        """Updates an organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -486,7 +498,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Organisation Id (required)
         :param OrganisationDto organisation_dto:
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -563,7 +575,7 @@ class OrganisationsApi(object):
             collection_formats=collection_formats)
 
     def api_organisations_post(self, **kwargs):  # noqa: E501
-        """api_organisations_post  # noqa: E501
+        """Creates a new Organisation. This will assign the logged in user to the organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -571,7 +583,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param OrganisationModel organisation_model:
+        :param OrganisationDto organisation_dto:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -579,7 +591,7 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: OrganisationDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -587,7 +599,7 @@ class OrganisationsApi(object):
         return self.api_organisations_post_with_http_info(**kwargs)  # noqa: E501
 
     def api_organisations_post_with_http_info(self, **kwargs):  # noqa: E501
-        """api_organisations_post  # noqa: E501
+        """Creates a new Organisation. This will assign the logged in user to the organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -595,7 +607,7 @@ class OrganisationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param OrganisationModel organisation_model:
+        :param OrganisationDto organisation_dto:
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -605,14 +617,14 @@ class OrganisationsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: None
+        :return: tuple(OrganisationDto, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['organisation_model']  # noqa: E501
+        all_params = ['organisation_dto']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -639,8 +651,12 @@ class OrganisationsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'organisation_model' in local_var_params:
-            body_params = local_var_params['organisation_model']
+        if 'organisation_dto' in local_var_params:
+            body_params = local_var_params['organisation_dto']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -656,7 +672,7 @@ class OrganisationsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='OrganisationDto',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -37,7 +37,7 @@ class ImagesApi(object):
         self.api_client = api_client
 
     def api_organisations_id_profile_jpg_get(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_profile_jpg_get  # noqa: E501
+        """Gets an organisations profile picture  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -45,7 +45,7 @@ class ImagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -61,7 +61,7 @@ class ImagesApi(object):
         return self.api_organisations_id_profile_jpg_get_with_http_info(id, **kwargs)  # noqa: E501
 
     def api_organisations_id_profile_jpg_get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """api_organisations_id_profile_jpg_get  # noqa: E501
+        """Gets an organisations profile picture  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -69,7 +69,7 @@ class ImagesApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: (required)
+        :param str id: Amphora Id (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

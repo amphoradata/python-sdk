@@ -31,6 +31,7 @@ class TestAuthenticationApi(unittest.TestCase):
     def test_api_authentication_request_post(self):
         """Test case for api_authentication_request_post
 
+        Returns a JWT (JSON Web Token).  # noqa: E501
         """
         pass
 

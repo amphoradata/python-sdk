@@ -31,36 +31,42 @@ class TestOrganisationsApi(unittest.TestCase):
     def test_api_organisations_id_delete(self):
         """Test case for api_organisations_id_delete
 
+        Deletes an organisation.  # noqa: E501
         """
         pass
 
     def test_api_organisations_id_get(self):
         """Test case for api_organisations_id_get
 
+        Gets an organisation's details.  # noqa: E501
         """
         pass
 
     def test_api_organisations_id_invitations_get(self):
         """Test case for api_organisations_id_invitations_get
 
+        Accept an invitation to an organisation.  # noqa: E501
         """
         pass
 
     def test_api_organisations_id_invitations_post(self):
         """Test case for api_organisations_id_invitations_post
 
+        Invite a user/ email address to your organisation.  # noqa: E501
         """
         pass
 
     def test_api_organisations_id_put(self):
         """Test case for api_organisations_id_put
 
+        Updates an organisation.  # noqa: E501
         """
         pass
 
     def test_api_organisations_post(self):
         """Test case for api_organisations_post
 
+        Creates a new Organisation. This will assign the logged in user to the organisation.  # noqa: E501
         """
         pass
 
