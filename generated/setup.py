@@ -12,7 +12,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "openapi-client"
+NAME = "amphora-client"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
@@ -26,10 +26,10 @@ REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 setup(
     name=NAME,
     version=VERSION,
-    description="AmphoraApi",
-    author_email="",
-    url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "AmphoraApi"],
+    description="Amphora Client",
+    author_email="rian@amphoradata.com",
+    url="https://amphoradata.com",
+    keywords=["Amphora", "Data", "AmphoraData"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
