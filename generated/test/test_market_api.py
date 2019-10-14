@@ -14,16 +14,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import openapi_client
-from openapi_client.api.market_api import MarketApi  # noqa: E501
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.api.market_api import MarketApi  # noqa: E501
+from amphora_client.rest import ApiException
 
 
 class TestMarketApi(unittest.TestCase):
     """MarketApi unit test stubs"""
 
     def setUp(self):
-        self.api = openapi_client.api.market_api.MarketApi()  # noqa: E501
+        self.api = amphora_client.api.market_api.MarketApi()  # noqa: E501
 
     def tearDown(self):
         pass

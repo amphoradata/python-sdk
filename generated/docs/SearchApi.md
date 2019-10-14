@@ -1,4 +1,4 @@
-# openapi_client.SearchApi
+# amphora_client.SearchApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,12 +20,12 @@ Searches for Amphorae by creator.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.SearchApi()
+api_instance = amphora_client.SearchApi()
 user_name = '' # str | User Name of the creator (optional) (default to '')
 
 try:
@@ -72,12 +72,12 @@ Searches for Amphorae by loction.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.SearchApi()
+api_instance = amphora_client.SearchApi()
 lat = 3.4 # float | Latitude (optional)
 lon = 3.4 # float | Longitude (optional)
 dist = 10 # float | Distance from Latitude and Longitude in which to search (optional) (default to 10)
@@ -128,12 +128,12 @@ Searches for Amphorae in an Organisation.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.SearchApi()
+api_instance = amphora_client.SearchApi()
 org_id = '' # str | Organisation Id (optional) (default to '')
 
 try:
@@ -180,13 +180,13 @@ Searches for Amphorae.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.SearchApi()
-search_parameters = openapi_client.SearchParameters() # SearchParameters |  (optional)
+api_instance = amphora_client.SearchApi()
+search_parameters = amphora_client.SearchParameters() # SearchParameters |  (optional)
 
 try:
     # Searches for Amphorae.

@@ -1,4 +1,4 @@
-# openapi_client.AmphoraeApi
+# amphora_client.AmphoraeApi
 
 All URIs are relative to *http://localhost*
 
@@ -26,12 +26,12 @@ Deletes an Amphora
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -77,12 +77,12 @@ Get's the contents of a file. Returns application/octet-stream
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
 file = '' # str | The name of the file (default to '')
 
@@ -130,12 +130,12 @@ Set's the contents of a file. The request body becomes the content.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
 file = '' # str | The name of the file (default to '')
 
@@ -183,12 +183,12 @@ Get's a list of an Amphora's files
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -235,12 +235,12 @@ Get's details of an Amphora by Id
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -287,14 +287,14 @@ Updates the details of an Amphora by Id
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
-amphora_extended_dto = openapi_client.AmphoraExtendedDto() # AmphoraExtendedDto |  (optional)
+amphora_extended_dto = amphora_client.AmphoraExtendedDto() # AmphoraExtendedDto |  (optional)
 
 try:
     # Updates the details of an Amphora by Id
@@ -341,12 +341,12 @@ Get's the signals associated with an Amphora.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -393,14 +393,14 @@ Associates a signal with an Amphora. Signal is created if not existing.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
-signal_dto = openapi_client.SignalDto() # SignalDto |  (optional)
+signal_dto = amphora_client.SignalDto() # SignalDto |  (optional)
 
 try:
     # Associates a signal with an Amphora. Signal is created if not existing.
@@ -447,12 +447,12 @@ Get's the signals associated with an Amphora.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi()
 id = '' # str | Amphora Id (default to '')
 request_body = None # dict(str, object) |  (optional)
 
@@ -500,13 +500,13 @@ Creates a new empty Amphora in the user's organisation
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AmphoraeApi()
-create_amphora_dto = openapi_client.CreateAmphoraDto() # CreateAmphoraDto |  (optional)
+api_instance = amphora_client.AmphoraeApi()
+create_amphora_dto = amphora_client.CreateAmphoraDto() # CreateAmphoraDto |  (optional)
 
 try:
     # Creates a new empty Amphora in the user's organisation

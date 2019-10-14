@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import openapi_client
-from openapi_client.models.amphora_extended_dto import AmphoraExtendedDto  # noqa: E501
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.models.amphora_extended_dto import AmphoraExtendedDto  # noqa: E501
+from amphora_client.rest import ApiException
 
 
 class TestAmphoraExtendedDto(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestAmphoraExtendedDto(unittest.TestCase):
     def testAmphoraExtendedDto(self):
         """Test AmphoraExtendedDto"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = openapi_client.models.amphora_extended_dto.AmphoraExtendedDto()  # noqa: E501
+        # model = amphora_client.models.amphora_extended_dto.AmphoraExtendedDto()  # noqa: E501
         pass
 
 

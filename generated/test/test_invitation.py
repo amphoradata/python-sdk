@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import openapi_client
-from openapi_client.models.invitation import Invitation  # noqa: E501
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.models.invitation import Invitation  # noqa: E501
+from amphora_client.rest import ApiException
 
 
 class TestInvitation(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestInvitation(unittest.TestCase):
     def testInvitation(self):
         """Test Invitation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = openapi_client.models.invitation.Invitation()  # noqa: E501
+        # model = amphora_client.models.invitation.Invitation()  # noqa: E501
         pass
 
 

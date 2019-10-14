@@ -1,4 +1,4 @@
-# openapi_client.MarketApi
+# amphora_client.MarketApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,12 +19,12 @@ Executes a fuzzy location search.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.MarketApi()
+api_instance = amphora_client.MarketApi()
 query = '' # str | Search Text (optional) (default to '')
 
 try:
@@ -71,12 +71,12 @@ Finds Amphora using a fuzzy search
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.MarketApi()
+api_instance = amphora_client.MarketApi()
 query = '' # str | Amphora Id (optional) (default to '')
 
 try:
@@ -123,12 +123,12 @@ Purchases an Amphora as the logged in user.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.MarketApi()
+api_instance = amphora_client.MarketApi()
 id = '' # str | Amphora Id (optional) (default to '')
 
 try:

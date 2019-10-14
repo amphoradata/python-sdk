@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import openapi_client
-from openapi_client.models.entry_point import EntryPoint  # noqa: E501
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.models.entry_point import EntryPoint  # noqa: E501
+from amphora_client.rest import ApiException
 
 
 class TestEntryPoint(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestEntryPoint(unittest.TestCase):
     def testEntryPoint(self):
         """Test EntryPoint"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = openapi_client.models.entry_point.EntryPoint()  # noqa: E501
+        # model = amphora_client.models.entry_point.EntryPoint()  # noqa: E501
         pass
 
 

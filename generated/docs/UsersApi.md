@@ -1,4 +1,4 @@
-# openapi_client.UsersApi
+# amphora_client.UsersApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,13 +19,13 @@ Creates a new User. Returns the password.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi()
-user_dto = openapi_client.UserDto() # UserDto |  (optional)
+api_instance = amphora_client.UsersApi()
+user_dto = amphora_client.UserDto() # UserDto |  (optional)
 
 try:
     # Creates a new User. Returns the password.
@@ -72,10 +72,10 @@ Get's logged in users information.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = amphora_client.Configuration()
 # Configure API key authorization: token
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -84,7 +84,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Defining host is optional and default to http://localhost
 configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = amphora_client.UsersApi(amphora_client.ApiClient(configuration))
 
 try:
     # Get's logged in users information.
@@ -130,10 +130,10 @@ Deletes a user
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
-configuration = openapi_client.Configuration()
+configuration = amphora_client.Configuration()
 # Configure API key authorization: token
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -142,7 +142,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Defining host is optional and default to http://localhost
 configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = openapi_client.UsersApi(openapi_client.ApiClient(configuration))
+api_instance = amphora_client.UsersApi(amphora_client.ApiClient(configuration))
 user_name = '' # str | UserName of user to delete. (default to '')
 
 try:

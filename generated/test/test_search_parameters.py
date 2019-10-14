@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import openapi_client
-from openapi_client.models.search_parameters import SearchParameters  # noqa: E501
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.models.search_parameters import SearchParameters  # noqa: E501
+from amphora_client.rest import ApiException
 
 
 class TestSearchParameters(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSearchParameters(unittest.TestCase):
     def testSearchParameters(self):
         """Test SearchParameters"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = openapi_client.models.search_parameters.SearchParameters()  # noqa: E501
+        # model = amphora_client.models.search_parameters.SearchParameters()  # noqa: E501
         pass
 
 

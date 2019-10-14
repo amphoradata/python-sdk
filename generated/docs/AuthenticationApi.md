@@ -1,4 +1,4 @@
-# openapi_client.AuthenticationApi
+# amphora_client.AuthenticationApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,13 +17,13 @@ Returns a JWT (JSON Web Token).
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.AuthenticationApi()
-token_request = openapi_client.TokenRequest() # TokenRequest |  (optional)
+api_instance = amphora_client.AuthenticationApi()
+token_request = amphora_client.TokenRequest() # TokenRequest |  (optional)
 
 try:
     # Returns a JWT (JSON Web Token).

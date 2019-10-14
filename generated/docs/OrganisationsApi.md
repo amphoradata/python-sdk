@@ -1,4 +1,4 @@
-# openapi_client.OrganisationsApi
+# amphora_client.OrganisationsApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,12 +22,12 @@ Deletes an organisation.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.OrganisationsApi()
+api_instance = amphora_client.OrganisationsApi()
 id = '' # str | Organisation Id (default to '')
 
 try:
@@ -74,12 +74,12 @@ Gets an organisation's details.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.OrganisationsApi()
+api_instance = amphora_client.OrganisationsApi()
 id = '' # str | Organisation Id (default to '')
 
 try:
@@ -126,12 +126,12 @@ Accept an invitation to an organisation.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.OrganisationsApi()
+api_instance = amphora_client.OrganisationsApi()
 id = '' # str | Organisation Id (default to '')
 
 try:
@@ -178,14 +178,14 @@ Invite a user/ email address to your organisation.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.OrganisationsApi()
+api_instance = amphora_client.OrganisationsApi()
 id = '' # str | Organisation Id (default to '')
-invitation = openapi_client.Invitation() # Invitation |  (optional)
+invitation = amphora_client.Invitation() # Invitation |  (optional)
 
 try:
     # Invite a user/ email address to your organisation.
@@ -231,14 +231,14 @@ Updates an organisation.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.OrganisationsApi()
+api_instance = amphora_client.OrganisationsApi()
 id = '' # str | Organisation Id (default to '')
-organisation_dto = openapi_client.OrganisationDto() # OrganisationDto |  (optional)
+organisation_dto = amphora_client.OrganisationDto() # OrganisationDto |  (optional)
 
 try:
     # Updates an organisation.
@@ -284,13 +284,13 @@ Creates a new Organisation. This will assign the logged in user to the organisat
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.OrganisationsApi()
-organisation_dto = openapi_client.OrganisationDto() # OrganisationDto |  (optional)
+api_instance = amphora_client.OrganisationsApi()
+organisation_dto = amphora_client.OrganisationDto() # OrganisationDto |  (optional)
 
 try:
     # Creates a new Organisation. This will assign the logged in user to the organisation.

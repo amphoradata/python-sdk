@@ -1,4 +1,4 @@
-# openapi_client.HealthzApi
+# amphora_client.HealthzApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,12 +17,12 @@ Health endpoint.
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.rest import ApiException
 from pprint import pprint
 
 # Create an instance of the API class
-api_instance = openapi_client.HealthzApi()
+api_instance = amphora_client.HealthzApi()
 
 try:
     # Health endpoint.

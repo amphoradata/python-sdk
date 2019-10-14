@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import openapi_client
-from openapi_client.models.token_request import TokenRequest  # noqa: E501
-from openapi_client.rest import ApiException
+import amphora_client
+from amphora_client.models.token_request import TokenRequest  # noqa: E501
+from amphora_client.rest import ApiException
 
 
 class TestTokenRequest(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestTokenRequest(unittest.TestCase):
     def testTokenRequest(self):
         """Test TokenRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = openapi_client.models.token_request.TokenRequest()  # noqa: E501
+        # model = amphora_client.models.token_request.TokenRequest()  # noqa: E501
         pass
 
 
