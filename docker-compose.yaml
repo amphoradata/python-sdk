@@ -4,4 +4,4 @@ services:
     image: openapitools/openapi-generator-cli
     volumes: 
       - ${PWD}:/local
-    command: generate -i https://beta.amphoradata.com/swagger/v1/swagger.json -g python -o /local/generated --additional-properties=packageName=amphora_client,projectName=amphora,packageVersion=0.0.1
+    command: generate -i https://beta.amphoradata.com/swagger/v1/swagger.json -g python -o /local/generated -c local/config.yaml
