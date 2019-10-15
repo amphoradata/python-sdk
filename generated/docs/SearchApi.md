@@ -17,15 +17,23 @@ Searches for Amphorae by creator.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.SearchApi()
+api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
 user_name = '' # str | User Name of the creator (optional) (default to '')
 
 try:
@@ -48,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -59,6 +67,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -69,15 +79,23 @@ Searches for Amphorae by loction.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.SearchApi()
+api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
 lat = 3.4 # float | Latitude (optional)
 lon = 3.4 # float | Longitude (optional)
 dist = 10 # float | Distance from Latitude and Longitude in which to search (optional) (default to 10)
@@ -104,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -115,6 +133,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -125,15 +145,23 @@ Searches for Amphorae in an Organisation.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.SearchApi()
+api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
 org_id = '' # str | Organisation Id (optional) (default to '')
 
 try:
@@ -156,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -167,6 +195,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -177,15 +207,23 @@ Searches for Amphorae.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.SearchApi()
+api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
 search_parameters = amphora_client.SearchParameters() # SearchParameters |  (optional)
 
 try:
@@ -208,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -219,6 +257,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

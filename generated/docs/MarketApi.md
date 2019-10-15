@@ -16,15 +16,23 @@ Executes a fuzzy location search.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.MarketApi()
+api_instance = amphora_client.MarketApi(amphora_client.ApiClient(configuration))
 query = '' # str | Search Text (optional) (default to '')
 
 try:
@@ -47,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -58,6 +66,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -68,15 +78,23 @@ Finds Amphora using a fuzzy search
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.MarketApi()
+api_instance = amphora_client.MarketApi(amphora_client.ApiClient(configuration))
 query = '' # str | Amphora Id (optional) (default to '')
 
 try:
@@ -99,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -110,6 +128,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -120,15 +140,23 @@ Purchases an Amphora as the logged in user.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.MarketApi()
+api_instance = amphora_client.MarketApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (optional) (default to '')
 
 try:
@@ -150,7 +178,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -161,6 +189,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

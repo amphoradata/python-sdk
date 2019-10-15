@@ -23,15 +23,23 @@ Deletes an Amphora
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -53,7 +61,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -64,6 +72,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -74,15 +84,23 @@ Get's the contents of a file. Returns application/octet-stream
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 file = '' # str | The name of the file (default to '')
 
@@ -106,7 +124,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -117,6 +135,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -127,15 +147,23 @@ Set's the contents of a file. The request body becomes the content.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 file = '' # str | The name of the file (default to '')
 
@@ -159,7 +187,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -170,6 +198,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -180,15 +210,23 @@ Get's a list of an Amphora's files
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -211,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -222,6 +260,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -232,15 +272,23 @@ Get's details of an Amphora by Id
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -263,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -274,6 +322,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -284,15 +334,23 @@ Updates the details of an Amphora by Id
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 amphora_extended_dto = amphora_client.AmphoraExtendedDto() # AmphoraExtendedDto |  (optional)
 
@@ -317,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -328,6 +386,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -338,15 +398,23 @@ Get's the signals associated with an Amphora.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 
 try:
@@ -369,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -380,6 +448,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -390,15 +460,23 @@ Associates a signal with an Amphora. Signal is created if not existing.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 signal_dto = amphora_client.SignalDto() # SignalDto |  (optional)
 
@@ -423,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -434,6 +512,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -444,15 +524,23 @@ Get's the signals associated with an Amphora.
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = '' # str | Amphora Id (default to '')
 request_body = None # dict(str, object) |  (optional)
 
@@ -476,7 +564,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -487,6 +575,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -497,15 +587,23 @@ Creates a new empty Amphora in the user's organisation
 
 ### Example
 
+* Api Key Authentication (token):
 ```python
 from __future__ import print_function
 import time
 import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: token
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
+# Defining host is optional and default to http://localhost
+configuration.host = "http://localhost"
 # Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi()
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 create_amphora_dto = amphora_client.CreateAmphoraDto() # CreateAmphoraDto |  (optional)
 
 try:
@@ -528,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -539,6 +637,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
