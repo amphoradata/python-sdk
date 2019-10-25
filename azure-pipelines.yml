@@ -30,9 +30,10 @@ steps:
   displayName: Install and Run Tests
 - script: |
     pushd generated
+    pip install twine
     python setup.py sdist
     twine upload -u $PyPi_Username -p $PyPi_Password dist/*
-  displayName: 'Run a multi-line script'
+  displayName: 'Publish to PyPi'
   env:
     PyPi_Username: $(PyPi_Username)
     PyPi_Password: $(PyPi_Password)
