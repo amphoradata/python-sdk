@@ -9,11 +9,23 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  - group: PyPi
+
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    pushd generated
+    pip install tox
+    pip install -r requirements.txt
+    pip install -r test-requirements.txt
+    tox
+  displayName: Install and Run Tests
+- script: |
+    pushd generated
+    python setup.py sdist
+    twine upload -u $PyPi_Username -p $PyPi_Password dist/*
   displayName: 'Run a multi-line script'
+  env:
+    PyPi_Username: $(PyPi_Username)
+    PyPi_Password: $(PyPi_Password)
