@@ -1,23 +1,23 @@
 # amphora_client.SearchApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_search_amphorae_by_creator_get**](SearchApi.md#api_search_amphorae_by_creator_get) | **GET** /api/search/amphorae/byCreator | Searches for Amphorae by creator.
-[**api_search_amphorae_by_location_get**](SearchApi.md#api_search_amphorae_by_location_get) | **GET** /api/search/amphorae/byLocation | Searches for Amphorae by loction.
-[**api_search_amphorae_by_organisation_get**](SearchApi.md#api_search_amphorae_by_organisation_get) | **GET** /api/search/amphorae/byOrganisation | Searches for Amphorae in an Organisation.
-[**api_search_amphorae_post**](SearchApi.md#api_search_amphorae_post) | **POST** /api/search/amphorae | Searches for Amphorae.
+[**search_search_amphorae**](SearchApi.md#search_search_amphorae) | **POST** /api/search/amphorae | Searches for Amphorae.
+[**search_search_amphorae_by_creator**](SearchApi.md#search_search_amphorae_by_creator) | **GET** /api/search/amphorae/byCreator | Searches for Amphorae by creator.
+[**search_search_amphorae_by_location**](SearchApi.md#search_search_amphorae_by_location) | **GET** /api/search/amphorae/byLocation | Searches for Amphorae by loction.
+[**search_search_amphorae_by_organisation**](SearchApi.md#search_search_amphorae_by_organisation) | **GET** /api/search/amphorae/byOrganisation | Searches for Amphorae in an Organisation.
 
 
-# **api_search_amphorae_by_creator_get**
-> list[AmphoraDto] api_search_amphorae_by_creator_get(user_name=user_name)
+# **search_search_amphorae**
+> list[AmphoraDto] search_search_amphorae(search_parameters)
 
-Searches for Amphorae by creator.
+Searches for Amphorae.
 
 ### Example
 
-* Api Key Authentication (token):
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
@@ -25,30 +25,30 @@ import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
 configuration = amphora_client.Configuration()
-# Configure API key authorization: token
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-user_name = '' # str | User Name of the creator (optional) (default to '')
+search_parameters = amphora_client.SearchParameters() # SearchParameters | Search parameters
 
 try:
-    # Searches for Amphorae by creator.
-    api_response = api_instance.api_search_amphorae_by_creator_get(user_name=user_name)
+    # Searches for Amphorae.
+    api_response = api_instance.search_search_amphorae(search_parameters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SearchApi->api_search_amphorae_by_creator_get: %s\n" % e)
+    print("Exception when calling SearchApi->search_search_amphorae: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_name** | **str**| User Name of the creator | [optional] [default to &#39;&#39;]
+ **search_parameters** | [**SearchParameters**](SearchParameters.md)| Search parameters | 
 
 ### Return type
 
@@ -56,30 +56,28 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[token](../README.md#token)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_search_amphorae_by_location_get**
-> list[AmphoraDto] api_search_amphorae_by_location_get(lat=lat, lon=lon, dist=dist)
+# **search_search_amphorae_by_creator**
+> list[AmphoraDto] search_search_amphorae_by_creator(user_name=user_name)
 
-Searches for Amphorae by loction.
+Searches for Amphorae by creator.
 
 ### Example
 
-* Api Key Authentication (token):
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
@@ -87,25 +85,85 @@ import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
 configuration = amphora_client.Configuration()
-# Configure API key authorization: token
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
+user_name = 'user_name_example' # str | User Name of the creator (optional)
+
+try:
+    # Searches for Amphorae by creator.
+    api_response = api_instance.search_search_amphorae_by_creator(user_name=user_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->search_search_amphorae_by_creator: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_name** | **str**| User Name of the creator | [optional] 
+
+### Return type
+
+[**list[AmphoraDto]**](AmphoraDto.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_search_amphorae_by_location**
+> list[AmphoraDto] search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist)
+
+Searches for Amphorae by loction.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
 lat = 3.4 # float | Latitude (optional)
 lon = 3.4 # float | Longitude (optional)
-dist = 10 # float | Distance from Latitude and Longitude in which to search (optional) (default to 10)
+dist = 10.0 # float | Distance from Latitude and Longitude in which to search (optional) (default to 10.0)
 
 try:
     # Searches for Amphorae by loction.
-    api_response = api_instance.api_search_amphorae_by_location_get(lat=lat, lon=lon, dist=dist)
+    api_response = api_instance.search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SearchApi->api_search_amphorae_by_location_get: %s\n" % e)
+    print("Exception when calling SearchApi->search_search_amphorae_by_location: %s\n" % e)
 ```
 
 ### Parameters
@@ -114,7 +172,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **lat** | **float**| Latitude | [optional] 
  **lon** | **float**| Longitude | [optional] 
- **dist** | **float**| Distance from Latitude and Longitude in which to search | [optional] [default to 10]
+ **dist** | **float**| Distance from Latitude and Longitude in which to search | [optional] [default to 10.0]
 
 ### Return type
 
@@ -122,30 +180,28 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[token](../README.md#token)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_search_amphorae_by_organisation_get**
-> list[AmphoraDto] api_search_amphorae_by_organisation_get(org_id=org_id)
+# **search_search_amphorae_by_organisation**
+> list[AmphoraDto] search_search_amphorae_by_organisation(org_id=org_id)
 
 Searches for Amphorae in an Organisation.
 
 ### Example
 
-* Api Key Authentication (token):
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
@@ -153,30 +209,30 @@ import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
 configuration = amphora_client.Configuration()
-# Configure API key authorization: token
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-org_id = '' # str | Organisation Id (optional) (default to '')
+org_id = 'org_id_example' # str | Organisation Id (optional)
 
 try:
     # Searches for Amphorae in an Organisation.
-    api_response = api_instance.api_search_amphorae_by_organisation_get(org_id=org_id)
+    api_response = api_instance.search_search_amphorae_by_organisation(org_id=org_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SearchApi->api_search_amphorae_by_organisation_get: %s\n" % e)
+    print("Exception when calling SearchApi->search_search_amphorae_by_organisation: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organisation Id | [optional] [default to &#39;&#39;]
+ **org_id** | **str**| Organisation Id | [optional] 
 
 ### Return type
 
@@ -184,81 +240,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[token](../README.md#token)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_search_amphorae_post**
-> list[AmphoraDto] api_search_amphorae_post(search_parameters=search_parameters)
-
-Searches for Amphorae.
-
-### Example
-
-* Api Key Authentication (token):
-```python
-from __future__ import print_function
-import time
-import amphora_client
-from amphora_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_client.Configuration()
-# Configure API key authorization: token
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
-# Create an instance of the API class
-api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-search_parameters = amphora_client.SearchParameters() # SearchParameters |  (optional)
-
-try:
-    # Searches for Amphorae.
-    api_response = api_instance.api_search_amphorae_post(search_parameters=search_parameters)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SearchApi->api_search_amphorae_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search_parameters** | [**SearchParameters**](SearchParameters.md)|  | [optional] 
-
-### Return type
-
-[**list[AmphoraDto]**](AmphoraDto.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

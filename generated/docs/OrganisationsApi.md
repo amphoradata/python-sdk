@@ -1,149 +1,25 @@
 # amphora_client.OrganisationsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_organisations_id_delete**](OrganisationsApi.md#api_organisations_id_delete) | **DELETE** /api/organisations/{id} | Deletes an organisation.
-[**api_organisations_id_get**](OrganisationsApi.md#api_organisations_id_get) | **GET** /api/organisations/{id} | Gets an organisation&#39;s details.
-[**api_organisations_id_invitations_get**](OrganisationsApi.md#api_organisations_id_invitations_get) | **GET** /api/organisations/{id}/invitations | Accept an invitation to an organisation.
-[**api_organisations_id_invitations_post**](OrganisationsApi.md#api_organisations_id_invitations_post) | **POST** /api/organisations/{id}/invitations | Invite a user/ email address to your organisation.
-[**api_organisations_id_put**](OrganisationsApi.md#api_organisations_id_put) | **PUT** /api/organisations/{id} | Updates an organisation.
-[**api_organisations_post**](OrganisationsApi.md#api_organisations_post) | **POST** /api/organisations | Creates a new Organisation. This will assign the logged in user to the organisation.
+[**organisations_accept_invitation**](OrganisationsApi.md#organisations_accept_invitation) | **GET** /api/organisations/{id}/invitations | Accept an invitation to an organisation.
+[**organisations_create_organisation**](OrganisationsApi.md#organisations_create_organisation) | **POST** /api/organisations | Creates a new Organisation. This will assign the logged in user to the organisation.
+[**organisations_delete_organisation**](OrganisationsApi.md#organisations_delete_organisation) | **DELETE** /api/organisations/{id} | Deletes an organisation.
+[**organisations_get_organisation**](OrganisationsApi.md#organisations_get_organisation) | **GET** /api/organisations/{id} | Gets an organisation&#39;s details.
+[**organisations_invite_to_organisation**](OrganisationsApi.md#organisations_invite_to_organisation) | **POST** /api/organisations/{id}/invitations | Invite a user/ email address to your organisation.
+[**organisations_update_organisation**](OrganisationsApi.md#organisations_update_organisation) | **PUT** /api/organisations/{id} | Updates an organisation.
 
 
-# **api_organisations_id_delete**
-> OrganisationDto api_organisations_id_delete(id)
-
-Deletes an organisation.
-
-### Example
-
-* Api Key Authentication (token):
-```python
-from __future__ import print_function
-import time
-import amphora_client
-from amphora_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_client.Configuration()
-# Configure API key authorization: token
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
-# Create an instance of the API class
-api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
-id = '' # str | Organisation Id (default to '')
-
-try:
-    # Deletes an organisation.
-    api_response = api_instance.api_organisations_id_delete(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->api_organisations_id_delete: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id | [default to &#39;&#39;]
-
-### Return type
-
-[**OrganisationDto**](OrganisationDto.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_organisations_id_get**
-> OrganisationDto api_organisations_id_get(id)
-
-Gets an organisation's details.
-
-### Example
-
-* Api Key Authentication (token):
-```python
-from __future__ import print_function
-import time
-import amphora_client
-from amphora_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_client.Configuration()
-# Configure API key authorization: token
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
-# Create an instance of the API class
-api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
-id = '' # str | Organisation Id (default to '')
-
-try:
-    # Gets an organisation's details.
-    api_response = api_instance.api_organisations_id_get(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->api_organisations_id_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id | [default to &#39;&#39;]
-
-### Return type
-
-[**OrganisationDto**](OrganisationDto.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_organisations_id_invitations_get**
-> OrganisationDto api_organisations_id_invitations_get(id)
+# **organisations_accept_invitation**
+> OrganisationDto organisations_accept_invitation(id)
 
 Accept an invitation to an organisation.
 
 ### Example
 
-* Api Key Authentication (token):
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
@@ -151,30 +27,30 @@ import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
 configuration = amphora_client.Configuration()
-# Configure API key authorization: token
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
-id = '' # str | Organisation Id (default to '')
+id = 'id_example' # str | Organisation Id
 
 try:
     # Accept an invitation to an organisation.
-    api_response = api_instance.api_organisations_id_invitations_get(id)
+    api_response = api_instance.organisations_accept_invitation(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OrganisationsApi->api_organisations_id_invitations_get: %s\n" % e)
+    print("Exception when calling OrganisationsApi->organisations_accept_invitation: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id | [default to &#39;&#39;]
+ **id** | **str**| Organisation Id | 
 
 ### Return type
 
@@ -182,156 +58,28 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[token](../README.md#token)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_organisations_id_invitations_post**
-> api_organisations_id_invitations_post(id, invitation=invitation)
-
-Invite a user/ email address to your organisation.
-
-### Example
-
-* Api Key Authentication (token):
-```python
-from __future__ import print_function
-import time
-import amphora_client
-from amphora_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_client.Configuration()
-# Configure API key authorization: token
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
-# Create an instance of the API class
-api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
-id = '' # str | Organisation Id (default to '')
-invitation = amphora_client.Invitation() # Invitation |  (optional)
-
-try:
-    # Invite a user/ email address to your organisation.
-    api_instance.api_organisations_id_invitations_post(id, invitation=invitation)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->api_organisations_id_invitations_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id | [default to &#39;&#39;]
- **invitation** | [**Invitation**](Invitation.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_organisations_id_put**
-> api_organisations_id_put(id, organisation_dto=organisation_dto)
-
-Updates an organisation.
-
-### Example
-
-* Api Key Authentication (token):
-```python
-from __future__ import print_function
-import time
-import amphora_client
-from amphora_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_client.Configuration()
-# Configure API key authorization: token
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
-# Create an instance of the API class
-api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
-id = '' # str | Organisation Id (default to '')
-organisation_dto = amphora_client.OrganisationDto() # OrganisationDto |  (optional)
-
-try:
-    # Updates an organisation.
-    api_instance.api_organisations_id_put(id, organisation_dto=organisation_dto)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->api_organisations_id_put: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id | [default to &#39;&#39;]
- **organisation_dto** | [**OrganisationDto**](OrganisationDto.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_organisations_post**
-> OrganisationDto api_organisations_post(organisation_dto=organisation_dto)
+# **organisations_create_organisation**
+> OrganisationDto organisations_create_organisation(organisation_dto)
 
 Creates a new Organisation. This will assign the logged in user to the organisation.
 
 ### Example
 
-* Api Key Authentication (token):
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
@@ -339,30 +87,30 @@ import amphora_client
 from amphora_client.rest import ApiException
 from pprint import pprint
 configuration = amphora_client.Configuration()
-# Configure API key authorization: token
+# Configure API key authorization: Bearer
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to http://localhost
-configuration.host = "http://localhost"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
-organisation_dto = amphora_client.OrganisationDto() # OrganisationDto |  (optional)
+organisation_dto = amphora_client.OrganisationDto() # OrganisationDto | Information of the new Organisation
 
 try:
     # Creates a new Organisation. This will assign the logged in user to the organisation.
-    api_response = api_instance.api_organisations_post(organisation_dto=organisation_dto)
+    api_response = api_instance.organisations_create_organisation(organisation_dto)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OrganisationsApi->api_organisations_post: %s\n" % e)
+    print("Exception when calling OrganisationsApi->organisations_create_organisation: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organisation_dto** | [**OrganisationDto**](OrganisationDto.md)|  | [optional] 
+ **organisation_dto** | [**OrganisationDto**](OrganisationDto.md)| Information of the new Organisation | 
 
 ### Return type
 
@@ -370,19 +118,261 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[token](../README.md#token)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **organisations_delete_organisation**
+> OrganisationDto organisations_delete_organisation(id)
+
+Deletes an organisation.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
+id = 'id_example' # str | Organisation Id
+
+try:
+    # Deletes an organisation.
+    api_response = api_instance.organisations_delete_organisation(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganisationsApi->organisations_delete_organisation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organisation Id | 
+
+### Return type
+
+[**OrganisationDto**](OrganisationDto.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **organisations_get_organisation**
+> OrganisationDto organisations_get_organisation(id)
+
+Gets an organisation's details.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
+id = 'id_example' # str | Organisation Id
+
+try:
+    # Gets an organisation's details.
+    api_response = api_instance.organisations_get_organisation(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganisationsApi->organisations_get_organisation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organisation Id | 
+
+### Return type
+
+[**OrganisationDto**](OrganisationDto.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **organisations_invite_to_organisation**
+> file organisations_invite_to_organisation(id, invitation)
+
+Invite a user/ email address to your organisation.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
+id = 'id_example' # str | Organisation Id
+invitation = amphora_client.Invitation() # Invitation | Invitation details
+
+try:
+    # Invite a user/ email address to your organisation.
+    api_response = api_instance.organisations_invite_to_organisation(id, invitation)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganisationsApi->organisations_invite_to_organisation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organisation Id | 
+ **invitation** | [**Invitation**](Invitation.md)| Invitation details | 
+
+### Return type
+
+**file**
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/octet-stream
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **organisations_update_organisation**
+> file organisations_update_organisation(id, organisation_dto)
+
+Updates an organisation.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
+id = 'id_example' # str | Organisation Id
+organisation_dto = amphora_client.OrganisationDto() # OrganisationDto | Organisation Information. All fields are updated.
+
+try:
+    # Updates an organisation.
+    api_response = api_instance.organisations_update_organisation(id, organisation_dto)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganisationsApi->organisations_update_organisation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organisation Id | 
+ **organisation_dto** | [**OrganisationDto**](OrganisationDto.md)| Organisation Information. All fields are updated. | 
+
+### Return type
+
+**file**
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/octet-stream
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
