@@ -4,12 +4,12 @@ All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**market_find**](MarketApi.md#market_find) | **GET** /api/market | Finds Amphora using a fuzzy search
+[**market_find**](MarketApi.md#market_find) | **GET** /api/market/search | Finds Amphora using a fuzzy search
 [**market_lookup_location**](MarketApi.md#market_lookup_location) | **GET** /api/location/fuzzy | Executes a fuzzy location search.
 
 
 # **market_find**
-> list[AmphoraDto] market_find(query=query)
+> list[AmphoraDto] market_find(query=query, top=top, skip=skip)
 
 Finds Amphora using a fuzzy search
 
@@ -33,10 +33,12 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.MarketApi(amphora_client.ApiClient(configuration))
 query = 'query_example' # str | Amphora Id (optional)
+top = 56 # int | How many results to return (optional)
+skip = 56 # int | How many pages (in multiples of top) to skip (optional)
 
 try:
     # Finds Amphora using a fuzzy search
-    api_response = api_instance.market_find(query=query)
+    api_response = api_instance.market_find(query=query, top=top, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MarketApi->market_find: %s\n" % e)
@@ -47,6 +49,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Amphora Id | [optional] 
+ **top** | **int**| How many results to return | [optional] 
+ **skip** | **int**| How many pages (in multiples of top) to skip | [optional] 
 
 ### Return type
 

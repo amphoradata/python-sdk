@@ -31,24 +31,49 @@ class AmphoraDto(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'id': 'str',
         'name': 'str',
         'price': 'float'
     }
 
     attribute_map = {
+        'id': 'id',
         'name': 'name',
         'price': 'price'
     }
 
-    def __init__(self, name=None, price=None):  # noqa: E501
+    def __init__(self, id=None, name=None, price=None):  # noqa: E501
         """AmphoraDto - a model defined in OpenAPI"""  # noqa: E501
 
+        self._id = None
         self._name = None
         self._price = None
         self.discriminator = None
 
+        self.id = id
         self.name = name
         self.price = price
+
+    @property
+    def id(self):
+        """Gets the id of this AmphoraDto.  # noqa: E501
+
+
+        :return: The id of this AmphoraDto.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AmphoraDto.
+
+
+        :param id: The id of this AmphoraDto.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def name(self):

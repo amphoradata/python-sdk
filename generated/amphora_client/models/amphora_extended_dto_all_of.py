@@ -31,7 +31,6 @@ class AmphoraExtendedDtoAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'str',
         'organisation_id': 'str',
         'terms_and_conditions_id': 'str',
         'description': 'str',
@@ -40,7 +39,6 @@ class AmphoraExtendedDtoAllOf(object):
     }
 
     attribute_map = {
-        'id': 'id',
         'organisation_id': 'organisationId',
         'terms_and_conditions_id': 'termsAndConditionsId',
         'description': 'description',
@@ -48,10 +46,9 @@ class AmphoraExtendedDtoAllOf(object):
         'lon': 'lon'
     }
 
-    def __init__(self, id=None, organisation_id=None, terms_and_conditions_id=None, description=None, lat=None, lon=None):  # noqa: E501
+    def __init__(self, organisation_id=None, terms_and_conditions_id=None, description=None, lat=None, lon=None):  # noqa: E501
         """AmphoraExtendedDtoAllOf - a model defined in OpenAPI"""  # noqa: E501
 
-        self._id = None
         self._organisation_id = None
         self._terms_and_conditions_id = None
         self._description = None
@@ -59,33 +56,11 @@ class AmphoraExtendedDtoAllOf(object):
         self._lon = None
         self.discriminator = None
 
-        self.id = id
         self.organisation_id = organisation_id
         self.terms_and_conditions_id = terms_and_conditions_id
         self.description = description
         self.lat = lat
         self.lon = lon
-
-    @property
-    def id(self):
-        """Gets the id of this AmphoraExtendedDtoAllOf.  # noqa: E501
-
-
-        :return: The id of this AmphoraExtendedDtoAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this AmphoraExtendedDtoAllOf.
-
-
-        :param id: The id of this AmphoraExtendedDtoAllOf.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def organisation_id(self):

@@ -46,6 +46,8 @@ class MarketApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str query: Amphora Id
+        :param int top: How many results to return
+        :param int skip: How many pages (in multiples of top) to skip
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -70,6 +72,8 @@ class MarketApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str query: Amphora Id
+        :param int top: How many results to return
+        :param int skip: How many pages (in multiples of top) to skip
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -86,7 +90,7 @@ class MarketApi(object):
 
         local_var_params = locals()
 
-        all_params = ['query']  # noqa: E501
+        all_params = ['query', 'top', 'skip']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -108,6 +112,10 @@ class MarketApi(object):
         query_params = []
         if 'query' in local_var_params:
             query_params.append(('query', local_var_params['query']))  # noqa: E501
+        if 'top' in local_var_params:
+            query_params.append(('top', local_var_params['top']))  # noqa: E501
+        if 'skip' in local_var_params:
+            query_params.append(('skip', local_var_params['skip']))  # noqa: E501
 
         header_params = {}
 
@@ -123,7 +131,7 @@ class MarketApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/market', 'GET',
+            '/api/market/search', 'GET',
             path_params,
             query_params,
             header_params,

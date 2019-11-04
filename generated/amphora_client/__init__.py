@@ -14,19 +14,22 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # import apis into sdk package
 from amphora_client.api.account_api import AccountApi
 from amphora_client.api.amphorae_api import AmphoraeApi
+from amphora_client.api.amphorae_statistics_api import AmphoraeStatisticsApi
 from amphora_client.api.authentication_api import AuthenticationApi
 from amphora_client.api.healthz_api import HealthzApi
 from amphora_client.api.images_api import ImagesApi
+from amphora_client.api.invitations_api import InvitationsApi
 from amphora_client.api.market_api import MarketApi
 from amphora_client.api.organisations_api import OrganisationsApi
 from amphora_client.api.purchases_api import PurchasesApi
 from amphora_client.api.search_api import SearchApi
 from amphora_client.api.terms_and_conditions_api import TermsAndConditionsApi
+from amphora_client.api.time_series_api import TimeSeriesApi
 from amphora_client.api.users_api import UsersApi
 
 # import ApiClient
@@ -38,8 +41,10 @@ from amphora_client.exceptions import ApiValueError
 from amphora_client.exceptions import ApiKeyError
 from amphora_client.exceptions import ApiException
 # import models into sdk package
+from amphora_client.models.accept_invitation_dto import AcceptInvitationDto
 from amphora_client.models.account import Account
 from amphora_client.models.address import Address
+from amphora_client.models.aggregate_series import AggregateSeries
 from amphora_client.models.amphora_dto import AmphoraDto
 from amphora_client.models.amphora_extended_dto import AmphoraExtendedDto
 from amphora_client.models.amphora_extended_dto_all_of import AmphoraExtendedDtoAllOf
@@ -47,13 +52,24 @@ from amphora_client.models.category_set import CategorySet
 from amphora_client.models.classification import Classification
 from amphora_client.models.create_amphora_dto import CreateAmphoraDto
 from amphora_client.models.create_amphora_dto_all_of import CreateAmphoraDtoAllOf
+from amphora_client.models.date_time_range import DateTimeRange
 from amphora_client.models.entry_point import EntryPoint
+from amphora_client.models.event_property import EventProperty
 from amphora_client.models.fuzzy_search_response import FuzzySearchResponse
-from amphora_client.models.invitation import Invitation
+from amphora_client.models.get_events import GetEvents
+from amphora_client.models.get_series import GetSeries
+from amphora_client.models.invitation_dto import InvitationDto
 from amphora_client.models.name import Name
 from amphora_client.models.organisation_dto import OrganisationDto
+from amphora_client.models.paged_response import PagedResponse
 from amphora_client.models.poi import Poi
 from amphora_client.models.position import Position
+from amphora_client.models.problem_details import ProblemDetails
+from amphora_client.models.property_values import PropertyValues
+from amphora_client.models.property_values_all_of import PropertyValuesAllOf
+from amphora_client.models.query_request import QueryRequest
+from amphora_client.models.query_result_page import QueryResultPage
+from amphora_client.models.query_result_page_all_of import QueryResultPageAllOf
 from amphora_client.models.result import Result
 from amphora_client.models.search_parameters import SearchParameters
 from amphora_client.models.search_parameters_all_of import SearchParametersAllOf
@@ -61,6 +77,8 @@ from amphora_client.models.signal_dto import SignalDto
 from amphora_client.models.summary import Summary
 from amphora_client.models.terms_and_conditions_dto import TermsAndConditionsDto
 from amphora_client.models.token_request import TokenRequest
+from amphora_client.models.tsx import Tsx
 from amphora_client.models.user_dto import UserDto
+from amphora_client.models.variable import Variable
 from amphora_client.models.viewport import Viewport
 

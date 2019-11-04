@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
 **organisation_id** | **str** |  | [optional] 
 **terms_and_conditions_id** | **str** |  | [optional] 
 **description** | **str** |  | 
