@@ -5,6 +5,7 @@ All URIs are relative to *https://beta.amphoradata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**amphorae_create**](AmphoraeApi.md#amphorae_create) | **POST** /api/amphorae | Creates a new empty Amphora in the user&#39;s organisation
+[**amphorae_create_file**](AmphoraeApi.md#amphorae_create_file) | **POST** /api/amphorae/{id}/files/{file} | Creates a file. Returns a blob URL to upload to.
 [**amphorae_create_signal**](AmphoraeApi.md#amphorae_create_signal) | **POST** /api/amphorae/{id}/signals | Associates a signal with an Amphora. Signal is created if not existing.
 [**amphorae_delete_api**](AmphoraeApi.md#amphorae_delete_api) | **DELETE** /api/amphorae/{id} | Deletes an Amphora
 [**amphorae_download_file**](AmphoraeApi.md#amphorae_download_file) | **GET** /api/amphorae/{id}/files/{file} | Get&#39;s the contents of a file. Returns application/octet-stream
@@ -67,6 +68,68 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphorae_create_file**
+> UploadResponse amphorae_create_file(id, file)
+
+Creates a file. Returns a blob URL to upload to.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
+id = 'id_example' # str | Amphora Id
+file = 'file_example' # str | The name of the file
+
+try:
+    # Creates a file. Returns a blob URL to upload to.
+    api_response = api_instance.amphorae_create_file(id, file)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_create_file: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Amphora Id | 
+ **file** | **str**| The name of the file | 
+
+### Return type
+
+[**UploadResponse**](UploadResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -564,7 +627,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_upload_to_amphora**
-> file amphorae_upload_to_amphora(id, file)
+> UploadResponse amphorae_upload_to_amphora(id, file)
 
 Set's the contents of a file. The request body becomes the content.
 
@@ -607,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+[**UploadResponse**](UploadResponse.md)
 
 ### Authorization
 
@@ -616,7 +679,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
