@@ -26,7 +26,7 @@ try:
 
     dto = amphora_client.CreateAmphoraDto(name = "Create File Example", price = 0, 
         description="This is an Amphora created to show how to upload a file via the Python SDK")
-    amphoraApi.api_client
+
     a = amphoraApi.amphorae_create(dto)
     print('created amphora')
 
