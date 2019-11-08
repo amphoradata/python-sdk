@@ -32,6 +32,8 @@ class CreateAmphoraDto(object):
     """
     openapi_types = {
         'id': 'str',
+        'is_deleted': 'bool',
+        'created_date': 'datetime',
         'name': 'str',
         'price': 'float',
         'description': 'str',
@@ -42,6 +44,8 @@ class CreateAmphoraDto(object):
 
     attribute_map = {
         'id': 'id',
+        'is_deleted': 'isDeleted',
+        'created_date': 'createdDate',
         'name': 'name',
         'price': 'price',
         'description': 'description',
@@ -50,10 +54,12 @@ class CreateAmphoraDto(object):
         'terms_and_conditions_id': 'termsAndConditionsId'
     }
 
-    def __init__(self, id=None, name=None, price=None, description=None, lat=None, lon=None, terms_and_conditions_id=None):  # noqa: E501
+    def __init__(self, id=None, is_deleted=None, created_date=None, name=None, price=None, description=None, lat=None, lon=None, terms_and_conditions_id=None):  # noqa: E501
         """CreateAmphoraDto - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
+        self._is_deleted = None
+        self._created_date = None
         self._name = None
         self._price = None
         self._description = None
@@ -63,6 +69,8 @@ class CreateAmphoraDto(object):
         self.discriminator = None
 
         self.id = id
+        self.is_deleted = is_deleted
+        self.created_date = created_date
         self.name = name
         self.price = price
         self.description = description
@@ -90,6 +98,48 @@ class CreateAmphoraDto(object):
         """
 
         self._id = id
+
+    @property
+    def is_deleted(self):
+        """Gets the is_deleted of this CreateAmphoraDto.  # noqa: E501
+
+
+        :return: The is_deleted of this CreateAmphoraDto.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_deleted
+
+    @is_deleted.setter
+    def is_deleted(self, is_deleted):
+        """Sets the is_deleted of this CreateAmphoraDto.
+
+
+        :param is_deleted: The is_deleted of this CreateAmphoraDto.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_deleted = is_deleted
+
+    @property
+    def created_date(self):
+        """Gets the created_date of this CreateAmphoraDto.  # noqa: E501
+
+
+        :return: The created_date of this CreateAmphoraDto.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_date
+
+    @created_date.setter
+    def created_date(self, created_date):
+        """Sets the created_date of this CreateAmphoraDto.
+
+
+        :param created_date: The created_date of this CreateAmphoraDto.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_date = created_date
 
     @property
     def name(self):

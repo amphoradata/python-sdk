@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 # import apis into sdk package
 from amphora_client.api.account_api import AccountApi
@@ -46,6 +46,7 @@ from amphora_client.models.account import Account
 from amphora_client.models.address import Address
 from amphora_client.models.aggregate_series import AggregateSeries
 from amphora_client.models.amphora_dto import AmphoraDto
+from amphora_client.models.amphora_dto_all_of import AmphoraDtoAllOf
 from amphora_client.models.amphora_extended_dto import AmphoraExtendedDto
 from amphora_client.models.amphora_extended_dto_all_of import AmphoraExtendedDtoAllOf
 from amphora_client.models.category_set import CategorySet
@@ -53,6 +54,7 @@ from amphora_client.models.classification import Classification
 from amphora_client.models.create_amphora_dto import CreateAmphoraDto
 from amphora_client.models.create_amphora_dto_all_of import CreateAmphoraDtoAllOf
 from amphora_client.models.date_time_range import DateTimeRange
+from amphora_client.models.entity_dto import EntityDto
 from amphora_client.models.entry_point import EntryPoint
 from amphora_client.models.event_property import EventProperty
 from amphora_client.models.fuzzy_search_response import FuzzySearchResponse
@@ -61,6 +63,7 @@ from amphora_client.models.get_series import GetSeries
 from amphora_client.models.invitation_dto import InvitationDto
 from amphora_client.models.name import Name
 from amphora_client.models.organisation_dto import OrganisationDto
+from amphora_client.models.organisation_dto_all_of import OrganisationDtoAllOf
 from amphora_client.models.paged_response import PagedResponse
 from amphora_client.models.poi import Poi
 from amphora_client.models.position import Position
