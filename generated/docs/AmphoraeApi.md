@@ -1,20 +1,20 @@
 # amphora_client.AmphoraeApi
 
-All URIs are relative to *https://beta.amphoradata.com*
+All URIs are relative to *https://appsvc50a3d34f.azurewebsites.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**amphorae_create**](AmphoraeApi.md#amphorae_create) | **POST** /api/amphorae | Creates a new empty Amphora in the user&#39;s organisation
-[**amphorae_create_file**](AmphoraeApi.md#amphorae_create_file) | **POST** /api/amphorae/{id}/files/{file} | Creates a file. Returns a blob URL to upload to.
+[**amphorae_create_file_request**](AmphoraeApi.md#amphorae_create_file_request) | **POST** /api/amphorae/{id}/files/{file} | Creates a file. Returns a blob URL to upload to.
 [**amphorae_create_signal**](AmphoraeApi.md#amphorae_create_signal) | **POST** /api/amphorae/{id}/signals | Associates a signal with an Amphora. Signal is created if not existing.
-[**amphorae_delete_api**](AmphoraeApi.md#amphorae_delete_api) | **DELETE** /api/amphorae/{id} | Deletes an Amphora
+[**amphorae_delete**](AmphoraeApi.md#amphorae_delete) | **DELETE** /api/amphorae/{id} | Deletes an Amphora
 [**amphorae_download_file**](AmphoraeApi.md#amphorae_download_file) | **GET** /api/amphorae/{id}/files/{file} | Get&#39;s the contents of a file. Returns application/octet-stream
 [**amphorae_get_signals**](AmphoraeApi.md#amphorae_get_signals) | **GET** /api/amphorae/{id}/signals | Get&#39;s the signals associated with an Amphora.
 [**amphorae_list_files**](AmphoraeApi.md#amphorae_list_files) | **GET** /api/amphorae/{id}/files | Get&#39;s a list of an Amphora&#39;s files
 [**amphorae_read**](AmphoraeApi.md#amphorae_read) | **GET** /api/amphorae/{id} | Get&#39;s details of an Amphora by Id
 [**amphorae_update**](AmphoraeApi.md#amphorae_update) | **PUT** /api/amphorae/{id} | Updates the details of an Amphora by Id
-[**amphorae_upload_signal_value**](AmphoraeApi.md#amphorae_upload_signal_value) | **POST** /api/amphorae/{id}/signals/values | 
-[**amphorae_upload_to_amphora**](AmphoraeApi.md#amphorae_upload_to_amphora) | **PUT** /api/amphorae/{id}/files/{file} | Set&#39;s the contents of a file. The request body becomes the content.
+[**amphorae_upload_file**](AmphoraeApi.md#amphorae_upload_file) | **PUT** /api/amphorae/{id}/files/{file} | Set&#39;s the contents of a file. The request body becomes the content.
+[**amphorae_upload_signal**](AmphoraeApi.md#amphorae_upload_signal) | **POST** /api/amphorae/{id}/signals/values | 
 
 
 # **amphorae_create**
@@ -37,8 +37,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 create_amphora_dto = amphora_client.CreateAmphoraDto() # CreateAmphoraDto | Information for the new Amphora
@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **amphorae_create_file**
-> UploadResponse amphorae_create_file(id, file)
+# **amphorae_create_file_request**
+> UploadResponse amphorae_create_file_request(id, file)
 
 Creates a file. Returns a blob URL to upload to.
 
@@ -97,8 +97,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -106,10 +106,10 @@ file = 'file_example' # str | The name of the file
 
 try:
     # Creates a file. Returns a blob URL to upload to.
-    api_response = api_instance.amphorae_create_file(id, file)
+    api_response = api_instance.amphorae_create_file_request(id, file)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AmphoraeApi->amphorae_create_file: %s\n" % e)
+    print("Exception when calling AmphoraeApi->amphorae_create_file_request: %s\n" % e)
 ```
 
 ### Parameters
@@ -159,8 +159,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -201,8 +201,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **amphorae_delete_api**
-> file amphorae_delete_api(id)
+# **amphorae_delete**
+> str amphorae_delete(id)
 
 Deletes an Amphora
 
@@ -221,18 +221,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
 
 try:
     # Deletes an Amphora
-    api_response = api_instance.amphorae_delete_api(id)
+    api_response = api_instance.amphorae_delete(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AmphoraeApi->amphorae_delete_api: %s\n" % e)
+    print("Exception when calling AmphoraeApi->amphorae_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+**str**
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -281,8 +281,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -343,8 +343,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -403,8 +403,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -463,8 +463,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -523,8 +523,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -565,69 +565,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **amphorae_upload_signal_value**
-> file amphorae_upload_signal_value(id, request_body)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import amphora_client
-from amphora_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_client.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
-# Create an instance of the API class
-api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
-id = 'id_example' # str | 
-request_body = None # dict(str, object) | 
-
-try:
-    api_response = api_instance.amphorae_upload_signal_value(id, request_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AmphoraeApi->amphorae_upload_signal_value: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **request_body** | [**dict(str, object)**](object.md)|  | 
-
-### Return type
-
-**file**
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/octet-stream
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **amphorae_upload_to_amphora**
-> UploadResponse amphorae_upload_to_amphora(id, file)
+# **amphorae_upload_file**
+> UploadResponse amphorae_upload_file(id, file)
 
 Set's the contents of a file. The request body becomes the content.
 
@@ -646,8 +585,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -655,10 +594,10 @@ file = 'file_example' # str | The name of the file
 
 try:
     # Set's the contents of a file. The request body becomes the content.
-    api_response = api_instance.amphorae_upload_to_amphora(id, file)
+    api_response = api_instance.amphorae_upload_file(id, file)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AmphoraeApi->amphorae_upload_to_amphora: %s\n" % e)
+    print("Exception when calling AmphoraeApi->amphorae_upload_file: %s\n" % e)
 ```
 
 ### Parameters
@@ -685,6 +624,67 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphorae_upload_signal**
+> amphorae_upload_signal(id, request_body)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
+# Create an instance of the API class
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
+id = 'id_example' # str | 
+request_body = None # dict(str, object) | 
+
+try:
+    api_instance.amphorae_upload_signal(id, request_body)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_upload_signal: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **request_body** | [**dict(str, object)**](object.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

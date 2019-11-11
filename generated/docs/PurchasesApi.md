@@ -1,6 +1,6 @@
 # amphora_client.PurchasesApi
 
-All URIs are relative to *https://beta.amphoradata.com*
+All URIs are relative to *https://appsvc50a3d34f.azurewebsites.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **purchases_purchase**
-> file purchases_purchase(id)
+> str purchases_purchase(id)
 
 Purchases an Amphora as the logged in user.
 
@@ -27,8 +27,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.PurchasesApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+**str**
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

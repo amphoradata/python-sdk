@@ -1,14 +1,14 @@
 # amphora_client.AccountApi
 
-All URIs are relative to *https://beta.amphoradata.com*
+All URIs are relative to *https://appsvc50a3d34f.azurewebsites.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**account_get_account**](AccountApi.md#account_get_account) | **GET** /api/Organisations/{id}/Account | Deletes an organisation.
+[**account_read**](AccountApi.md#account_read) | **GET** /api/Organisations/{id}/Account | Deletes an organisation.
 
 
-# **account_get_account**
-> Account account_get_account(id)
+# **account_read**
+> Account account_read(id)
 
 Deletes an organisation.
 
@@ -27,18 +27,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AccountApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
 
 try:
     # Deletes an organisation.
-    api_response = api_instance.account_get_account(id)
+    api_response = api_instance.account_read(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountApi->account_get_account: %s\n" % e)
+    print("Exception when calling AccountApi->account_read: %s\n" % e)
 ```
 
 ### Parameters

@@ -1,17 +1,17 @@
 # amphora_client.OrganisationsApi
 
-All URIs are relative to *https://beta.amphoradata.com*
+All URIs are relative to *https://appsvc50a3d34f.azurewebsites.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**organisations_create_organisation**](OrganisationsApi.md#organisations_create_organisation) | **POST** /api/organisations | Creates a new Organisation. This will assign the logged in user to the organisation.
-[**organisations_delete_organisation**](OrganisationsApi.md#organisations_delete_organisation) | **DELETE** /api/organisations/{id} | Deletes an organisation.
-[**organisations_get_organisation**](OrganisationsApi.md#organisations_get_organisation) | **GET** /api/organisations/{id} | Gets an organisation&#39;s details.
-[**organisations_update_organisation**](OrganisationsApi.md#organisations_update_organisation) | **PUT** /api/organisations/{id} | Updates an organisation.
+[**organisations_create**](OrganisationsApi.md#organisations_create) | **POST** /api/organisations | Creates a new Organisation. This will assign the logged in user to the organisation.
+[**organisations_delete**](OrganisationsApi.md#organisations_delete) | **DELETE** /api/organisations/{id} | Deletes an organisation.
+[**organisations_read**](OrganisationsApi.md#organisations_read) | **GET** /api/organisations/{id} | Gets an organisation&#39;s details.
+[**organisations_update**](OrganisationsApi.md#organisations_update) | **PUT** /api/organisations/{id} | Updates an organisation.
 
 
-# **organisations_create_organisation**
-> OrganisationDto organisations_create_organisation(organisation_dto)
+# **organisations_create**
+> OrganisationDto organisations_create(organisation_dto)
 
 Creates a new Organisation. This will assign the logged in user to the organisation.
 
@@ -30,18 +30,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
 organisation_dto = amphora_client.OrganisationDto() # OrganisationDto | Information of the new Organisation
 
 try:
     # Creates a new Organisation. This will assign the logged in user to the organisation.
-    api_response = api_instance.organisations_create_organisation(organisation_dto)
+    api_response = api_instance.organisations_create(organisation_dto)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OrganisationsApi->organisations_create_organisation: %s\n" % e)
+    print("Exception when calling OrganisationsApi->organisations_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **organisations_delete_organisation**
-> OrganisationDto organisations_delete_organisation(id)
+# **organisations_delete**
+> str organisations_delete(id)
 
 Deletes an organisation.
 
@@ -90,18 +90,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
 
 try:
     # Deletes an organisation.
-    api_response = api_instance.organisations_delete_organisation(id)
+    api_response = api_instance.organisations_delete(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OrganisationsApi->organisations_delete_organisation: %s\n" % e)
+    print("Exception when calling OrganisationsApi->organisations_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganisationDto**](OrganisationDto.md)
+**str**
 
 ### Authorization
 
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **organisations_get_organisation**
-> OrganisationDto organisations_get_organisation(id)
+# **organisations_read**
+> OrganisationDto organisations_read(id)
 
 Gets an organisation's details.
 
@@ -150,18 +150,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
 
 try:
     # Gets an organisation's details.
-    api_response = api_instance.organisations_get_organisation(id)
+    api_response = api_instance.organisations_read(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OrganisationsApi->organisations_get_organisation: %s\n" % e)
+    print("Exception when calling OrganisationsApi->organisations_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -190,8 +190,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **organisations_update_organisation**
-> file organisations_update_organisation(id, organisation_dto)
+# **organisations_update**
+> file organisations_update(id, organisation_dto)
 
 Updates an organisation.
 
@@ -210,8 +210,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc50a3d34f.azurewebsites.net
+configuration.host = "https://appsvc50a3d34f.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
@@ -219,10 +219,10 @@ organisation_dto = amphora_client.OrganisationDto() # OrganisationDto | Organisa
 
 try:
     # Updates an organisation.
-    api_response = api_instance.organisations_update_organisation(id, organisation_dto)
+    api_response = api_instance.organisations_update(id, organisation_dto)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling OrganisationsApi->organisations_update_organisation: %s\n" % e)
+    print("Exception when calling OrganisationsApi->organisations_update: %s\n" % e)
 ```
 
 ### Parameters

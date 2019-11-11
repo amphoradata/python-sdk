@@ -1,6 +1,6 @@
 # amphora_client.AmphoraeStatisticsApi
 
-All URIs are relative to *https://beta.amphoradata.com*
+All URIs are relative to *https://appsvc19cba94a.azurewebsites.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,8 +27,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc19cba94a.azurewebsites.net
+configuration.host = "https://appsvc19cba94a.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeStatisticsApi(amphora_client.ApiClient(configuration))
 i_frame = True # bool |  (optional)

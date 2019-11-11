@@ -1,6 +1,6 @@
 # amphora_client.InvitationsApi
 
-All URIs are relative to *https://beta.amphoradata.com*
+All URIs are relative to *https://appsvc19cba94a.azurewebsites.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **invitations_accept_invitation**
-> file invitations_accept_invitation(org_id, accept_invitation_dto)
+> AcceptInvitationDto invitations_accept_invitation(org_id, accept_invitation_dto)
 
 Accepts an invitation sent to me
 
@@ -29,8 +29,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc19cba94a.azurewebsites.net
+configuration.host = "https://appsvc19cba94a.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.InvitationsApi(amphora_client.ApiClient(configuration))
 org_id = 'org_id_example' # str | Organisation to accept invitation for
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+[**AcceptInvitationDto**](AcceptInvitationDto.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -91,8 +91,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc19cba94a.azurewebsites.net
+configuration.host = "https://appsvc19cba94a.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.InvitationsApi(amphora_client.ApiClient(configuration))
 
@@ -128,7 +128,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invitations_invite_new_user**
-> file invitations_invite_new_user(invitation_dto)
+> InvitationDto invitations_invite_new_user(invitation_dto)
 
 Invite a new email address to Amphora Data
 
@@ -147,8 +147,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://beta.amphoradata.com
-configuration.host = "https://beta.amphoradata.com"
+# Defining host is optional and default to https://appsvc19cba94a.azurewebsites.net
+configuration.host = "https://appsvc19cba94a.azurewebsites.net"
 # Create an instance of the API class
 api_instance = amphora_client.InvitationsApi(amphora_client.ApiClient(configuration))
 invitation_dto = amphora_client.InvitationDto() # InvitationDto | Invitation details
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+[**InvitationDto**](InvitationDto.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
