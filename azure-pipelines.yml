@@ -32,7 +32,7 @@ steps:
     pushd generated
     pip install twine
     python setup.py sdist
-    twine upload -u $PyPi_Username -p $PyPi_Password dist/*
+    twine upload --skip-existing -u $PyPi_Username -p $PyPi_Password dist/*
   displayName: 'Publish to PyPi'
   env:
     PyPi_Username: $(PyPi_Username)
