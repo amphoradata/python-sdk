@@ -1,5 +1,6 @@
-# python-sdk
-A python SDK for Amphora Data
+# Amphora Data Python SDK
+
+[![Build Status](https://dev.azure.com/amphoradata/Public/_apis/build/status/amphoradata.python-sdk?branchName=master)](https://dev.azure.com/amphoradata/Public/_build/latest?definitionId=7&branchName=master)
 
 ## Open API
 
@@ -7,7 +8,7 @@ The code in `/generated` was produced via the [Open API Generator tool](https://
 
 # Samples
 
-## Prerequesits
+## Dependencies
 
 * You must have an account at beta.amphoradata.com
 * You should have git on your machine.
