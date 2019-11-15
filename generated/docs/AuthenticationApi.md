@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **authentication_request_token**
-> str authentication_request_token(token_request)
+> str authentication_request_token(x_amphoradata_version, token_request)
 
 Returns a JWT (JSON Web Token).             
 
@@ -31,11 +31,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AuthenticationApi(amphora_client.ApiClient(configuration))
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 token_request = amphora_client.TokenRequest() # TokenRequest | Token Request Parameters
 
 try:
     # Returns a JWT (JSON Web Token).             
-    api_response = api_instance.authentication_request_token(token_request)
+    api_response = api_instance.authentication_request_token(x_amphoradata_version, token_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthenticationApi->authentication_request_token: %s\n" % e)
@@ -45,6 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **x_amphoradata_version** | **str**| API Version Number | 
  **token_request** | [**TokenRequest**](TokenRequest.md)| Token Request Parameters | 
 
 ### Return type

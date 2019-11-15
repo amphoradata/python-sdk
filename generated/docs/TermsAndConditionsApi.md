@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **terms_and_conditions_create**
-> TermsAndConditionsDto terms_and_conditions_create(id, terms_and_conditions_dto)
+> TermsAndConditionsDto terms_and_conditions_create(id, x_amphoradata_version, terms_and_conditions_dto)
 
 Adds new Terms and Conditions to your Organisations T/C Library
 
@@ -33,11 +33,12 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.TermsAndConditionsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | The Id of the Organisation
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 terms_and_conditions_dto = amphora_client.TermsAndConditionsDto() # TermsAndConditionsDto | The new Terms and Conditions
 
 try:
     # Adds new Terms and Conditions to your Organisations T/C Library
-    api_response = api_instance.terms_and_conditions_create(id, terms_and_conditions_dto)
+    api_response = api_instance.terms_and_conditions_create(id, x_amphoradata_version, terms_and_conditions_dto)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TermsAndConditionsApi->terms_and_conditions_create: %s\n" % e)
@@ -48,6 +49,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The Id of the Organisation | 
+ **x_amphoradata_version** | **str**| API Version Number | 
  **terms_and_conditions_dto** | [**TermsAndConditionsDto**](TermsAndConditionsDto.md)| The new Terms and Conditions | 
 
 ### Return type
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terms_and_conditions_read**
-> list[TermsAndConditionsDto] terms_and_conditions_read(id)
+> list[TermsAndConditionsDto] terms_and_conditions_read(id, x_amphoradata_version)
 
 Get's a list of an Organisation's Terms and Conditions
 
@@ -96,10 +98,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.TermsAndConditionsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | The Id of the Organisation
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 
 try:
     # Get's a list of an Organisation's Terms and Conditions
-    api_response = api_instance.terms_and_conditions_read(id)
+    api_response = api_instance.terms_and_conditions_read(id, x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TermsAndConditionsApi->terms_and_conditions_read: %s\n" % e)
@@ -110,6 +113,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The Id of the Organisation | 
+ **x_amphoradata_version** | **str**| API Version Number | 
 
 ### Return type
 

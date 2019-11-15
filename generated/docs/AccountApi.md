@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **account_read**
-> Account account_read(id)
+> Account account_read(id, x_amphoradata_version)
 
 Deletes an organisation.
 
@@ -32,10 +32,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AccountApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 
 try:
     # Deletes an organisation.
-    api_response = api_instance.account_read(id)
+    api_response = api_instance.account_read(id, x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->account_read: %s\n" % e)
@@ -46,6 +47,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id | 
+ **x_amphoradata_version** | **str**| API Version Number | 
 
 ### Return type
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **purchases_purchase**
-> str purchases_purchase(id)
+> str purchases_purchase(id, x_amphoradata_version)
 
 Purchases an Amphora as the logged in user.
 
@@ -32,10 +32,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.PurchasesApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 
 try:
     # Purchases an Amphora as the logged in user.
-    api_response = api_instance.purchases_purchase(id)
+    api_response = api_instance.purchases_purchase(id, x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PurchasesApi->purchases_purchase: %s\n" % e)
@@ -46,6 +47,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
+ **x_amphoradata_version** | **str**| API Version Number | 
 
 ### Return type
 
