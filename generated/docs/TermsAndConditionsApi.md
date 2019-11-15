@@ -4,12 +4,12 @@ All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**terms_and_conditions_create_terms_and_conditions**](TermsAndConditionsApi.md#terms_and_conditions_create_terms_and_conditions) | **POST** /api/Organisations/{id}/TermsAndConditions | Adds new Terms and Conditions to your Organisations T/C Library
-[**terms_and_conditions_get_terms_and_conditions**](TermsAndConditionsApi.md#terms_and_conditions_get_terms_and_conditions) | **GET** /api/Organisations/{id}/TermsAndConditions | Get&#39;s a list of an Organisation&#39;s Terms and Conditions
+[**terms_and_conditions_create**](TermsAndConditionsApi.md#terms_and_conditions_create) | **POST** /api/Organisations/{id}/TermsAndConditions | Adds new Terms and Conditions to your Organisations T/C Library
+[**terms_and_conditions_read**](TermsAndConditionsApi.md#terms_and_conditions_read) | **GET** /api/Organisations/{id}/TermsAndConditions | Get&#39;s a list of an Organisation&#39;s Terms and Conditions
 
 
-# **terms_and_conditions_create_terms_and_conditions**
-> TermsAndConditionsDto terms_and_conditions_create_terms_and_conditions(id, terms_and_conditions_dto)
+# **terms_and_conditions_create**
+> TermsAndConditionsDto terms_and_conditions_create(id, terms_and_conditions_dto)
 
 Adds new Terms and Conditions to your Organisations T/C Library
 
@@ -37,10 +37,10 @@ terms_and_conditions_dto = amphora_client.TermsAndConditionsDto() # TermsAndCond
 
 try:
     # Adds new Terms and Conditions to your Organisations T/C Library
-    api_response = api_instance.terms_and_conditions_create_terms_and_conditions(id, terms_and_conditions_dto)
+    api_response = api_instance.terms_and_conditions_create(id, terms_and_conditions_dto)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TermsAndConditionsApi->terms_and_conditions_create_terms_and_conditions: %s\n" % e)
+    print("Exception when calling TermsAndConditionsApi->terms_and_conditions_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -67,11 +67,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **terms_and_conditions_get_terms_and_conditions**
-> list[TermsAndConditionsDto] terms_and_conditions_get_terms_and_conditions(id)
+# **terms_and_conditions_read**
+> list[TermsAndConditionsDto] terms_and_conditions_read(id)
 
 Get's a list of an Organisation's Terms and Conditions
 
@@ -98,10 +99,10 @@ id = 'id_example' # str | The Id of the Organisation
 
 try:
     # Get's a list of an Organisation's Terms and Conditions
-    api_response = api_instance.terms_and_conditions_get_terms_and_conditions(id)
+    api_response = api_instance.terms_and_conditions_read(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TermsAndConditionsApi->terms_and_conditions_get_terms_and_conditions: %s\n" % e)
+    print("Exception when calling TermsAndConditionsApi->terms_and_conditions_read: %s\n" % e)
 ```
 
 ### Parameters

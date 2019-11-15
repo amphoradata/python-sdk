@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **purchases_purchase**
-> file purchases_purchase(id)
+> str purchases_purchase(id)
 
 Purchases an Amphora as the logged in user.
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+**str**
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

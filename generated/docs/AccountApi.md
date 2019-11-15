@@ -4,11 +4,11 @@ All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**account_get_account**](AccountApi.md#account_get_account) | **GET** /api/Organisations/{id}/Account | Deletes an organisation.
+[**account_read**](AccountApi.md#account_read) | **GET** /api/Organisations/{id}/Account | Deletes an organisation.
 
 
-# **account_get_account**
-> Account account_get_account(id)
+# **account_read**
+> Account account_read(id)
 
 Deletes an organisation.
 
@@ -35,10 +35,10 @@ id = 'id_example' # str | Organisation Id
 
 try:
     # Deletes an organisation.
-    api_response = api_instance.account_get_account(id)
+    api_response = api_instance.account_read(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountApi->account_get_account: %s\n" % e)
+    print("Exception when calling AccountApi->account_read: %s\n" % e)
 ```
 
 ### Parameters
