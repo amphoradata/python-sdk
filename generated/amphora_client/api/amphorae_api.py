@@ -103,12 +103,12 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_create`")  # noqa: E501
         # verify the required parameter 'create_amphora_dto' is set
-        if ('create_amphora_dto' not in local_var_params or
-                local_var_params['create_amphora_dto'] is None):
+        if self.api_client.client_side_validation and ('create_amphora_dto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['create_amphora_dto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `create_amphora_dto` when calling `amphorae_create`")  # noqa: E501
 
         collection_formats = {}
@@ -223,8 +223,8 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_create_file_request`")  # noqa: E501
 
         collection_formats = {}
@@ -337,12 +337,12 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_create_signal`")  # noqa: E501
         # verify the required parameter 'signal_dto' is set
-        if ('signal_dto' not in local_var_params or
-                local_var_params['signal_dto'] is None):
+        if self.api_client.client_side_validation and ('signal_dto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['signal_dto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `signal_dto` when calling `amphorae_create_signal`")  # noqa: E501
 
         collection_formats = {}
@@ -457,8 +457,8 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_delete`")  # noqa: E501
 
         collection_formats = {}
@@ -569,8 +569,8 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_download_file`")  # noqa: E501
 
         collection_formats = {}
@@ -681,8 +681,8 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_get_signals`")  # noqa: E501
 
         collection_formats = {}
@@ -791,8 +791,8 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_list_files`")  # noqa: E501
 
         collection_formats = {}
@@ -901,8 +901,8 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_read`")  # noqa: E501
 
         collection_formats = {}
@@ -1013,12 +1013,12 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_update`")  # noqa: E501
         # verify the required parameter 'amphora_extended_dto' is set
-        if ('amphora_extended_dto' not in local_var_params or
-                local_var_params['amphora_extended_dto'] is None):
+        if self.api_client.client_side_validation and ('amphora_extended_dto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['amphora_extended_dto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `amphora_extended_dto` when calling `amphorae_update`")  # noqa: E501
 
         collection_formats = {}
@@ -1135,8 +1135,8 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_upload_file`")  # noqa: E501
 
         collection_formats = {}
@@ -1249,12 +1249,12 @@ class AmphoraeApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `amphorae_upload_signal`")  # noqa: E501
         # verify the required parameter 'request_body' is set
-        if ('request_body' not in local_var_params or
-                local_var_params['request_body'] is None):
+        if self.api_client.client_side_validation and ('request_body' not in local_var_params or  # noqa: E501
+                                                        local_var_params['request_body'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `request_body` when calling `amphorae_upload_signal`")  # noqa: E501
 
         collection_formats = {}

@@ -103,12 +103,12 @@ class OrganisationsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `organisations_create`")  # noqa: E501
         # verify the required parameter 'organisation_dto' is set
-        if ('organisation_dto' not in local_var_params or
-                local_var_params['organisation_dto'] is None):
+        if self.api_client.client_side_validation and ('organisation_dto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['organisation_dto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `organisation_dto` when calling `organisations_create`")  # noqa: E501
 
         collection_formats = {}
@@ -221,8 +221,8 @@ class OrganisationsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `organisations_delete`")  # noqa: E501
 
         collection_formats = {}
@@ -331,8 +331,8 @@ class OrganisationsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `organisations_read`")  # noqa: E501
 
         collection_formats = {}
@@ -443,12 +443,12 @@ class OrganisationsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `organisations_update`")  # noqa: E501
         # verify the required parameter 'organisation_dto' is set
-        if ('organisation_dto' not in local_var_params or
-                local_var_params['organisation_dto'] is None):
+        if self.api_client.client_side_validation and ('organisation_dto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['organisation_dto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `organisation_dto` when calling `organisations_update`")  # noqa: E501
 
         collection_formats = {}

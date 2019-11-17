@@ -103,12 +103,12 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `users_create`")  # noqa: E501
         # verify the required parameter 'user_dto' is set
-        if ('user_dto' not in local_var_params or
-                local_var_params['user_dto'] is None):
+        if self.api_client.client_side_validation and ('user_dto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_dto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `user_dto` when calling `users_create`")  # noqa: E501
 
         collection_formats = {}
@@ -219,8 +219,8 @@ class UsersApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `users_read_self`")  # noqa: E501
 
         collection_formats = {}

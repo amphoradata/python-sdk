@@ -103,12 +103,12 @@ class SearchApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `search_search_amphorae`")  # noqa: E501
         # verify the required parameter 'search_parameters' is set
-        if ('search_parameters' not in local_var_params or
-                local_var_params['search_parameters'] is None):
+        if self.api_client.client_side_validation and ('search_parameters' not in local_var_params or  # noqa: E501
+                                                        local_var_params['search_parameters'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `search_parameters` when calling `search_search_amphorae`")  # noqa: E501
 
         collection_formats = {}
@@ -221,8 +221,8 @@ class SearchApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `search_search_amphorae_by_creator`")  # noqa: E501
 
         collection_formats = {}
@@ -230,7 +230,7 @@ class SearchApi(object):
         path_params = {}
 
         query_params = []
-        if 'user_name' in local_var_params:
+        if 'user_name' in local_var_params and local_var_params['user_name'] is not None:  # noqa: E501
             query_params.append(('userName', local_var_params['user_name']))  # noqa: E501
 
         header_params = {}
@@ -335,8 +335,8 @@ class SearchApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `search_search_amphorae_by_location`")  # noqa: E501
 
         collection_formats = {}
@@ -344,11 +344,11 @@ class SearchApi(object):
         path_params = {}
 
         query_params = []
-        if 'lat' in local_var_params:
+        if 'lat' in local_var_params and local_var_params['lat'] is not None:  # noqa: E501
             query_params.append(('lat', local_var_params['lat']))  # noqa: E501
-        if 'lon' in local_var_params:
+        if 'lon' in local_var_params and local_var_params['lon'] is not None:  # noqa: E501
             query_params.append(('lon', local_var_params['lon']))  # noqa: E501
-        if 'dist' in local_var_params:
+        if 'dist' in local_var_params and local_var_params['dist'] is not None:  # noqa: E501
             query_params.append(('dist', local_var_params['dist']))  # noqa: E501
 
         header_params = {}
@@ -449,8 +449,8 @@ class SearchApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `search_search_amphorae_by_organisation`")  # noqa: E501
 
         collection_formats = {}
@@ -458,7 +458,7 @@ class SearchApi(object):
         path_params = {}
 
         query_params = []
-        if 'org_id' in local_var_params:
+        if 'org_id' in local_var_params and local_var_params['org_id'] is not None:  # noqa: E501
             query_params.append(('orgId', local_var_params['org_id']))  # noqa: E501
 
         header_params = {}

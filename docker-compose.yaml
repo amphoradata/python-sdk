@@ -1,7 +1,7 @@
 version: "3"
 services:
   generator:
-    image: openapitools/openapi-generator-cli
+    image: openapitools/openapi-generator-cli:v4.2.0
     volumes: 
       - ${PWD}:/local
-    command: generate -i https://beta.amphoradata.com/swagger/v1/swagger.json -g python -o /local/generated -c local/config.yaml
+    command: generate -i https://beta.amphoradata.com/swagger/v1/swagger.json -g python -o /local/generated -c local/config.yaml --skip-validate-spec

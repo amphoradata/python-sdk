@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "amphoradata"
-VERSION = "0.2.0.dev1"
+VERSION = "0.2.0.dev2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -31,7 +31,7 @@ setup(
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "Amphora Data Api"],
     install_requires=REQUIRES,
-    packages=find_packages(),
+    packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     long_description="""\
     API for interacting with the Amphora Data platform.  # noqa: E501

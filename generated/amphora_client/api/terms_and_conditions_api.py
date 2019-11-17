@@ -105,12 +105,12 @@ class TermsAndConditionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `terms_and_conditions_create`")  # noqa: E501
         # verify the required parameter 'terms_and_conditions_dto' is set
-        if ('terms_and_conditions_dto' not in local_var_params or
-                local_var_params['terms_and_conditions_dto'] is None):
+        if self.api_client.client_side_validation and ('terms_and_conditions_dto' not in local_var_params or  # noqa: E501
+                                                        local_var_params['terms_and_conditions_dto'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `terms_and_conditions_dto` when calling `terms_and_conditions_create`")  # noqa: E501
 
         collection_formats = {}
@@ -225,8 +225,8 @@ class TermsAndConditionsApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `terms_and_conditions_read`")  # noqa: E501
 
         collection_formats = {}

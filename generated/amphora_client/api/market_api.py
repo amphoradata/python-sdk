@@ -107,8 +107,8 @@ class MarketApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `market_find`")  # noqa: E501
 
         collection_formats = {}
@@ -116,11 +116,11 @@ class MarketApi(object):
         path_params = {}
 
         query_params = []
-        if 'query' in local_var_params:
+        if 'query' in local_var_params and local_var_params['query'] is not None:  # noqa: E501
             query_params.append(('query', local_var_params['query']))  # noqa: E501
-        if 'top' in local_var_params:
+        if 'top' in local_var_params and local_var_params['top'] is not None:  # noqa: E501
             query_params.append(('top', local_var_params['top']))  # noqa: E501
-        if 'skip' in local_var_params:
+        if 'skip' in local_var_params and local_var_params['skip'] is not None:  # noqa: E501
             query_params.append(('skip', local_var_params['skip']))  # noqa: E501
 
         header_params = {}
@@ -221,8 +221,8 @@ class MarketApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `market_lookup_location`")  # noqa: E501
 
         collection_formats = {}
@@ -230,7 +230,7 @@ class MarketApi(object):
         path_params = {}
 
         query_params = []
-        if 'query' in local_var_params:
+        if 'query' in local_var_params and local_var_params['query'] is not None:  # noqa: E501
             query_params.append(('query', local_var_params['query']))  # noqa: E501
 
         header_params = {}

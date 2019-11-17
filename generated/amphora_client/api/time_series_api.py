@@ -103,12 +103,12 @@ class TimeSeriesApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'x_amphoradata_version' is set
-        if ('x_amphoradata_version' not in local_var_params or
-                local_var_params['x_amphoradata_version'] is None):
+        if self.api_client.client_side_validation and ('x_amphoradata_version' not in local_var_params or  # noqa: E501
+                                                        local_var_params['x_amphoradata_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `x_amphoradata_version` when calling `time_series_query_time_series`")  # noqa: E501
         # verify the required parameter 'query_request' is set
-        if ('query_request' not in local_var_params or
-                local_var_params['query_request'] is None):
+        if self.api_client.client_side_validation and ('query_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['query_request'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `query_request` when calling `time_series_query_time_series`")  # noqa: E501
 
         collection_formats = {}

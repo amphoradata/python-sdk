@@ -17,11 +17,11 @@ token_request = amphora_client.TokenRequest(username=os.environ['username'], pas
 
 try:
     # Gets a token
-    res = auth_api.authentication_request_token(token_request = token_request)
+    res = auth_api.authentication_request_token(token_request = token_request, x_amphoradata_version="0")
     configuration.api_key["Authorization"] = "Bearer " + res
     # create an instance of the Users API, now with Bearer token
     users_api = amphora_client.UsersApi(amphora_client.ApiClient(configuration))
-    me = users_api.users_read_self()
+    me = users_api.users_read_self(x_amphoradata_version="0")
     print(me)
 
 except ApiException as e:
