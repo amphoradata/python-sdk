@@ -3,8 +3,18 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+# specific path build
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - azure-pipelines.yml
+    - generated/*
+    exclude:
+    - README.md
+    - samples/*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -21,7 +31,7 @@ steps:
     addToPath: true 
     #architecture: 'x64' # Options: x86, x64 (this argument applies only on Windows agents)
 - script: |
-    python --vertison
+    python --version
     pushd generated
     pip install tox
     pip install -r requirements.txt
