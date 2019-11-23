@@ -9,6 +9,7 @@ from amphora_client.configuration import Configuration
 import json
 
 configuration = Configuration()
+configuration.host = "http://beta.amphoradata.com"
 
 # Create an instance of the API class
 auth_api = a10a.AuthenticationApi(a10a.ApiClient(configuration))
@@ -21,7 +22,7 @@ id = "57d6593f-1889-410a-b1fb-631b6f9c9c85"
 try:
     # Gets a token
     t1_start = time.perf_counter()  
-    res = auth_api.authentication_request_token(token_request = token_request, x_amphoradata_version="0")
+    res = auth_api.authentication_request_token(token_request = token_request )
     t1_stop = time.perf_counter() 
     print("Elapsed time:", t1_stop - t1_start) # print performance indicator
     configuration.api_key["Authorization"] = "Bearer " + res
