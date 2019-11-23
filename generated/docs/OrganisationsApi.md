@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **organisations_create**
-> OrganisationDto organisations_create(x_amphoradata_version, organisation_dto)
+> OrganisationDto organisations_create(organisation_dto, x_amphoradata_version=x_amphoradata_version)
 
 Creates a new Organisation. This will assign the logged in user to the organisation.
 
@@ -34,12 +34,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 organisation_dto = amphora_client.OrganisationDto() # OrganisationDto | Information of the new Organisation
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new Organisation. This will assign the logged in user to the organisation.
-    api_response = api_instance.organisations_create(x_amphoradata_version, organisation_dto)
+    api_response = api_instance.organisations_create(organisation_dto, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_create: %s\n" % e)
@@ -49,8 +49,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **organisation_dto** | [**OrganisationDto**](OrganisationDto.md)| Information of the new Organisation | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_delete**
-> str organisations_delete(id, x_amphoradata_version)
+> str organisations_delete(id, x_amphoradata_version=x_amphoradata_version)
 
 Deletes an organisation.
 
@@ -97,11 +97,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Deletes an organisation.
-    api_response = api_instance.organisations_delete(id, x_amphoradata_version)
+    api_response = api_instance.organisations_delete(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_delete: %s\n" % e)
@@ -112,7 +112,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_read**
-> OrganisationDto organisations_read(id, x_amphoradata_version)
+> OrganisationDto organisations_read(id, x_amphoradata_version=x_amphoradata_version)
 
 Gets an organisation's details.
 
@@ -159,11 +159,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Gets an organisation's details.
-    api_response = api_instance.organisations_read(id, x_amphoradata_version)
+    api_response = api_instance.organisations_read(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_read: %s\n" % e)
@@ -174,7 +174,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_update**
-> file organisations_update(id, x_amphoradata_version, organisation_dto)
+> file organisations_update(id, organisation_dto, x_amphoradata_version=x_amphoradata_version)
 
 Updates an organisation.
 
@@ -221,12 +221,12 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.OrganisationsApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 organisation_dto = amphora_client.OrganisationDto() # OrganisationDto | Organisation Information. All fields are updated.
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Updates an organisation.
-    api_response = api_instance.organisations_update(id, x_amphoradata_version, organisation_dto)
+    api_response = api_instance.organisations_update(id, organisation_dto, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_update: %s\n" % e)
@@ -237,8 +237,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
  **organisation_dto** | [**OrganisationDto**](OrganisationDto.md)| Organisation Information. All fields are updated. | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

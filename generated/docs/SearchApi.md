@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **search_search_amphorae**
-> list[AmphoraDto] search_search_amphorae(x_amphoradata_version, search_parameters)
+> list[AmphoraDto] search_search_amphorae(search_parameters, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae.
 
@@ -34,12 +34,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 search_parameters = amphora_client.SearchParameters() # SearchParameters | Search parameters
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Searches for Amphorae.
-    api_response = api_instance.search_search_amphorae(x_amphoradata_version, search_parameters)
+    api_response = api_instance.search_search_amphorae(search_parameters, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->search_search_amphorae: %s\n" % e)
@@ -49,8 +49,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **search_parameters** | [**SearchParameters**](SearchParameters.md)| Search parameters | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_search_amphorae_by_creator**
-> list[AmphoraDto] search_search_amphorae_by_creator(x_amphoradata_version, user_name=user_name)
+> list[AmphoraDto] search_search_amphorae_by_creator(user_name=user_name, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae by creator.
 
@@ -96,12 +96,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 user_name = 'user_name_example' # str | User Name of the creator (optional)
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Searches for Amphorae by creator.
-    api_response = api_instance.search_search_amphorae_by_creator(x_amphoradata_version, user_name=user_name)
+    api_response = api_instance.search_search_amphorae_by_creator(user_name=user_name, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->search_search_amphorae_by_creator: %s\n" % e)
@@ -111,8 +111,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **user_name** | **str**| User Name of the creator | [optional] 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_search_amphorae_by_location**
-> list[AmphoraDto] search_search_amphorae_by_location(x_amphoradata_version, lat=lat, lon=lon, dist=dist)
+> list[AmphoraDto] search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae by loction.
 
@@ -158,14 +158,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 lat = 3.4 # float | Latitude (optional)
 lon = 3.4 # float | Longitude (optional)
 dist = 10.0 # float | Distance from Latitude and Longitude in which to search (optional) (default to 10.0)
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Searches for Amphorae by loction.
-    api_response = api_instance.search_search_amphorae_by_location(x_amphoradata_version, lat=lat, lon=lon, dist=dist)
+    api_response = api_instance.search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->search_search_amphorae_by_location: %s\n" % e)
@@ -175,10 +175,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **lat** | **float**| Latitude | [optional] 
  **lon** | **float**| Longitude | [optional] 
  **dist** | **float**| Distance from Latitude and Longitude in which to search | [optional] [default to 10.0]
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_search_amphorae_by_organisation**
-> list[AmphoraDto] search_search_amphorae_by_organisation(x_amphoradata_version, org_id=org_id)
+> list[AmphoraDto] search_search_amphorae_by_organisation(org_id=org_id, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae in an Organisation.
 
@@ -224,12 +224,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 org_id = 'org_id_example' # str | Organisation Id (optional)
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Searches for Amphorae in an Organisation.
-    api_response = api_instance.search_search_amphorae_by_organisation(x_amphoradata_version, org_id=org_id)
+    api_response = api_instance.search_search_amphorae_by_organisation(org_id=org_id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->search_search_amphorae_by_organisation: %s\n" % e)
@@ -239,8 +239,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **org_id** | **str**| Organisation Id | [optional] 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

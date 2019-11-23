@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **market_find**
-> list[AmphoraDto] market_find(x_amphoradata_version, query=query, top=top, skip=skip)
+> list[AmphoraDto] market_find(query=query, top=top, skip=skip, x_amphoradata_version=x_amphoradata_version)
 
 Finds Amphora using a fuzzy search
 
@@ -32,14 +32,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.MarketApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 query = 'query_example' # str | Amphora Id (optional)
 top = 56 # int | How many results to return (optional)
 skip = 56 # int | How many pages (in multiples of top) to skip (optional)
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Finds Amphora using a fuzzy search
-    api_response = api_instance.market_find(x_amphoradata_version, query=query, top=top, skip=skip)
+    api_response = api_instance.market_find(query=query, top=top, skip=skip, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MarketApi->market_find: %s\n" % e)
@@ -49,10 +49,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **query** | **str**| Amphora Id | [optional] 
  **top** | **int**| How many results to return | [optional] 
  **skip** | **int**| How many pages (in multiples of top) to skip | [optional] 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **market_lookup_location**
-> FuzzySearchResponse market_lookup_location(x_amphoradata_version, query=query)
+> FuzzySearchResponse market_lookup_location(query=query, x_amphoradata_version=x_amphoradata_version)
 
 Executes a fuzzy location search.
 
@@ -98,12 +98,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.MarketApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 query = 'query_example' # str | Search Text (optional)
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Executes a fuzzy location search.
-    api_response = api_instance.market_lookup_location(x_amphoradata_version, query=query)
+    api_response = api_instance.market_lookup_location(query=query, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MarketApi->market_lookup_location: %s\n" % e)
@@ -113,8 +113,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **query** | **str**| Search Text | [optional] 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

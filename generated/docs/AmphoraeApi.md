@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **amphorae_create**
-> AmphoraExtendedDto amphorae_create(x_amphoradata_version, create_amphora_dto)
+> AmphoraExtendedDto amphorae_create(create_amphora_dto, x_amphoradata_version=x_amphoradata_version)
 
 Creates a new empty Amphora in the user's organisation
 
@@ -41,12 +41,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 create_amphora_dto = amphora_client.CreateAmphoraDto() # CreateAmphoraDto | Information for the new Amphora
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new empty Amphora in the user's organisation
-    api_response = api_instance.amphorae_create(x_amphoradata_version, create_amphora_dto)
+    api_response = api_instance.amphorae_create(create_amphora_dto, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_create: %s\n" % e)
@@ -56,8 +56,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | 
  **create_amphora_dto** | [**CreateAmphoraDto**](CreateAmphoraDto.md)| Information for the new Amphora | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_create_file_request**
-> UploadResponse amphorae_create_file_request(id, file, x_amphoradata_version)
+> UploadResponse amphorae_create_file_request(id, file, x_amphoradata_version=x_amphoradata_version)
 
 Creates a file. Returns a blob URL to upload to.
 
@@ -105,11 +105,11 @@ configuration.host = "https://beta.amphoradata.com"
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
 file = 'file_example' # str | The name of the file
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a file. Returns a blob URL to upload to.
-    api_response = api_instance.amphorae_create_file_request(id, file, x_amphoradata_version)
+    api_response = api_instance.amphorae_create_file_request(id, file, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_create_file_request: %s\n" % e)
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
  **file** | **str**| The name of the file | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_create_signal**
-> SignalDto amphorae_create_signal(id, x_amphoradata_version, signal_dto)
+> SignalDto amphorae_create_signal(id, signal_dto, x_amphoradata_version=x_amphoradata_version)
 
 Associates a signal with an Amphora. Signal is created if not existing.
 
@@ -168,12 +168,12 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 signal_dto = amphora_client.SignalDto() # SignalDto | Signal Details
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Associates a signal with an Amphora. Signal is created if not existing.
-    api_response = api_instance.amphorae_create_signal(id, x_amphoradata_version, signal_dto)
+    api_response = api_instance.amphorae_create_signal(id, signal_dto, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_create_signal: %s\n" % e)
@@ -184,8 +184,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
  **signal_dto** | [**SignalDto**](SignalDto.md)| Signal Details | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_delete**
-> str amphorae_delete(id, x_amphoradata_version)
+> str amphorae_delete(id, x_amphoradata_version=x_amphoradata_version)
 
 Deletes an Amphora
 
@@ -232,11 +232,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Deletes an Amphora
-    api_response = api_instance.amphorae_delete(id, x_amphoradata_version)
+    api_response = api_instance.amphorae_delete(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_delete: %s\n" % e)
@@ -247,7 +247,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_download_file**
-> file amphorae_download_file(id, file, x_amphoradata_version)
+> file amphorae_download_file(id, file, x_amphoradata_version=x_amphoradata_version)
 
 Get's the contents of a file. Returns application/octet-stream
 
@@ -295,11 +295,11 @@ configuration.host = "https://beta.amphoradata.com"
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
 file = 'file_example' # str | The name of the file
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's the contents of a file. Returns application/octet-stream
-    api_response = api_instance.amphorae_download_file(id, file, x_amphoradata_version)
+    api_response = api_instance.amphorae_download_file(id, file, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_download_file: %s\n" % e)
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
  **file** | **str**| The name of the file | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_get_signals**
-> list[SignalDto] amphorae_get_signals(id, x_amphoradata_version)
+> list[SignalDto] amphorae_get_signals(id, x_amphoradata_version=x_amphoradata_version)
 
 Get's the signals associated with an Amphora.
 
@@ -358,11 +358,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's the signals associated with an Amphora.
-    api_response = api_instance.amphorae_get_signals(id, x_amphoradata_version)
+    api_response = api_instance.amphorae_get_signals(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_get_signals: %s\n" % e)
@@ -373,7 +373,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_list_files**
-> list[str] amphorae_list_files(id, x_amphoradata_version)
+> list[str] amphorae_list_files(id, x_amphoradata_version=x_amphoradata_version)
 
 Get's a list of an Amphora's files
 
@@ -420,11 +420,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's a list of an Amphora's files
-    api_response = api_instance.amphorae_list_files(id, x_amphoradata_version)
+    api_response = api_instance.amphorae_list_files(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_list_files: %s\n" % e)
@@ -435,7 +435,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_read**
-> AmphoraExtendedDto amphorae_read(id, x_amphoradata_version)
+> AmphoraExtendedDto amphorae_read(id, x_amphoradata_version=x_amphoradata_version)
 
 Get's details of an Amphora by Id
 
@@ -482,11 +482,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's details of an Amphora by Id
-    api_response = api_instance.amphorae_read(id, x_amphoradata_version)
+    api_response = api_instance.amphorae_read(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_read: %s\n" % e)
@@ -497,7 +497,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_update**
-> AmphoraExtendedDto amphorae_update(id, x_amphoradata_version, amphora_extended_dto)
+> AmphoraExtendedDto amphorae_update(id, amphora_extended_dto, x_amphoradata_version=x_amphoradata_version)
 
 Updates the details of an Amphora by Id
 
@@ -544,12 +544,12 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 amphora_extended_dto = amphora_client.AmphoraExtendedDto() # AmphoraExtendedDto | Information to update
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Updates the details of an Amphora by Id
-    api_response = api_instance.amphorae_update(id, x_amphoradata_version, amphora_extended_dto)
+    api_response = api_instance.amphorae_update(id, amphora_extended_dto, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_update: %s\n" % e)
@@ -560,8 +560,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
- **x_amphoradata_version** | **str**| API Version Number | 
  **amphora_extended_dto** | [**AmphoraExtendedDto**](AmphoraExtendedDto.md)| Information to update | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_upload_file**
-> UploadResponse amphorae_upload_file(id, file, x_amphoradata_version)
+> UploadResponse amphorae_upload_file(id, file, x_amphoradata_version=x_amphoradata_version)
 
 Set's the contents of a file. The request body becomes the content.
 
@@ -609,11 +609,11 @@ configuration.host = "https://beta.amphoradata.com"
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | Amphora Id
 file = 'file_example' # str | The name of the file
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Set's the contents of a file. The request body becomes the content.
-    api_response = api_instance.amphorae_upload_file(id, file, x_amphoradata_version)
+    api_response = api_instance.amphorae_upload_file(id, file, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_upload_file: %s\n" % e)
@@ -625,7 +625,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Amphora Id | 
  **file** | **str**| The name of the file | 
- **x_amphoradata_version** | **str**| API Version Number | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_upload_signal**
-> amphorae_upload_signal(id, x_amphoradata_version, request_body)
+> amphorae_upload_signal(id, request_body, x_amphoradata_version=x_amphoradata_version)
 
 
 
@@ -672,11 +672,11 @@ configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
 id = 'id_example' # str | 
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number
 request_body = None # dict(str, object) | 
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
-    api_instance.amphorae_upload_signal(id, x_amphoradata_version, request_body)
+    api_instance.amphorae_upload_signal(id, request_body, x_amphoradata_version=x_amphoradata_version)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_upload_signal: %s\n" % e)
 ```
@@ -686,8 +686,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **x_amphoradata_version** | **str**| API Version Number | 
  **request_body** | [**dict(str, object)**](object.md)|  | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
