@@ -31,7 +31,10 @@ try:
     print('created amphora')
 
     uploader = FileUploader(amphoraApi)
-    uploader.create_and_upload_file(a.id, "./dog.jpg")
+    t1_start = time.perf_counter()  
+    uploader.create_and_upload_file(a.id, file_path)
+    t1_stop = time.perf_counter() 
+    print("Upload time:", t1_stop - t1_start) # print performance indicator
 
 except ApiException as e:
     print("Exception when calling API: %s\n" % e)
