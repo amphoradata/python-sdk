@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**amphorae_update**](AmphoraeApi.md#amphorae_update) | **PUT** /api/amphorae/{id} | Updates the details of an Amphora by Id
 [**amphorae_upload_file**](AmphoraeApi.md#amphorae_upload_file) | **PUT** /api/amphorae/{id}/files/{file} | Set&#39;s the contents of a file. The request body becomes the content.
 [**amphorae_upload_signal**](AmphoraeApi.md#amphorae_upload_signal) | **POST** /api/amphorae/{id}/signals/values | 
+[**amphorae_upload_signal_batch**](AmphoraeApi.md#amphorae_upload_signal_batch) | **POST** /api/amphorae/{id}/signals/batchvalues | 
 
 
 # **amphorae_create**
@@ -687,6 +688,69 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
  **request_body** | [**dict(str, object)**](object.md)|  | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphorae_upload_signal_batch**
+> amphorae_upload_signal_batch(id, request_body, x_amphoradata_version=x_amphoradata_version)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_client
+from amphora_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_client.AmphoraeApi(amphora_client.ApiClient(configuration))
+id = 'id_example' # str | 
+request_body = None # list[dict(str, object)] | 
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    api_instance.amphorae_upload_signal_batch(id, request_body, x_amphoradata_version=x_amphoradata_version)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_upload_signal_batch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **request_body** | [**list[dict(str, object)]**](dict.md)|  | 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
