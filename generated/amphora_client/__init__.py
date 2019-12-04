@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.3.0.dev1"
+__version__ = "0.3.0"
 
 # import apis into sdk package
 from amphora_client.api.account_api import AccountApi
