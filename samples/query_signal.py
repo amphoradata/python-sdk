@@ -9,7 +9,7 @@ from amphora_client.configuration import Configuration
 import json
 
 configuration = Configuration()
-configuration.host = "http://beta.amphoradata.com"
+configuration.host = "https://beta.amphoradata.com"
 
 # Create an instance of the API class
 auth_api = a10a.AuthenticationApi(a10a.ApiClient(configuration))
