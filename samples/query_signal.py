@@ -11,7 +11,7 @@ import json
 configuration = Configuration()
 configuration.host = "https://beta.amphoradata.com"
 
-# Create an instance of the API class
+# Create an instance of the auth API class
 auth_api = a10a.AuthenticationApi(a10a.ApiClient(configuration))
 
 token_request = a10a.TokenRequest(username=os.environ['username'], password=os.environ['password'] ) 
@@ -34,25 +34,27 @@ try:
 
     ts_api = a10a.TimeSeriesApi(a10a.ApiClient(configuration)) # the API for interacting with time series
     tomorrow = datetime.now() + timedelta(hours=24)
-
+    # Create a DateTimeRange to describe over what period we want data.
     time_range = a10a.DateTimeRange(_from = datetime.now(), to= tomorrow)
-    # get tomorrow's temperatures
-    variable = a10a.NumericVariable( kind="numeric", 
+    # Create a variable object for getting temperature data
+    temperatureVariable = a10a.NumericVariable( kind="numeric", 
         value=a10a.Tsx(tsx="$event.temperature"), 
         aggregation=a10a.Tsx("avg($value)"))
-    get_series = a10a.GetSeries([id], search_span= time_range, inline_variables={"temperature": variable})
+    get_series = a10a.GetSeries([id], search_span= time_range, inline_variables={"temperature": temperatureVariable})
     time_series_data = ts_api.time_series_query_time_series( a10a.QueryRequest(get_series= get_series))
 
     print(f'Got {len(time_series_data.timestamps)} datapoints and {len(time_series_data.properties)} properties')
     # access the data in time_series_data.properties
     print("-----------")
 
-    # get average of tomorrow's rainfall probablility
+    # get average of tomorrow's rainfall probablility, filtered by description = Possible shower or Mostly cloudy
     variable = a10a.AggregateVariable( kind="aggregate", 
         aggregation=a10a.Tsx("avg($event.rainProb)"))
     aggregate_series = a10a.AggregateSeries([id], 
         search_span= time_range, 
-        inline_variables={"rainProbAvg": variable}, 
+        inline_variables={"rainProbAvg": variable},
+        # filter is optional, for numeric filtering use `$event.rainProb.Double > 10` etc.
+        filter= a10a.Tsx("$event.description.String = 'Possible shower' OR $event.description.String = 'Mostly cloudy'"),
         interval= "PT24H") # 24 hour buckets
     time_series_data = ts_api.time_series_query_time_series( a10a.QueryRequest(aggregate_series= aggregate_series))
     event_count = next(value for value in time_series_data.properties if value.name == 'EventCount')
