@@ -27,6 +27,8 @@ print(users_api.users_read_self())
 
 # Samples
 
+Check out the samples in the `samples/` directory.
+
 ## Dependencies
 
 * You must have an account at beta.amphoradata.com
