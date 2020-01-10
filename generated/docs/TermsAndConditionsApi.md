@@ -1,17 +1,17 @@
 # amphora_client.TermsAndConditionsApi
 
-All URIs are relative to *https://appsvc62a56562.azurewebsites.net*
+All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**terms_and_conditions_create**](TermsAndConditionsApi.md#terms_and_conditions_create) | **POST** /api/Organisations/{id}/TermsAndConditions | Adds new Terms and Conditions to your Organisations T/C Library
-[**terms_and_conditions_read**](TermsAndConditionsApi.md#terms_and_conditions_read) | **GET** /api/Organisations/{id}/TermsAndConditions | Get&#39;s a list of an Organisation&#39;s Terms and Conditions
+[**terms_and_conditions_create**](TermsAndConditionsApi.md#terms_and_conditions_create) | **POST** /api/Organisations/{id}/TermsAndConditions | Adds new Terms and Conditions to your Organisations T/C Library.
+[**terms_and_conditions_read**](TermsAndConditionsApi.md#terms_and_conditions_read) | **GET** /api/Organisations/{id}/TermsAndConditions | Get&#39;s a list of an Organisation&#39;s Terms and Conditions.
 
 
 # **terms_and_conditions_create**
 > TermsAndConditionsDto terms_and_conditions_create(id, terms_and_conditions_dto, x_amphoradata_version=x_amphoradata_version)
 
-Adds new Terms and Conditions to your Organisations T/C Library
+Adds new Terms and Conditions to your Organisations T/C Library.
 
 ### Example
 
@@ -28,16 +28,16 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://appsvc62a56562.azurewebsites.net
-configuration.host = "https://appsvc62a56562.azurewebsites.net"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.TermsAndConditionsApi(amphora_client.ApiClient(configuration))
-id = 'id_example' # str | The Id of the Organisation
-terms_and_conditions_dto = amphora_client.TermsAndConditionsDto() # TermsAndConditionsDto | The new Terms and Conditions
+id = 'id_example' # str | The Id of the Organisation.
+terms_and_conditions_dto = amphora_client.TermsAndConditionsDto() # TermsAndConditionsDto | The new Terms and Conditions.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
-    # Adds new Terms and Conditions to your Organisations T/C Library
+    # Adds new Terms and Conditions to your Organisations T/C Library.
     api_response = api_instance.terms_and_conditions_create(id, terms_and_conditions_dto, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
@@ -48,8 +48,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| The Id of the Organisation | 
- **terms_and_conditions_dto** | [**TermsAndConditionsDto**](TermsAndConditionsDto.md)| The new Terms and Conditions | 
+ **id** | **str**| The Id of the Organisation. | 
+ **terms_and_conditions_dto** | [**TermsAndConditionsDto**](TermsAndConditionsDto.md)| The new Terms and Conditions. | 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | The organisation metadaa.  |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 # **terms_and_conditions_read**
 > list[TermsAndConditionsDto] terms_and_conditions_read(id, x_amphoradata_version=x_amphoradata_version)
 
-Get's a list of an Organisation's Terms and Conditions
+Get's a list of an Organisation's Terms and Conditions.
 
 ### Example
 
@@ -93,15 +93,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://appsvc62a56562.azurewebsites.net
-configuration.host = "https://appsvc62a56562.azurewebsites.net"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.TermsAndConditionsApi(amphora_client.ApiClient(configuration))
-id = 'id_example' # str | The Id of the Organisation
+id = 'id_example' # str | The Id of the Organisation.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
-    # Get's a list of an Organisation's Terms and Conditions
+    # Get's a list of an Organisation's Terms and Conditions.
     api_response = api_instance.terms_and_conditions_read(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
@@ -112,7 +112,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| The Id of the Organisation | 
+ **id** | **str**| The Id of the Organisation. | 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | The Terms and Conditions.  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

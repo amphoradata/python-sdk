@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **created_date** | **datetime** |  | [optional] 
 **name** | **str** |  | 
 **price** | **float** |  | 
+**labels** | **str** |  | [optional] 
 **description** | **str** |  | 
 **lat** | **float** |  | [optional] 
 **lon** | **float** |  | [optional] 

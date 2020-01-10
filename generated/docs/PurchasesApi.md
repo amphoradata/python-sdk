@@ -1,6 +1,6 @@
 # amphora_client.PurchasesApi
 
-All URIs are relative to *https://appsvc62a56562.azurewebsites.net*
+All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,11 +27,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://appsvc62a56562.azurewebsites.net
-configuration.host = "https://appsvc62a56562.azurewebsites.net"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.PurchasesApi(amphora_client.ApiClient(configuration))
-id = 'id_example' # str | Amphora Id
+id = 'id_example' # str | Amphora Id.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
@@ -46,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Amphora Id | 
+ **id** | **str**| Amphora Id. | 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | A Message. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

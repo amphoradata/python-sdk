@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **created_date** | **datetime** |  | [optional] 
 **name** | **str** |  | 
 **price** | **float** |  | 
+**labels** | **str** |  | [optional] 
 **organisation_id** | **str** |  | [optional] 
 **terms_and_conditions_id** | **str** |  | [optional] 
 **description** | **str** |  | 

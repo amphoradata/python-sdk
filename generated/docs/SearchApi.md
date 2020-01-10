@@ -1,6 +1,6 @@
 # amphora_client.SearchApi
 
-All URIs are relative to *https://appsvc62a56562.azurewebsites.net*
+All URIs are relative to *https://beta.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,11 +30,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://appsvc62a56562.azurewebsites.net
-configuration.host = "https://appsvc62a56562.azurewebsites.net"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-search_parameters = amphora_client.SearchParameters() # SearchParameters | Search parameters
+search_parameters = amphora_client.SearchParameters() # SearchParameters | Search parameters.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
@@ -49,7 +49,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search_parameters** | [**SearchParameters**](SearchParameters.md)| Search parameters | 
+ **search_parameters** | [**SearchParameters**](SearchParameters.md)| Search parameters. | 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | A collection of Amphora.  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -92,11 +92,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://appsvc62a56562.azurewebsites.net
-configuration.host = "https://appsvc62a56562.azurewebsites.net"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-user_name = 'user_name_example' # str | User Name of the creator (optional)
+user_name = 'user_name_example' # str | User Name of the creator. (optional)
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
@@ -111,7 +111,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_name** | **str**| User Name of the creator | [optional] 
+ **user_name** | **str**| User Name of the creator. | [optional] 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | A collection of Amphora.  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -154,13 +154,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://appsvc62a56562.azurewebsites.net
-configuration.host = "https://appsvc62a56562.azurewebsites.net"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-lat = 3.4 # float | Latitude (optional)
-lon = 3.4 # float | Longitude (optional)
-dist = 10.0 # float | Distance from Latitude and Longitude in which to search (optional) (default to 10.0)
+lat = 3.4 # float | Latitude. (optional)
+lon = 3.4 # float | Longitude. (optional)
+dist = 10.0 # float | Distance from Latitude and Longitude in which to search. (optional) (default to 10.0)
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
@@ -175,9 +175,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lat** | **float**| Latitude | [optional] 
- **lon** | **float**| Longitude | [optional] 
- **dist** | **float**| Distance from Latitude and Longitude in which to search | [optional] [default to 10.0]
+ **lat** | **float**| Latitude. | [optional] 
+ **lon** | **float**| Longitude. | [optional] 
+ **dist** | **float**| Distance from Latitude and Longitude in which to search. | [optional] [default to 10.0]
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | A collection of Amphora. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -220,11 +220,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# Defining host is optional and default to https://appsvc62a56562.azurewebsites.net
-configuration.host = "https://appsvc62a56562.azurewebsites.net"
+# Defining host is optional and default to https://beta.amphoradata.com
+configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.SearchApi(amphora_client.ApiClient(configuration))
-org_id = 'org_id_example' # str | Organisation Id (optional)
+org_id = 'org_id_example' # str | Organisation Id. (optional)
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
@@ -239,7 +239,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organisation Id | [optional] 
+ **org_id** | **str**| Organisation Id. | [optional] 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | A collection of Amphora.  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
