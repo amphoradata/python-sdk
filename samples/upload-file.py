@@ -15,6 +15,7 @@ auth_api = amphora_client.AuthenticationApi(amphora_client.ApiClient(configurati
 
 token_request = amphora_client.TokenRequest(username=os.environ['username'], password=os.environ['password'] ) 
 
+file_path="./dog.jpg"
 
 try:
     res = auth_api.authentication_request_token(token_request = token_request)
