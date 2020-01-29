@@ -39,7 +39,7 @@ try:
     # Create a variable object for getting temperature data
     temperatureVariable = a10a.NumericVariable( kind="numeric", 
         value=a10a.Tsx(tsx="$event.temperature"), 
-        aggregation=a10a.Tsx("avg($value)"))
+        aggregation=a10a.Tsx(tsx = "it doesn't matter"))
     get_series = a10a.GetSeries([id], search_span= time_range, inline_variables={"temperature": temperatureVariable})
     time_series_data = ts_api.time_series_query_time_series( a10a.QueryRequest(get_series= get_series))
 
