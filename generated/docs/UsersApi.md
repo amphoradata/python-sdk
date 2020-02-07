@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **users_create**
-> str users_create(user_dto, x_amphoradata_version=x_amphoradata_version)
+> str users_create(amphora_user, x_amphoradata_version=x_amphoradata_version)
 
 Creates a new User. Returns the password.
 
@@ -32,12 +32,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://beta.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_client.UsersApi(amphora_client.ApiClient(configuration))
-user_dto = amphora_client.UserDto() # UserDto | User parameters.
+amphora_user = amphora_client.AmphoraUser() # AmphoraUser | User parameters.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new User. Returns the password.
-    api_response = api_instance.users_create(user_dto, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.users_create(amphora_user, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->users_create: %s\n" % e)
@@ -47,7 +47,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_dto** | [**UserDto**](UserDto.md)| User parameters. | 
+ **amphora_user** | [**AmphoraUser**](AmphoraUser.md)| User parameters. | 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **users_read_self**
-> UserDto users_read_self(x_amphoradata_version=x_amphoradata_version)
+> AmphoraUser users_read_self(x_amphoradata_version=x_amphoradata_version)
 
 Get's logged in users information.
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserDto**](UserDto.md)
+[**AmphoraUser**](AmphoraUser.md)
 
 ### Authorization
 

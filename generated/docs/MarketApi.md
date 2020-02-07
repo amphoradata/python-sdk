@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **market_find**
-> list[AmphoraDto] market_find(query=query, top=top, skip=skip, x_amphoradata_version=x_amphoradata_version)
+> list[BasicAmphora] market_find(query=query, top=top, skip=skip, x_amphoradata_version=x_amphoradata_version)
 
 Finds Amphora using a fuzzy search.
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[AmphoraDto]**](AmphoraDto.md)
+[**list[BasicAmphora]**](BasicAmphora.md)
 
 ### Authorization
 

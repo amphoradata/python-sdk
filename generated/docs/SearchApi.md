@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **search_search_amphorae**
-> list[AmphoraDto] search_search_amphorae(search_parameters, x_amphoradata_version=x_amphoradata_version)
+> list[BasicAmphora] search_search_amphorae(search_parameters, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae.
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[AmphoraDto]**](AmphoraDto.md)
+[**list[BasicAmphora]**](BasicAmphora.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_search_amphorae_by_creator**
-> list[AmphoraDto] search_search_amphorae_by_creator(user_name=user_name, x_amphoradata_version=x_amphoradata_version)
+> list[BasicAmphora] search_search_amphorae_by_creator(user_name=user_name, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae by creator.
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[AmphoraDto]**](AmphoraDto.md)
+[**list[BasicAmphora]**](BasicAmphora.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_search_amphorae_by_location**
-> list[AmphoraDto] search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist, x_amphoradata_version=x_amphoradata_version)
+> list[BasicAmphora] search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae by loction.
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[AmphoraDto]**](AmphoraDto.md)
+[**list[BasicAmphora]**](BasicAmphora.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_search_amphorae_by_organisation**
-> list[AmphoraDto] search_search_amphorae_by_organisation(org_id=org_id, x_amphoradata_version=x_amphoradata_version)
+> list[BasicAmphora] search_search_amphorae_by_organisation(org_id=org_id, x_amphoradata_version=x_amphoradata_version)
 
 Searches for Amphorae in an Organisation.
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[AmphoraDto]**](AmphoraDto.md)
+[**list[BasicAmphora]**](BasicAmphora.md)
 
 ### Authorization
 
