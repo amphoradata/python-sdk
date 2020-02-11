@@ -1,9 +1,13 @@
-# MetaDataStore
+# EditAmphoraAllOf
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta_data** | **dict(str, str)** |  | [optional] 
+**description** | **str** |  | 
+**lat** | **float** |  | [optional] 
+**lon** | **float** |  | [optional] 
+**terms_and_conditions_id** | **str** |  | [optional] 
+**file_attributes** | [**dict(str, AttributeStore)**](AttributeStore.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

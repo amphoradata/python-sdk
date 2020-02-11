@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import amphora_client
-from amphora_client.models.query_result_page_all_of import QueryResultPageAllOf  # noqa: E501
+from amphora_client.models.edit_amphora import EditAmphora  # noqa: E501
 from amphora_client.rest import ApiException
 
 
-class TestQueryResultPageAllOf(unittest.TestCase):
-    """QueryResultPageAllOf unit test stubs"""
+class TestEditAmphora(unittest.TestCase):
+    """EditAmphora unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestQueryResultPageAllOf(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testQueryResultPageAllOf(self):
-        """Test QueryResultPageAllOf"""
+    def testEditAmphora(self):
+        """Test EditAmphora"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = amphora_client.models.query_result_page_all_of.QueryResultPageAllOf()  # noqa: E501
+        # model = amphora_client.models.edit_amphora.EditAmphora()  # noqa: E501
         pass
 
 
