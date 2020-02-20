@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.7.4.dev1"
+__version__ = "0.7.4"
 
 # import apis into sdk package
 from amphora_client.api.amphorae_api import AmphoraeApi
