@@ -31,20 +31,7 @@ Check out the samples in the `samples/` directory.
 
 ## Dependencies
 
-* You must have an account at beta.amphoradata.com
-* You should have git on your machine.
-* You should have [Docker installed](https://docs.docker.com/) on your machine.
-* You should have a bash shell to run the scripts.
-
-## Running the sample
-
-* Clone this repository `git clone https://github.com/amphoradata/python-sdk`
-* Set your username and password [here](run-container.sh)
-* Run `build-container.sh`
-* Run `run-container.sh`
-
-You will see your profile information printed as JSON on the console.
-
+* You must have an account at [app.amphoradata.com](https://app.amphoradata.com)
 
 # Open API
 
