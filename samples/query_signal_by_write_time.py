@@ -40,7 +40,7 @@ try:
     amphora_api = a10a.AmphoraeApi(a10a.ApiClient(configuration))
     print(f'Getting signals for: {amphora_api.amphorae_read(id).name}')
     print("-----------")
-    signals = amphora_api.amphorae_get_signals(id)
+    signals = amphora_api.amphorae_signals_get_signals(id)
     properties=list((s._property for s in signals))
 
     ts_api = a10a.TimeSeriesApi(a10a.ApiClient(configuration)) # the API for interacting with time series

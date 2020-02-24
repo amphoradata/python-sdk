@@ -18,14 +18,14 @@ token_request = amphora_client.TokenRequest(username=os.environ['username'], pas
 try:
     # Gets a token
     t1_start = time.perf_counter()  
-    res = auth_api.authentication_request_token(token_request = token_request, x_amphoradata_version="0")
+    res = auth_api.authentication_request_token(token_request = token_request)
     t1_stop = time.perf_counter() 
     print("Elapsed time:", t1_stop - t1_start) # print performance indicator
 
     configuration.api_key["Authorization"] = "Bearer " + res
     # create an instance of the Users API, now with Bearer token
     users_api = amphora_client.UsersApi(amphora_client.ApiClient(configuration))
-    me = users_api.users_read_self(x_amphoradata_version="0")
+    me = users_api.users_read_self()
     print(me)
 
 except ApiException as e:
