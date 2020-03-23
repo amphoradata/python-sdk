@@ -1,10 +1,9 @@
 from __future__ import print_function
 import time
 import os
-import amphora_client
-from amphora_client.rest import ApiException
+import amphora_api_client as amphora_client
 from pprint import pprint
-from amphora_client.configuration import Configuration
+from amphora_api_client.configuration import Configuration
 
 # Defining host is optional and default to http://localhost
 configuration = Configuration()
@@ -28,6 +27,6 @@ try:
     me = users_api.users_read_self()
     print(me)
 
-except ApiException as e:
+except Exception as e:
     print("Exception when calling AuthenticationAPI: %s\n" % e)
 
