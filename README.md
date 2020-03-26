@@ -13,11 +13,11 @@ pip install amphoradata
 # Usage
 
 ```py
-from amphora.client import AmphoraClient, Credentials
+from amphora.client import AmphoraDataRepositoryClient, Credentials
 
 # username and password credentials should not be persisted in code
 credentials = Credentials("rian@amphoradata.com", "My Password")
-client = AmphoraClient(credentials)
+client = AmphoraDataRepositoryClient(credentials)
 
 # reference an existing amphora
 amphora = client.get_amphora("e6097df0-952c-46a6-84b0-ccc29bf1b0f7")
