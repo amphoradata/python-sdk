@@ -19,9 +19,18 @@ class AmphoraSignals:
         self._amphoraApi = api.AmphoraeApi(apiClient)
 
     '''
+    Get's a list of Signal metadata
+    returns:
+        [amphora_api_client.Signal]
+    '''
+    @property
+    def metadata(self):
+        return self._amphoraApi.amphorae_signals_get_signals(self._id)
+
+    '''
     Downloads the data to a local object
     params:
-        date_time_range (default to 1 day)          amphora_api_client.DateTimeRange
+        date_time_range [UTC] (default to 1 day)          amphora_api_client.DateTimeRange
     returns:
         amphora.SignalData
     '''
@@ -51,8 +60,8 @@ class SignalData:
 
 
 def default_date_time_range() -> api.DateTimeRange:
-    yesterday = datetime.now() + timedelta(hours=-24)
-    return api.DateTimeRange(_from=yesterday , to= datetime.now())
+    yesterday = datetime.utcnow() + timedelta(hours=-24)
+    return api.DateTimeRange(_from=yesterday , to= datetime.utcnow())
 
 def get_inline_variables(signals: [api.Signal]) -> {}:
     variables = {}
