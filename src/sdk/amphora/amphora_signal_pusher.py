@@ -11,27 +11,32 @@ class AmphoraSignalPusher:
 
 
     def push(self, df: pd.DataFrame = None):
-        dictionary = df.to_dict(orient = 'records')
-        self.push_signals_dict(dictionary)
+        dictionaries = df.to_dict(orient = 'records')
+        self.push_signals_dictionaries(dictionaries)
 
-    def push_signals_dict(self, dictionary: dict):
+    def push_signals_dictionaries(self, dictionaries: [dict]):
         signals = self._amphoraApi.amphorae_signals_get_signals(self._id)
-        validate_dictionary(signals, dictionary)
-        print(dictionary)
-        # self._amphoraApi.amphorae_signals_upload_signal_batch2(self._id, dictionary)
+        for d in dictionaries:
+            validate_dictionary(signals, d)
+
+        self._amphoraApi.amphorae_signals_upload_signal_batch2(self._id, dictionaries)
 
 
 def validate_dictionary(signals: [api.Signal], dictionary: dict):
-    for p in dictionary.keys:
+    for p in dictionary.keys():
         isInSignals = False
         for s in signals:
-            if s._property == p:
+            if p == s._property:
+                isInSignals = True
+            if p == 't':
                 isInSignals = True
         if isInSignals == False:
             raise SignalNotExistError(p)
-
-    for v in dictionary.values:
+        
+        v = dictionary[p]
         if utils.isNumber(v) or utils.isString(v):
             pass
+        elif p == 't':
+            pass
         else:
-            raise InvalidDataError()
+            raise InvalidDataError(f'the value {v} for key {p} neither string nor number')
