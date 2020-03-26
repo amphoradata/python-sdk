@@ -13,26 +13,38 @@ pip install amphoradata
 # Usage
 
 ```py
-import amphora_client as a10a
-from amphora_client.configuration import Configuration
-# authenticate
-configuration = Configuration()
-auth_api = a10a.AuthenticationApi(a10a.ApiClient(configuration)) # creates an unauthenticated client
-token = auth_api.authentication_request_token(token_request = a10a.TokenRequest(username='username', password='*****' ))
-configuration.api_key["Authorization"] = "Bearer " + token
-# read user info
-users_api = amphora_client.UsersApi(amphora_client.ApiClient(configuration)) # creates an authenticated client
-print(users_api.users_read_self())
+from amphora.client import AmphoraClient, Credentials
+
+# username and password credentials should not be persisted in code
+credentials = Credentials("rian@amphoradata.com", "My Password")
+client = AmphoraClient(credentials)
+
+# reference an existing amphora
+amphora = client.get_amphora("e6097df0-952c-46a6-84b0-ccc29bf1b0f7")
+
+# upload a file to an Amphora
+amphora.push_file("/path/to/a/file")
+
+# share with your collaborators
+amphora.share_with("my_friends_email@ghotmail.com")
+
 ```
 
 # Samples
 
 Check out the samples in the `samples/` directory.
 
-## Dependencies
+> You must have an account at [app.amphoradata.com](https://app.amphoradata.com)
 
-* You must have an account at [app.amphoradata.com](https://app.amphoradata.com)
+# Docs
 
-# Open API
+Check our our official docs page at [docs.amphoradata.com](https://docs.amphoradata.com) or view the Open API Spec docs [here](./src/sdk/README.md)
 
-The code in `/generated` was produced via the [Open API Generator tool](https://github.com/OpenAPITools/openapi-generator). View the generated docs [here](generated/README.md)
+# Contributing
+
+We welcome pull requests! This project is constantly evolving, and we're always tring to improve.
+
+Feel free to open an issue if you have feature requests, or are experiencing bugs.
+
+We also use [gitter](https://gitter.im/amphoradata/community).
+
