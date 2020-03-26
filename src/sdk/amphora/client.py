@@ -21,8 +21,8 @@ class Credentials:
         username: str           Your Amphora Data username
         password: str           Your password
     """
-    def __init__(self, username: str, password: str):
-        configuration = api.Configuration()
+    def __init__(self, username: str, password: str, host = "https://app.amphoradata.com"):
+        configuration = api.Configuration(host=host)
         authApi = api.AuthenticationApi(api.ApiClient(configuration))
         tr = api.TokenRequest(username=username, password=password)
         self.token = authApi.authentication_request_token(token_request = tr)
