@@ -22,8 +22,8 @@ class SignalNotExistError(Error):
 
 class InvalidDataError(Error):
    """The data is invalid"""
-   def __init__(self):
-      print(f'The data is invalid')
+   def __init__(self, message: str):
+      print(f'The data is invalid, {message}')
 
 class InvalidDataStructure(Error):
    """The data structure is invalid"""
