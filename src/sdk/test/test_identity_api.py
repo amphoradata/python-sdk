@@ -15,23 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import amphora_api_client
-from amphora_api_client.models.signal import Signal  # noqa: E501
+from amphora_api_client.api.identity_api import IdentityApi  # noqa: E501
 from amphora_api_client.rest import ApiException
 
 
-class TestSignal(unittest.TestCase):
-    """Signal unit test stubs"""
+class TestIdentityApi(unittest.TestCase):
+    """IdentityApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = amphora_api_client.api.identity_api.IdentityApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testSignal(self):
-        """Test Signal"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = amphora_api_client.models.signal.Signal()  # noqa: E501
+    def test_identity_get(self):
+        """Test case for identity_get
+
+        """
         pass
 
 

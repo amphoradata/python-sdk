@@ -5,6 +5,7 @@ from __future__ import absolute_import
 # import apis into api package
 from amphora_api_client.api.amphorae_api import AmphoraeApi
 from amphora_api_client.api.authentication_api import AuthenticationApi
+from amphora_api_client.api.identity_api import IdentityApi
 from amphora_api_client.api.market_api import MarketApi
 from amphora_api_client.api.organisations_api import OrganisationsApi
 from amphora_api_client.api.search_api import SearchApi

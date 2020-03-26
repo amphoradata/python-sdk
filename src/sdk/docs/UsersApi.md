@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **users_create**
-> str users_create(amphora_user, x_amphoradata_version=x_amphoradata_version)
+> AmphoraUser users_create(create_amphora_user, x_amphoradata_version=x_amphoradata_version)
 
 Creates a new User. Returns the password.
 
@@ -32,12 +32,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.UsersApi(amphora_api_client.ApiClient(configuration))
-amphora_user = amphora_api_client.AmphoraUser() # AmphoraUser | User parameters.
+create_amphora_user = amphora_api_client.CreateAmphoraUser() # CreateAmphoraUser | User parameters.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new User. Returns the password.
-    api_response = api_instance.users_create(amphora_user, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.users_create(create_amphora_user, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->users_create: %s\n" % e)
@@ -47,12 +47,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **amphora_user** | [**AmphoraUser**](AmphoraUser.md)| User parameters. | 
+ **create_amphora_user** | [**CreateAmphoraUser**](CreateAmphoraUser.md)| User parameters. | 
  **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
-**str**
+[**AmphoraUser**](AmphoraUser.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A password string. |  -  |
+**200** | The info for the created user. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

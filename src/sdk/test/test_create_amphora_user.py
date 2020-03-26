@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import amphora_api_client
-from amphora_api_client.models.signal import Signal  # noqa: E501
+from amphora_api_client.models.create_amphora_user import CreateAmphoraUser  # noqa: E501
 from amphora_api_client.rest import ApiException
 
 
-class TestSignal(unittest.TestCase):
-    """Signal unit test stubs"""
+class TestCreateAmphoraUser(unittest.TestCase):
+    """CreateAmphoraUser unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestSignal(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSignal(self):
-        """Test Signal"""
+    def testCreateAmphoraUser(self):
+        """Test CreateAmphoraUser"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = amphora_api_client.models.signal.Signal()  # noqa: E501
+        # model = amphora_api_client.models.create_amphora_user.CreateAmphoraUser()  # noqa: E501
         pass
 
 
