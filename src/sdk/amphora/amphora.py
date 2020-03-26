@@ -60,6 +60,11 @@ class Amphora:
         
         model = amphoraApi.amphorae_update(self.amphora_id, model)
 
+    """
+    Gets a list of files in this Amphora
+    returns:
+        [amphora.AmphoraFile]
+    """
     def get_files(self) -> [AmphoraFile]:
         file_names = self._amphoraApi.amphorae_files_list_files(self._id)
         res = []
@@ -67,6 +72,11 @@ class Amphora:
             res.append(AmphoraFile(self._apiClient, self._id, f))
         return res
 
+    """
+    Gets a reference to a file in this Amphora
+    returns:
+        amphora.AmphoraFile
+    """
     def get_file(self, file_name: str) -> AmphoraFile:
         files = self._amphoraApi.amphorae_files_list_files(self._id)
         if file_name in files:
@@ -74,6 +84,12 @@ class Amphora:
         else:
             raise errors.AmphoraFileNotFoundError()
 
+    """
+    Uploads a file to the Data Repository for this Amphora
+    params:
+        file_path: str              Path to the file on this machine.
+        file_name: str (optional)   Overrride the file name on Data Repository.
+    """
     def push_file(self, file_path: str, file_name: str = None):
         # open the file
         if not file_name:
@@ -93,20 +109,52 @@ class Amphora:
             print("Error uploading")
             raise errors.ApiError(response.data)
 
+    """
+    Downloads a file from the Data Repository to this machine.
+    params:
+        file_name: str              Name of the file to download. Must exist in the Amphora.
+        download_path: str          Path where to download the file on this machine.
+    """
     def pull_file(self, file_name: str, download_path: str):
         file_ref = self.get_file(file_name)
         file_ref.pull(download_path)
 
+    """
+    Creates a Signal definition in this Amphora.
+    params:
+        property_name: str            Name of the property, e.g. temperature.
+        value_type = 'Numeric'        Type of property, either Numeric or String. Default is Numeric.
+        attributes = {str: str}       A dictionary of attributes that are associated with the signal. 
+
+        Note: Units is a special attribute you can use to render graphs with units.
+    returns:
+        amphora_api_client.Signal
+    """
     def create_signal(self, property_name: str, value_type = 'Numeric', attributes = {} ) -> api.Signal: 
         signal = api.Signal(_property= property_name, value_type= value_type, attributes= attributes)
         signal = self._amphoraApi.amphorae_signals_create_signal(self._id, signal)
         print(f'Created Signal {signal._property}')
         return signal
 
-
+    """
+    Gets a reference to the signals in this Amphora.
+    returns:
+        amphora.AmphoraSignals
+    """
     def get_signals(self) -> AmphoraSignals:
         return AmphoraSignals(self._apiClient, self._id)
     
+    """
+    Uploads data to the Data Repository as Signals in this Amphora
+    params:
+        df: pandas.DataFrame          A dataframe containing data to be pushed.
+        auto: boolean [True]          Automatically create the Signals on the Amphora
+
+        Note: The dataframe should have a column called 't' containing the timstamps of the time series data.
+              Dataframe's without a 't' column will automatically have 't' set to the current time.
+              Timestamps should be in UTC
+              Columns require names.
+    """
     def push_signals(self, df: pd.DataFrame, auto = True):
         pusher = AmphoraSignalPusher(self._apiClient, self._id)
         signals = self.get_signals()
@@ -123,6 +171,18 @@ class Amphora:
                     value_type = utils.infer_value_type_from_value(df[column_name].iloc[0])
                     self.create_signal(df[column_name].name, value_type)
         pusher.push(df)
+
+    # Restrictions
+    """
+    Creates a restriction by Organisation on this Amphora
+    params:
+        organisation_id: str          The organisation restricted from accessing this Amphora.
+    returns:
+        amphora_api_client.Restriction      
+    """
+    def create_restriction(self, organisation_id: str):
+        restriction = api.Restriction(target_organisation_id=organisation_id)
+        return self._amphoraApi.amphorae_restrictions_create(self.amphora_id, restriction)
 
 def is_property_in_signals(signals: [api.Signal], prop: str) -> bool:
     isInSignals = False
