@@ -2,37 +2,29 @@ import time
 import os
 from datetime import datetime, timedelta
 
-import amphora_client as a10a
-from amphora_client.rest import ApiException
-from amphora_client.configuration import Configuration
+import amphora_api_client as a10a
+from amphora_api_client.rest import ApiException
+from amphora_api_client.configuration import Configuration
 
 import json
 
-configuration = Configuration()
-configuration.host = "https://beta.amphoradata.com"
+from amphora.client import AmphoraDataRepositoryClient, Credentials
 
-# Create an instance of the auth API class
-auth_api = a10a.AuthenticationApi(a10a.ApiClient(configuration))
-
-token_request = a10a.TokenRequest(username=os.environ['username'], password=os.environ['password'] ) 
+# provide your login credentials
+credentials = Credentials(username=os.environ['username'], password=os.environ['password'])
+# create a client for interacting with the public Amphora Data Repository
+client = AmphoraDataRepositoryClient(credentials)
 
 # https://beta.amphoradata.com/Amphorae/Detail?id=57d6593f-1889-410a-b1fb-631b6f9c9c85
 id = "57d6593f-1889-410a-b1fb-631b6f9c9c85" 
 
 try:
-    # Gets a token
-    t1_start = time.perf_counter()  
-    res = auth_api.authentication_request_token(token_request = token_request )
-    t1_stop = time.perf_counter() 
-    print("Elapsed time:", t1_stop - t1_start) # print performance indicator
-    configuration.api_key["Authorization"] = "Bearer " + res
-
-    amphora_api = a10a.AmphoraeApi(a10a.ApiClient(configuration))
+    amphora_api = a10a.AmphoraeApi(client.apiClient)
     print(f'Getting signals for: {amphora_api.amphorae_read(id).name}')
     signals = amphora_api.amphorae_signals_get_signals(id)
     properties=list((s._property for s in signals))
 
-    ts_api = a10a.TimeSeriesApi(a10a.ApiClient(configuration)) # the API for interacting with time series
+    ts_api = a10a.TimeSeriesApi(client.apiClient) # the API for interacting with time series
     tomorrow = datetime.now() + timedelta(hours=24)
     # Create a DateTimeRange to describe over what period we want data.
     time_range = a10a.DateTimeRange(_from = datetime.now(), to= tomorrow)

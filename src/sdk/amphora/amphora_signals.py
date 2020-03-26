@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 import pandas as pd
 import numpy as np
 
+import amphora.errors as errors
+import amphora.utilities as utils
 import amphora_api_client as api
 from amphora_api_client.rest import ApiException
 
@@ -17,6 +19,12 @@ class AmphoraSignals:
         self._id = amphora_id
         self._apiClient = apiClient
         self._amphoraApi = api.AmphoraeApi(apiClient)
+
+    def __getitem__(self, property_name):
+        for s in self.metadata:
+            if s._property == property_name:
+                return s
+        raise ValueError(f'{property_name} not in signals')
 
     '''
     Get's a list of Signal metadata
@@ -46,6 +54,18 @@ class AmphoraSignals:
         get_series = api.GetSeries([self._id], search_span= date_time_range, inline_variables=variables)
         time_series_data = ts_api.time_series_query_time_series( api.QueryRequest(get_series= get_series))
         return SignalData(time_series_data)
+
+    def update_attributes(self, property_name: str, attributes: dict) -> api.Signal:
+        for k in attributes.keys():
+            if utils.isString(k) and utils.isString(attributes[k]):
+                pass
+            else:
+                raise errors.InvalidDataStructure(f'The attributes with key {k} must have key and value as strings')
+
+        signal = self[property_name]
+        update_signal = api.UpdateSignal(meta = attributes)
+        return self._amphoraApi.amphorae_signals_update_signal(self._id, signal.id, update_signal = update_signal)
+
 
 class SignalData:
     def __init__(self, data: api.QueryResultPage):

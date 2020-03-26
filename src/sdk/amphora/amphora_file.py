@@ -14,6 +14,10 @@ class AmphoraFile:
         self._apiClient = apiClient
         self._amphoraApi = api.AmphoraeApi(self._apiClient)
 
+    @property
+    def name(self) -> str:
+        return self._file_name
+
     def get_attributes(self) -> dict:
         amphora_metadata = self._amphoraApi.amphorae_read(self._id)
         if self._file_name in amphora_metadata.file_attributes:
