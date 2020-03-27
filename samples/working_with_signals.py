@@ -21,4 +21,4 @@ print(df)
 temperature_signal = signals['temperature']
 
 # update the temperature's units
-signals.update_attributes(temperature_signal._property, {"units": "celcius"})
+temperature_signal.update_attributes({"units": "farenheit"})

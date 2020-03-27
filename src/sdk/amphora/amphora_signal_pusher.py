@@ -1,25 +1,24 @@
 import amphora_api_client as api
+from amphora.base import Base
 from amphora.errors import SignalNotExistError, InvalidDataError
 import amphora.utilities as utils
 import pandas as pd
 
-class AmphoraSignalPusher:
+class AmphoraSignalPusher(Base):
     def __init__(self, apiClient: api.ApiClient, amphora_id: str):
         self._id = amphora_id
-        self._apiClient = apiClient
-        self._amphoraApi = api.AmphoraeApi(apiClient)
-
+        Base.__init__(self, apiClient)
 
     def push(self, df: pd.DataFrame = None):
         dictionaries = df.to_dict(orient = 'records')
         self.push_signals_dictionaries(dictionaries)
 
     def push_signals_dictionaries(self, dictionaries: [dict]):
-        signals = self._amphoraApi.amphorae_signals_get_signals(self._id)
+        signals = self.amphoraeApi.amphorae_signals_get_signals(self._id)
         for d in dictionaries:
             validate_dictionary(signals, d)
 
-        self._amphoraApi.amphorae_signals_upload_signal_batch2(self._id, dictionaries)
+        self.amphoraeApi.amphorae_signals_upload_signal_batch2(self._id, dictionaries)
 
 
 def validate_dictionary(signals: [api.Signal], dictionary: dict):

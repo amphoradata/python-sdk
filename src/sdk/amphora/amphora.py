@@ -1,4 +1,5 @@
 import amphora_api_client as api
+from amphora.base import Base
 from amphora.amphora_file import AmphoraFile
 from amphora.amphora_signals import AmphoraSignals
 from amphora.amphora_signal_pusher import AmphoraSignalPusher
@@ -8,15 +9,13 @@ import amphora.utilities as utils
 import pandas as pd
 
 
-class Amphora:
+class Amphora(Base):
     """
     This class heplps you manage amphora
     """
     def __init__(self, apiClient: api.ApiClient, amphora_id: str):
-        self._apiClient = apiClient
         self._id = amphora_id
-        self._amphoraApi = api.AmphoraeApi(apiClient)
-        self._metadata = self._amphoraApi.amphorae_read(amphora_id)
+        Base.__init__(self, apiClient)
 
     @property
     def amphora_id(self) -> str:
@@ -30,7 +29,7 @@ class Amphora:
         """
         Gets the metadata of the Amphora
         """
-        return self._metadata
+        return self.amphoraeApi.amphorae_read(self.amphora_id)
 
     def update(self, **kwargs):
         """
@@ -60,13 +59,16 @@ class Amphora:
         
         model = amphoraApi.amphorae_update(self.amphora_id, model)
 
+    def delete(self):
+        self.amphoraeApi.amphorae_delete(self._id)
+
     def get_files(self) -> [AmphoraFile]:
         """
         Gets a list of files in this Amphora
         returns:
             [amphora.AmphoraFile]
         """
-        file_names = self._amphoraApi.amphorae_files_list_files(self._id)
+        file_names = self.amphoraeApi.amphorae_files_list_files(self._id)
         res = []
         for f in file_names:
             res.append(AmphoraFile(self._apiClient, self._id, f))
@@ -78,7 +80,7 @@ class Amphora:
         returns:
             amphora.AmphoraFile
         """
-        files = self._amphoraApi.amphorae_files_list_files(self._id)
+        files = self.amphoraeApi.amphorae_files_list_files(self._id)
         if file_name in files:
             return AmphoraFile(self._apiClient, self._id, file_name)
         else:
@@ -95,14 +97,14 @@ class Amphora:
         if not file_name:
             file_name = utils.path_leaf(file_path)
         
-        file_req = self._amphoraApi.amphorae_files_create_file_request(self._id, file_name )
+        file_req = self.amphoraeApi.amphorae_files_create_file_request(self._id, file_name )
         f = open(file_path, "rb")
         body=f.read()
         hdrs = dict({
             'x-ms-blob-type' : 'BlockBlob',
             'Content-Type': 'application/octet-stream'
             })
-        response = self._amphoraApi.api_client.rest_client.PUT(file_req.url, hdrs, body=body)
+        response = self.amphoraeApi.api_client.rest_client.PUT(file_req.url, hdrs, body=body)
         if(response.status == 201):
             print("Successfully uploaded")
         else:
@@ -132,7 +134,7 @@ class Amphora:
             amphora_api_client.Signal
         """
         signal = api.Signal(_property= property_name, value_type= value_type, attributes= attributes)
-        signal = self._amphoraApi.amphorae_signals_create_signal(self._id, signal)
+        signal = self.amphoraeApi.amphorae_signals_create_signal(self._id, signal)
         print(f'Created Signal {signal._property}')
         return signal
 
@@ -182,7 +184,7 @@ class Amphora:
             amphora_api_client.Restriction      
         """
         restriction = api.Restriction(target_organisation_id=organisation_id)
-        return self._amphoraApi.amphorae_restrictions_create(self.amphora_id, restriction)
+        return self.amphoraeApi.amphorae_restrictions_create(self.amphora_id, restriction)
     
     """
     Deletes a restriction by Id on this Amphora
@@ -190,7 +192,7 @@ class Amphora:
         restriction_id: str          The id restriction you wish to delete.
     """
     def delete_restriction_by_id(self, restriction_id: str):
-        self._amphoraApi.amphorae_restrictions_delete(self.amphora_id, restriction_id )
+        self.amphoraeApi.amphorae_restrictions_delete(self.amphora_id, restriction_id )
 
 def is_property_in_signals(signals: [api.Signal], prop: str) -> bool:
     isInSignals = False

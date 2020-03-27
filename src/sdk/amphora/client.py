@@ -1,5 +1,6 @@
 import amphora_api_client as api
 from amphora.amphora import Amphora
+from amphora.base import Base
 
 # metadata objects
 # GET
@@ -27,7 +28,7 @@ class Credentials:
         tr = api.TokenRequest(username=username, password=password)
         self.token = authApi.authentication_request_token(token_request = tr)
 
-class AmphoraDataRepositoryClient:
+class AmphoraDataRepositoryClient(Base):
     """
     The high level client for interacting with an Amphora Data Repository
     params:
@@ -37,16 +38,7 @@ class AmphoraDataRepositoryClient:
     def __init__(self, credentials: Credentials):
         configuration = api.Configuration()
         configuration.api_key["Authorization"] = "Bearer " + credentials.token
-        self._apiClient = api.ApiClient(configuration=configuration)
-
-    @property
-    def apiClient(self) -> api.ApiClient:
-        """
-        The underlying API client
-        returns:
-            amphora_api_client.ApiClient
-        """
-        return self._apiClient
+        Base.__init__(self, api.ApiClient(configuration=configuration))
 
     def create_amphora(self, name: str, description: str, **kwargs) -> Amphora:
         """
@@ -67,7 +59,7 @@ class AmphoraDataRepositoryClient:
         lat:float= kwargs["lat"] if "lat" in kwargs else None
         lon:float= kwargs["lon"] if "lon" in kwargs else None
         terms_and_conditions_id: str = kwargs["terms_and_conditions_id"] if "terms_and_conditions_id" in kwargs else None
-        labels: [str] = kwargs["lon"] if "lon" in kwargs else []
+        labels: [str] = kwargs["labels"] if "labels" in kwargs else []
         model = api.CreateAmphora(name = name, 
                                     description=description, 
                                     price= price, 

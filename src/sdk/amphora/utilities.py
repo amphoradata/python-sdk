@@ -1,3 +1,4 @@
+from typing import Sequence, TypeVar
 import ntpath
 
 def path_leaf(path: str) -> str:
@@ -20,3 +21,19 @@ def infer_value_type_from_value(value) -> str:
         return "String"
     else:
         return None
+
+T = TypeVar('ITEM') # Declare type variable
+def filter_by_id(items: [T], item_id: str) -> T:
+    for i in items:
+        if hasattr(i, 'id'):
+            if i.id == item_id:
+                return i
+        elif hasattr(i, "_id"):
+            if i._id == item_id:
+                return i
+        else:
+            raise ValueError("Item had no attribute _id or id")
+
+    # we got here, means none of them had the id
+    print(f'Warning: Item with id {item_id} was not found.')
+    return None
