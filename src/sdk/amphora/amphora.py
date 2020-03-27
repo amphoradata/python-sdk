@@ -146,7 +146,7 @@ class Amphora(Base):
         """
         return AmphoraSignals(self._apiClient, self._id)
     
-    def push_signals(self, df: pd.DataFrame, auto = True):
+    def push_signals_df(self, df: pd.DataFrame, auto = True):
         """
         Uploads data to the Data Repository as Signals in this Amphora
         params:
@@ -154,7 +154,7 @@ class Amphora(Base):
             auto: boolean [True]          Automatically create the Signals on the Amphora
 
             Note: The dataframe should have a column called 't' containing the timstamps of the time series data.
-                Dataframe's without a 't' column will automatically have 't' set to the current time.
+                Dataframes without a 't' column will automatically have 't' set to the current time.
                 Timestamps should be in UTC
                 Columns require names.
         """
@@ -173,6 +173,19 @@ class Amphora(Base):
                     value_type = utils.infer_value_type_from_value(df[column_name].iloc[0])
                     self.create_signal(df[column_name].name, value_type)
         pusher.push(df)
+    
+    def push_signals_dict_array(self, dictionaries: [dict]):
+        """
+        Uploads data to the Data Repository as Signals in this Amphora
+        params:
+            dictionary: [dict]            An array of dictionaries containing key value pairs of data
+
+            Note: The dictionaries should have a property called 't' containing the timstamps of the time series data.
+                Dictionaries without a 't' property will automatically have 't' set to the current time.
+                Timestamps should be in UTC
+        """
+        pusher = AmphoraSignalPusher(self._apiClient, self._id)
+        pusher.push_signals_dictionaries(dictionaries)
 
     # Restrictions
     def create_restriction(self, organisation_id: str) -> api.Restriction:
