@@ -1,33 +1,18 @@
-from __future__ import print_function
-import time
 import os
-import amphora_client
-from amphora_client.rest import ApiException
-from pprint import pprint
-from amphora_client.configuration import Configuration
+from amphora.client import AmphoraDataRepositoryClient, Credentials
 
-# Defining host is optional and default to http://localhost
-configuration = Configuration()
-configuration.host = "https://beta.amphoradata.com"
-# Create an instance of the API class
-auth_api = amphora_client.AuthenticationApi(amphora_client.ApiClient(configuration))
+# provide your login credentials
+credentials = Credentials(username=os.environ['username'], password=os.environ['password'])
+# create a client for interacting with the public Amphora Data Repository
+client = AmphoraDataRepositoryClient(credentials)
+# get information about the logged in user
+my_information = client.get_self()
+print(my_information)
 
-token_request = amphora_client.TokenRequest(username=os.environ['username'], password=os.environ['password'] ) 
-
-
-try:
-    # Gets a token
-    t1_start = time.perf_counter()  
-    res = auth_api.authentication_request_token(token_request = token_request)
-    t1_stop = time.perf_counter() 
-    print("Elapsed time:", t1_stop - t1_start) # print performance indicator
-
-    configuration.api_key["Authorization"] = "Bearer " + res
-    # create an instance of the Users API, now with Bearer token
-    users_api = amphora_client.UsersApi(amphora_client.ApiClient(configuration))
-    me = users_api.users_read_self()
-    print(me)
-
-except ApiException as e:
-    print("Exception when calling AuthenticationAPI: %s\n" % e)
-
+# {'about': "I'm the CTO at Amphora Data.",
+#  'email': None,
+#  'full_name': 'Rian Finnegan',
+#  'id': 'd54505c0-2756-44e6-8b99-e7fb0fbc8711',
+#  'last_modified': datetime.datetime(2020, 3, 23, 0, 3, 54, 922250, tzinfo=tzutc()),
+#  'organisation_id': '7b429e6c-2885-49cf-994d-4775ae170d64',
+#  'user_name': 'rian@amphoradata.com'}

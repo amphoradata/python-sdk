@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip install -e ../generated
+pip install -e ../src/sdk

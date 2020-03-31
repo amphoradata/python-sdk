@@ -11,7 +11,7 @@ trigger:
   paths:
     include:
     - azure-pipelines.yml
-    - generated/*
+    - src/sdk/*
     exclude:
     - README.md
     - samples/*
@@ -32,14 +32,14 @@ steps:
     #architecture: 'x64' # Options: x86, x64 (this argument applies only on Windows agents)
 - script: |
     python --version
-    pushd generated
+    pushd src/sdk
     pip install tox
     pip install -r requirements.txt
     pip install -r test-requirements.txt
     tox
   displayName: Install and Run Tests
 - script: |
-    pushd generated
+    pushd src/sdk
     pip install twine
     python setup.py sdist
     twine upload --skip-existing -u $PyPi_Username -p $PyPi_Password dist/*
