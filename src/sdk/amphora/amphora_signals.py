@@ -9,6 +9,20 @@ import amphora.utilities as utils
 import amphora_api_client as api
 from amphora_api_client.rest import ApiException
 
+tsi_api_get_series = "GetSeries"
+tsi_api_get_events = "GetEvents"
+tsi_api_aggregate_series = "AggregateSeries"
+
+class SignalData:
+    def __init__(self, data: api.QueryResultPage):
+        self._data = data
+    
+    @property
+    def data(self) -> api.QueryResultPage:
+        return self._data
+
+    def to_pandas(self, t_as_index = True, exclude_event_count = True):
+        return to_df(self.data, t_as_index, exclude_event_count)
 
 class AmphoraSignal(Base):
     '''
@@ -68,22 +82,35 @@ class AmphoraSignal(Base):
     '''
     Downloads the data to a local object
     params:
-        date_time_range [UTC] (default to 1 day)          amphora_api_client.DateTimeRange
+        date_time_range [UTC] (default to 1 day)                    amphora_api_client.DateTimeRange
+        include_wt (default TRUE)                                   bool, includes the Write Time (wt)
+        tsi_api (options: GetSeries, GetEvents, AggregateSeries)    str
     returns:
         amphora.SignalData
     '''
-    def pull(self, date_time_range: api.DateTimeRange = None) :
+    def pull(self, date_time_range: api.DateTimeRange = None, include_wt:bool = False, tsi_api:str = "GetSeries") -> SignalData:
+        validate_tsi_api_options(tsi_api)
         signals = self.amphoraeApi.amphorae_signals_get_signals(self._id)
-        signal = utils.filter_by_id(signals, self._id)
+        signal = utils.filter_by_id(signals, self._id) # filter for just 1 signal
         if(date_time_range is None):
             date_time_range = default_date_time_range()
 
         ts_api = api.TimeSeriesApi(self._apiClient) # the API for interacting with time series
         
         # Create a variable object for getting temperature data
-        variables = get_inline_variables([signal])
-        get_series = api.GetSeries([self._id], search_span= date_time_range, inline_variables=variables)
-        time_series_data = ts_api.time_series_query_time_series( api.QueryRequest(get_series= get_series))
+        variables = get_inline_variables([signal], include_wt)
+        if tsi_api == tsi_api_get_series:
+            get_series = api.GetSeries([self._id], search_span= date_time_range, inline_variables=variables)
+            qr =  api.QueryRequest(get_series=get_series)
+        elif tsi_api == tsi_api_get_events:
+            get_events = api.GetEvents([self._id], search_span= date_time_range)
+            qr =  api.QueryRequest(get_events=get_events)
+        elif tsi_api == tsi_api_aggregate_series:
+            # this might not work
+            aggregate_series = api.AggregateSeries([self._id], search_span= date_time_range, inline_variables=variables)
+            qr =  api.QueryRequest(aggregate_series=aggregate_series)
+        
+        time_series_data = ts_api.time_series_query_time_series(qr)
         return SignalData(time_series_data)
 
 
@@ -116,11 +143,14 @@ class AmphoraSignals(Base):
     '''
     Downloads the data to a local object
     params:
-        date_time_range [UTC] (default to 1 day)          amphora_api_client.DateTimeRange
+        date_time_range [UTC] (default to 1 day)                    amphora_api_client.DateTimeRange
+        include_wt (default TRUE)                                   bool, includes the Write Time (wt)
+        tsi_api (options: GetSeries, GetEvents, AggregateSeries)    str
     returns:
         amphora.SignalData
     '''
-    def pull(self, date_time_range: api.DateTimeRange = None) :
+    def pull(self, date_time_range: api.DateTimeRange = None, include_wt: bool = False, tsi_api:str ="GetSeries") -> SignalData :
+        validate_tsi_api_options(tsi_api)
         signals = self.amphoraeApi.amphorae_signals_get_signals(self._id)
         if(date_time_range is None):
             date_time_range = default_date_time_range()
@@ -128,29 +158,27 @@ class AmphoraSignals(Base):
         ts_api = api.TimeSeriesApi(self._apiClient) # the API for interacting with time series
         
         # Create a variable object for getting temperature data
-        variables = get_inline_variables(signals)
-        get_series = api.GetSeries([self._id], search_span= date_time_range, inline_variables=variables)
-        time_series_data = ts_api.time_series_query_time_series( api.QueryRequest(get_series= get_series))
+        variables = get_inline_variables(signals, include_wt)
+
+        if tsi_api == tsi_api_get_series:
+            get_series = api.GetSeries([self._id], search_span= date_time_range, inline_variables=variables)
+            qr =  api.QueryRequest(get_series=get_series)
+        elif tsi_api == tsi_api_get_events:
+            get_events = api.GetEvents([self._id], search_span= date_time_range)
+            qr =  api.QueryRequest(get_events=get_events)
+        elif tsi_api == tsi_api_aggregate_series:
+            # this might not work
+            aggregate_series = api.AggregateSeries([self._id], search_span= date_time_range, inline_variables=variables)
+            qr =  api.QueryRequest(aggregate_series=aggregate_series)
+        time_series_data = ts_api.time_series_query_time_series(qr)
         return SignalData(time_series_data)
-
-
-class SignalData:
-    def __init__(self, data: api.QueryResultPage):
-        self._data = data
-    
-    @property
-    def data(self) -> api.QueryResultPage:
-        return self._data
-
-    def to_pandas(self, t_as_index = True, exclude_event_count = True):
-        return to_df(self.data, t_as_index, exclude_event_count)
 
 
 def default_date_time_range() -> api.DateTimeRange:
     yesterday = datetime.utcnow() + timedelta(hours=-24)
     return api.DateTimeRange(_from=yesterday , to= datetime.utcnow())
 
-def get_inline_variables(signals: [api.Signal]) -> {}:
+def get_inline_variables(signals: [api.Signal], include_wt: bool) -> {}:
     variables = {}
     for signal in signals:
         if(signal.value_type == 'Numeric'):
@@ -160,6 +188,10 @@ def get_inline_variables(signals: [api.Signal]) -> {}:
             variables[signal._property] = variable
         else:
             print(f'Not adding signal {signal._property} with value type {signal.value_type}')
+    if include_wt:
+        variables["wt"] = variable = api.NumericVariable( kind="numeric", 
+            value=api.Tsx(tsx='$event.wt'), 
+            aggregation=api.Tsx(tsx = "avg($value)"))
     return variables
 
 def to_df(query_result_page: api.QueryResultPage, t_as_index: bool, exclude_event_count: bool):
@@ -188,7 +220,17 @@ def to_df(query_result_page: api.QueryResultPage, t_as_index: bool, exclude_even
 
     df.columns = column_names
 
-    if exclude_event_count:
-        del df['EventCount']
+    if exclude_event_count and "EventCount" in df:
+        del df["EventCount"]
 
     return df
+
+def validate_tsi_api_options(tsi_api:str):
+    if tsi_api == tsi_api_get_series:
+        pass
+    elif tsi_api == tsi_api_get_events:
+        pass
+    elif tsi_api == tsi_api_aggregate_series:
+        pass
+    else:
+        raise ValueError("tsi_api must be one of GetSeries, GetEvents, AggregateSeries")
