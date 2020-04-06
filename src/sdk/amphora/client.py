@@ -25,8 +25,9 @@ class Credentials:
     def __init__(self, username: str, password: str, host = "https://app.amphoradata.com"):
         configuration = api.Configuration(host=host)
         authApi = api.AuthenticationApi(api.ApiClient(configuration))
-        tr = api.TokenRequest(username=username, password=password)
-        self.token = authApi.authentication_request_token(token_request = tr)
+        details = api.LoginRequest(username= username, password= password)
+        self.token = authApi.authentication_request_token(login_request= details)
+        self.configuration = configuration
 
 class AmphoraDataRepositoryClient(Base):
     """
@@ -36,7 +37,7 @@ class AmphoraDataRepositoryClient(Base):
         password: str           Your password
     """
     def __init__(self, credentials: Credentials):
-        configuration = api.Configuration()
+        configuration = credentials.configuration
         configuration.api_key["Authorization"] = "Bearer " + credentials.token
         Base.__init__(self, api.ApiClient(configuration=configuration))
 
