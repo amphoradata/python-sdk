@@ -33,7 +33,7 @@ def validate_dictionary(signals: [api.Signal], dictionary: dict):
             raise SignalNotExistError(p)
         
         v = dictionary[p]
-        if utils.isNumber(v) or utils.isString(v):
+        if utils.isNumber(v) or utils.isString(v) or v is None:
             pass
         elif p == 't':
             pass
