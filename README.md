@@ -26,8 +26,7 @@ amphora = client.get_amphora("e6097df0-952c-46a6-84b0-ccc29bf1b0f7")
 amphora.push_file("/path/to/a/file")
 
 # share with your collaborators
-amphora.share_with("my_friends_email@ghotmail.com")
-
+amphora.share_with("amy")
 ```
 
 # Samples
