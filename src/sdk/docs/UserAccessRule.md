@@ -1,11 +1,12 @@
-# Restriction
+# UserAccessRule
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**kind** | [**OneOfRestrictionKind**](OneOfRestrictionKind.md) | The kind of Restriction (Allow [default] or Deny) | [optional] 
-**target_organisation_id** | **str** | Target Organisation&#39;s Id | 
+**allow_or_deny** | **str** |  | [optional] 
+**priority** | **int** |  | [optional] 
+**username** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
