@@ -1,5 +1,6 @@
 import amphora_api_client as api
 from amphora.base import Base
+from amphora.amphora_access import AmphoraAccess
 from amphora.amphora_file import AmphoraFile
 from amphora.amphora_signals import AmphoraSignals
 from amphora.amphora_signal_pusher import AmphoraSignalPusher
@@ -187,25 +188,23 @@ class Amphora(Base):
         pusher = AmphoraSignalPusher(self._apiClient, self._id)
         pusher.push_signals_dictionaries(dictionaries)
 
-    # Restrictions
-    def create_restriction(self, organisation_id: str) -> api.Restriction:
+    # Access
+    def share_with(self, username: str) -> api.UserAccessRule:
         """
         Creates a restriction by Organisation on this Amphora
         params:
-            organisation_id: str          The organisation restricted from accessing this Amphora.
+            username: str          The username of the user you want to share the data with.
         returns:
-            amphora_api_client.Restriction      
+            amphora_api_client.UserAccessRule      
         """
-        restriction = api.Restriction(target_organisation_id=organisation_id)
-        return self.amphoraeApi.amphorae_restrictions_create(self.amphora_id, restriction)
+        access_controller = AmphoraAccess(self._apiClient, self._id)
+        return access_controller.create_user_rule(username, 'Allow')
     
     """
-    Deletes a restriction by Id on this Amphora
-    params:
-        restriction_id: str          The id restriction you wish to delete.
+    Get's an AccessRules object for working with access rules.
     """
-    def delete_restriction_by_id(self, restriction_id: str):
-        self.amphoraeApi.amphorae_restrictions_delete(self.amphora_id, restriction_id )
+    def access_rules(self) -> AmphoraAccess:
+        return AmphoraAccess(self._apiClient, self._id)
 
 def is_property_in_signals(signals: [api.Signal], prop: str) -> bool:
     isInSignals = False
