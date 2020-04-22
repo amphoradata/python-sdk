@@ -1,7 +1,9 @@
 version: "3"
 services:
   generator:
-    image: openapitools/openapi-generator-cli:v4.2.0
+    image: flanagan89/openapi-generator-cli-python:latest
     volumes: 
       - ${PWD}/src:/local
-    command: generate -i https://app.amphoradata.com/swagger/v1/swagger.json -g python -o /local/sdk -c local/config.yaml --skip-validate-spec
+    environment: 
+      - PYTHON_POST_PROCESS_FILE=yapf -i
+    command: generate -i https://app.amphoradata.com/swagger/v1/swagger.json -g python -o /local/sdk -c local/config.yaml --skip-validate-spec --enable-post-process-file
