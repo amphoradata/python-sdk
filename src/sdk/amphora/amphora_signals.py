@@ -157,6 +157,21 @@ class AmphoraSignals(Base):
         '''
         return self.amphoraeApi.amphorae_signals_get_signals(self._id)
 
+    def contains_signal(self, _property: str) -> bool:
+        """
+        Get's a list of Signal metadata
+        params:
+            _property: str              The name of the property to check
+        returns:
+            bool                        True if a signal exists with that property.
+        """
+        try:
+            signal = self.amphoraeApi.amphorae_signals_get_signal(self._id, _property=_property)
+            return signal is not None
+        except ApiException as e:
+            return False
+
+
     def pull(self,
              date_time_range: api.DateTimeRange = None,
              include_wt: bool = False,
