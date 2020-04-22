@@ -1,8 +1,11 @@
+from logging import getLogger
+logger = getLogger('amphora_signal_pusher.py')
+import pandas as pd
+
 import amphora_api_client as api
 from amphora.base import Base
 from amphora.errors import SignalNotExistError, InvalidDataError
 import amphora.utilities as utils
-import pandas as pd
 
 
 class AmphoraSignalPusher(Base):

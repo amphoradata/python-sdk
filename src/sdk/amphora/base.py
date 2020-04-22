@@ -1,3 +1,6 @@
+from logging import getLogger
+logger = getLogger('base.py')
+
 import amphora_api_client as api
 
 

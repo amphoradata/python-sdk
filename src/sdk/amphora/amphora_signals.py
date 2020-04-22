@@ -1,3 +1,6 @@
+from logging import getLogger
+logger = getLogger('amphora_signals.py')
+
 from datetime import datetime, timedelta
 
 import pandas as pd
@@ -170,6 +173,7 @@ class AmphoraSignals(Base):
                 self._id, _property=_property)
             return signal is not None
         except ApiException as e:
+            logger.error(f'An Api Exception was thrown: {e}')
             return False
 
     def pull(self,
@@ -229,7 +233,7 @@ def get_inline_variables(signals: [api.Signal], include_wt: bool) -> {}:
                 aggregation=api.Tsx(tsx="it doesn't matter"))
             variables[signal._property] = variable
         else:
-            print(
+            logger.info(
                 f'Not adding signal {signal._property} with value type {signal.value_type}'
             )
     if include_wt:

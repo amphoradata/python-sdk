@@ -1,3 +1,6 @@
+from logging import getLogger
+logger = getLogger('amphora_file.py')
+
 import os
 
 from amphora.base import Base

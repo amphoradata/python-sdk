@@ -1,3 +1,7 @@
+from logging import getLogger
+logger = getLogger('errors.py')
+
+
 class Error(Exception):
     """Base class for other exceptions"""
     pass
@@ -16,13 +20,13 @@ class AmphoraFileNotFoundError(Error):
 class FileExistsError(Error):
     """The local file already exists"""
     def __init__(self, path: str):
-        print(f'The local file {path} aready exists.')
+        logger.error(f'The local file {path} aready exists.')
 
 
 class SignalNotExistError(Error):
     """The signal doesn't exist on the Amphora"""
     def __init__(self, _property: str):
-        print(
+        logger.error(
             f'A signal with property {_property} does not exist on this Amphora.'
         )
 
@@ -30,10 +34,10 @@ class SignalNotExistError(Error):
 class InvalidDataError(Error):
     """The data is invalid"""
     def __init__(self, message: str):
-        print(f'The data is invalid, {message}')
+        logger.error(f'The data is invalid, {message}')
 
 
 class InvalidDataStructure(Error):
     """The data structure is invalid"""
     def __init__(self, message: str):
-        print(f'The data is invalid. {message}')
+        logger.error(f'The data is invalid. {message}')

@@ -1,3 +1,6 @@
+from logging import getLogger
+logger = getLogger('amphora.py')
+
 import amphora_api_client as api
 from amphora.base import Base
 from amphora.amphora_access import AmphoraAccess
@@ -114,9 +117,9 @@ class Amphora(Base):
                                                                hdrs,
                                                                body=body)
         if (response.status == 201):
-            print("Successfully uploaded")
+            logger.info("Successfully uploaded")
         else:
-            print("Error uploading")
+            logger.error("Error uploading")
             raise errors.ApiError(response.data)
 
     def pull_file(self, file_name: str, download_path: str):
@@ -149,7 +152,7 @@ class Amphora(Base):
                             attributes=attributes)
         signal = self.amphoraeApi.amphorae_signals_create_signal(
             self._id, signal)
-        print(f'Created Signal {signal._property}')
+        logger.info(f'Created Signal {signal._property}')
         return signal
 
     def get_signals(self) -> AmphoraSignals:
