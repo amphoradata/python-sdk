@@ -4,7 +4,8 @@ from amphora.client import AmphoraDataRepositoryClient, Credentials
 from amphora_api_client import DateTimeRange
 
 # provide your login credentials
-credentials = Credentials(username=os.environ['username'], password=os.environ['password'])
+credentials = Credentials(username=os.environ['username'],
+                          password=os.environ['password'])
 # create a client for interacting with the public Amphora Data Repository
 client = AmphoraDataRepositoryClient(credentials)
 
@@ -16,8 +17,11 @@ signals = amphora.get_signals()
 
 # download some signals and convert to a pandas dataframe
 
-dt_range = DateTimeRange(_from=datetime.utcnow() + timedelta(days=-1), to=datetime.utcnow() + timedelta(days=2))
-df = signals.pull( date_time_range= dt_range, include_wt=True, tsi_api="GetEvents").to_pandas()
+dt_range = DateTimeRange(_from=datetime.utcnow() + timedelta(days=-1),
+                         to=datetime.utcnow() + timedelta(days=2))
+df = signals.pull(date_time_range=dt_range,
+                  include_wt=True,
+                  tsi_api="GetEvents").to_pandas()
 
 print(df)
 

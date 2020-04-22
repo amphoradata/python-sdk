@@ -2,7 +2,8 @@ import os
 from amphora.client import AmphoraDataRepositoryClient, Credentials
 
 # provide your login credentials
-credentials = Credentials(username=os.environ['username'], password=os.environ['password'])
+credentials = Credentials(username=os.environ['username'],
+                          password=os.environ['password'])
 # create a client for interacting with the public Amphora Data Repository
 client = AmphoraDataRepositoryClient(credentials)
 # get information about the logged in user

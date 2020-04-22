@@ -2,7 +2,8 @@ import os
 from amphora.client import AmphoraDataRepositoryClient, Credentials
 
 # provide your login credentials
-credentials = Credentials(username=os.environ['username'], password=os.environ['password'])
+credentials = Credentials(username=os.environ['username'],
+                          password=os.environ['password'])
 # create a client for interacting with the public Amphora Data Repository
 client = AmphoraDataRepositoryClient(credentials)
 
@@ -20,7 +21,8 @@ for f in files:
 
 #downloads the file
 file_reference = amphora.get_file("dog.jpg")
-file_reference.pull("a_new_file.jpg") # downloads the file to your local machine
+file_reference.pull(
+    "a_new_file.jpg")  # downloads the file to your local machine
 
 # TODO: enable file deletion
 # file_reference.delete()
