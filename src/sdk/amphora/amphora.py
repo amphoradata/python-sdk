@@ -24,7 +24,7 @@ class Amphora(Base):
         Gets the Amphora Id
         """
         return self._id
-    
+
     @property
     def metadata(self) -> api.DetailedAmphora:
         """
@@ -51,13 +51,17 @@ class Amphora(Base):
         amphoraApi = api.AmphoraeApi(self._apiClient)
         model = amphoraApi.amphorae_read(self.amphora_id)
         model.name = kwargs["name"] if "name" in kwargs else model.name
-        model.description = kwargs["description"] if "description" in kwargs else model.description
-        model.price= kwargs["price"] if "price" in kwargs else model.price
-        model.lat:float= kwargs["lat"] if "lat" in kwargs else model.lat
-        model.lon:float= kwargs["lon"] if "lon" in kwargs else model.lon
-        model.terms_and_conditions_id: str = kwargs["terms_and_conditions_id"] if "terms_and_conditions_id" in kwargs else model.terms_and_conditions_id
-        model.labels: [str] = ",".join(kwargs["labels"]) if "labels" in kwargs else model.labels
-        
+        model.description = kwargs[
+            "description"] if "description" in kwargs else model.description
+        model.price = kwargs["price"] if "price" in kwargs else model.price
+        model.lat: float = kwargs["lat"] if "lat" in kwargs else model.lat
+        model.lon: float = kwargs["lon"] if "lon" in kwargs else model.lon
+        model.terms_and_conditions_id: str = kwargs[
+            "terms_and_conditions_id"] if "terms_and_conditions_id" in kwargs else model.terms_and_conditions_id
+        model.labels: [
+            str
+        ] = ",".join(kwargs["labels"]) if "labels" in kwargs else model.labels
+
         model = amphoraApi.amphorae_update(self.amphora_id, model)
 
     def delete(self):
@@ -97,16 +101,19 @@ class Amphora(Base):
         # open the file
         if not file_name:
             file_name = utils.path_leaf(file_path)
-        
-        file_req = self.amphoraeApi.amphorae_files_create_file_request(self._id, file_name )
+
+        file_req = self.amphoraeApi.amphorae_files_create_file_request(
+            self._id, file_name)
         f = open(file_path, "rb")
-        body=f.read()
+        body = f.read()
         hdrs = dict({
-            'x-ms-blob-type' : 'BlockBlob',
+            'x-ms-blob-type': 'BlockBlob',
             'Content-Type': 'application/octet-stream'
-            })
-        response = self.amphoraeApi.api_client.rest_client.PUT(file_req.url, hdrs, body=body)
-        if(response.status == 201):
+        })
+        response = self.amphoraeApi.api_client.rest_client.PUT(file_req.url,
+                                                               hdrs,
+                                                               body=body)
+        if (response.status == 201):
             print("Successfully uploaded")
         else:
             print("Error uploading")
@@ -122,7 +129,10 @@ class Amphora(Base):
         file_ref = self.get_file(file_name)
         file_ref.pull(download_path)
 
-    def create_signal(self, property_name: str, value_type = 'Numeric', attributes = {} ) -> api.Signal: 
+    def create_signal(self,
+                      property_name: str,
+                      value_type='Numeric',
+                      attributes={}) -> api.Signal:
         """
         Creates a Signal definition in this Amphora.
         params:
@@ -134,8 +144,11 @@ class Amphora(Base):
         returns:
             amphora_api_client.Signal
         """
-        signal = api.Signal(_property= property_name, value_type= value_type, attributes= attributes)
-        signal = self.amphoraeApi.amphorae_signals_create_signal(self._id, signal)
+        signal = api.Signal(_property=property_name,
+                            value_type=value_type,
+                            attributes=attributes)
+        signal = self.amphoraeApi.amphorae_signals_create_signal(
+            self._id, signal)
         print(f'Created Signal {signal._property}')
         return signal
 
@@ -146,8 +159,8 @@ class Amphora(Base):
             amphora.AmphoraSignals
         """
         return AmphoraSignals(self._apiClient, self._id)
-    
-    def push_signals_df(self, df: pd.DataFrame, auto = True):
+
+    def push_signals_df(self, df: pd.DataFrame, auto=True):
         """
         Uploads data to the Data Repository as Signals in this Amphora
         params:
@@ -167,14 +180,21 @@ class Amphora(Base):
             for column_name in df:
                 if not df[column_name].name:
                     raise errors.InvalidDataStructure("Column has no name")
-                if is_property_in_signals(signals.metadata, df[column_name].name) or df[column_name].name == 't':
-                    print(f'Signal {df[column_name].name} exists on Amphora({self._id})')
+                if is_property_in_signals(
+                        signals.metadata,
+                        df[column_name].name) or df[column_name].name == 't':
+                    print(
+                        f'Signal {df[column_name].name} exists on Amphora({self._id})'
+                    )
                 else:
-                    print(f'Auto creating Signal {df[column_name].name} on Amphora({self._id})')
-                    value_type = utils.infer_value_type_from_value(df[column_name].iloc[0])
+                    print(
+                        f'Auto creating Signal {df[column_name].name} on Amphora({self._id})'
+                    )
+                    value_type = utils.infer_value_type_from_value(
+                        df[column_name].iloc[0])
                     self.create_signal(df[column_name].name, value_type)
         pusher.push(df)
-    
+
     def push_signals_dict_array(self, dictionaries: [dict]):
         """
         Uploads data to the Data Repository as Signals in this Amphora
@@ -199,12 +219,14 @@ class Amphora(Base):
         """
         access_controller = AmphoraAccess(self._apiClient, self._id)
         return access_controller.create_user_rule(username, 'Allow')
-    
+
     """
     Get's an AccessRules object for working with access rules.
     """
+
     def access_rules(self) -> AmphoraAccess:
         return AmphoraAccess(self._apiClient, self._id)
+
 
 def is_property_in_signals(signals: [api.Signal], prop: str) -> bool:
     isInSignals = False
@@ -213,4 +235,3 @@ def is_property_in_signals(signals: [api.Signal], prop: str) -> bool:
             isInSignals = True
             break
     return isInSignals
-    

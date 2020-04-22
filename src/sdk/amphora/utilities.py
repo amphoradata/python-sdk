@@ -1,18 +1,22 @@
 from typing import Sequence, TypeVar
 import ntpath
 
+
 def path_leaf(path: str) -> str:
     head, tail = ntpath.split(path)
     return tail or ntpath.basename(head)
 
+
 def isNumber(x) -> bool:
     try:
-        return bool(0 == x*0) # multiply by zero should be zero
+        return bool(0 == x * 0)  # multiply by zero should be zero
     except:
         return False
 
+
 def isString(x) -> bool:
     return isinstance(x, str)
+
 
 def infer_value_type_from_value(value) -> str:
     if isNumber(value):
@@ -22,7 +26,10 @@ def infer_value_type_from_value(value) -> str:
     else:
         return None
 
-T = TypeVar('ITEM') # Declare type variable
+
+T = TypeVar('ITEM')  # Declare type variable
+
+
 def filter_by_id(items: [T], item_id: str) -> T:
     for i in items:
         if hasattr(i, 'id'):

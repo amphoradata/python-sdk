@@ -15,6 +15,7 @@ from amphora.base import Base
 # management
 # SHARE
 
+
 class Credentials:
     """
     A container for your Amphora Data Credentials
@@ -22,12 +23,17 @@ class Credentials:
         username: str           Your Amphora Data username
         password: str           Your password
     """
-    def __init__(self, username: str, password: str, host = "https://app.amphoradata.com"):
+    def __init__(self,
+                 username: str,
+                 password: str,
+                 host="https://app.amphoradata.com"):
         configuration = api.Configuration(host=host)
         authApi = api.AuthenticationApi(api.ApiClient(configuration))
-        details = api.LoginRequest(username= username, password= password)
-        self.token = authApi.authentication_request_token(login_request= details)
+        details = api.LoginRequest(username=username, password=password)
+        self.token = authApi.authentication_request_token(
+            login_request=details)
         self.configuration = configuration
+
 
 class AmphoraDataRepositoryClient(Base):
     """
@@ -56,18 +62,20 @@ class AmphoraDataRepositoryClient(Base):
         returns:
             amphora.Amphora
         """
-        price= kwargs["price"] if "price" in kwargs else 0
-        lat:float= kwargs["lat"] if "lat" in kwargs else None
-        lon:float= kwargs["lon"] if "lon" in kwargs else None
-        terms_and_conditions_id: str = kwargs["terms_and_conditions_id"] if "terms_and_conditions_id" in kwargs else None
+        price = kwargs["price"] if "price" in kwargs else 0
+        lat: float = kwargs["lat"] if "lat" in kwargs else None
+        lon: float = kwargs["lon"] if "lon" in kwargs else None
+        terms_and_conditions_id: str = kwargs[
+            "terms_and_conditions_id"] if "terms_and_conditions_id" in kwargs else None
         labels: [str] = kwargs["labels"] if "labels" in kwargs else []
-        model = api.CreateAmphora(name = name, 
-                                    description=description, 
-                                    price= price, 
-                                    terms_and_conditions_id= terms_and_conditions_id, 
-                                    labels= ",".join(labels),
-                                    lat = lat,
-                                    lon = lon)
+        model = api.CreateAmphora(
+            name=name,
+            description=description,
+            price=price,
+            terms_and_conditions_id=terms_and_conditions_id,
+            labels=",".join(labels),
+            lat=lat,
+            lon=lon)
         details = api.AmphoraeApi(self.apiClient).amphorae_create(model)
         return Amphora(self.apiClient, details.id)
 

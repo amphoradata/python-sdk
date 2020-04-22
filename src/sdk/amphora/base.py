@@ -1,5 +1,6 @@
 import amphora_api_client as api
 
+
 class Base:
     def __init__(self, apiClient: api.ApiClient):
         self._apiClient = apiClient

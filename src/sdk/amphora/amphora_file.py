@@ -3,13 +3,14 @@ import os
 from amphora.base import Base
 import amphora_api_client as api
 from amphora.errors import FileExistsError
-
 """
 This class helps you manage Amphora Files
 """
+
+
 class AmphoraFile(Base):
-    
-    def __init__(self, apiClient: api.ApiClient, amphora_id: str, file_name: str):
+    def __init__(self, apiClient: api.ApiClient, amphora_id: str,
+                 file_name: str):
         self._id = amphora_id
         self._file_name = file_name
         Base.__init__(self, apiClient)
@@ -29,7 +30,8 @@ class AmphoraFile(Base):
         if os.path.exists(path):
             raise FileExistsError(path)
         # _preload_content=False allows binary content to not be attempted to be converted to a string
-        httpResponse = self.amphoraeApi.amphorae_files_download_file(self._id, self._file_name, _preload_content=False)
+        httpResponse = self.amphoraeApi.amphorae_files_download_file(
+            self._id, self._file_name, _preload_content=False)
         #open and read the file after the appending:
         f = open(path, "wb")
         f.write(httpResponse.data)

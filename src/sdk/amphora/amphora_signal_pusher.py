@@ -4,13 +4,14 @@ from amphora.errors import SignalNotExistError, InvalidDataError
 import amphora.utilities as utils
 import pandas as pd
 
+
 class AmphoraSignalPusher(Base):
     def __init__(self, apiClient: api.ApiClient, amphora_id: str):
         self._id = amphora_id
         Base.__init__(self, apiClient)
 
     def push(self, df: pd.DataFrame = None):
-        dictionaries = df.to_dict(orient = 'records')
+        dictionaries = df.to_dict(orient='records')
         self.push_signals_dictionaries(dictionaries)
 
     def push_signals_dictionaries(self, dictionaries: [dict]):
@@ -18,7 +19,8 @@ class AmphoraSignalPusher(Base):
         for d in dictionaries:
             validate_dictionary(signals, d)
 
-        self.amphoraeApi.amphorae_signals_upload_signal_batch2(self._id, dictionaries)
+        self.amphoraeApi.amphorae_signals_upload_signal_batch2(
+            self._id, dictionaries)
 
 
 def validate_dictionary(signals: [api.Signal], dictionary: dict):
@@ -31,11 +33,12 @@ def validate_dictionary(signals: [api.Signal], dictionary: dict):
                 isInSignals = True
         if isInSignals == False:
             raise SignalNotExistError(p)
-        
+
         v = dictionary[p]
         if utils.isNumber(v) or utils.isString(v) or v is None:
             pass
         elif p == 't':
             pass
         else:
-            raise InvalidDataError(f'the value {v} for key {p} neither string nor number')
+            raise InvalidDataError(
+                f'the value {v} for key {p} neither string nor number')
