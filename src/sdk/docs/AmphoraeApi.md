@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**amphorae_access_controls_create_for_organisation**](AmphoraeApi.md#amphorae_access_controls_create_for_organisation) | **POST** /api/amphorae/{id}/AccessControls/ForOrganisation | Creates an Access Control Rule on this Amphora.
 [**amphorae_access_controls_create_for_user**](AmphoraeApi.md#amphorae_access_controls_create_for_user) | **POST** /api/amphorae/{id}/AccessControls/ForUser | Creates an Access Control rule on this Amphora.
 [**amphorae_access_controls_delete**](AmphoraeApi.md#amphorae_access_controls_delete) | **DELETE** /api/amphorae/{id}/AccessControls/{ruleId} | Deletes an Access Control on this Amphora.
+[**amphorae_access_controls_get_organisation_rules**](AmphoraeApi.md#amphorae_access_controls_get_organisation_rules) | **GET** /api/amphorae/{id}/AccessControls/ForOrganisation | Get&#39;s the list of access rules applied to organisations.
+[**amphorae_access_controls_get_user_rules**](AmphoraeApi.md#amphorae_access_controls_get_user_rules) | **GET** /api/amphorae/{id}/AccessControls/ForUser | Get&#39;s the list of access rules applied to users.
 [**amphorae_create**](AmphoraeApi.md#amphorae_create) | **POST** /api/amphorae | Creates a new empty Amphora in the user&#39;s organisation.
 [**amphorae_delete**](AmphoraeApi.md#amphorae_delete) | **DELETE** /api/amphorae/{id} | Deletes an Amphora.
 [**amphorae_files_create_file_request**](AmphoraeApi.md#amphorae_files_create_file_request) | **POST** /api/amphorae/{id}/files/{file} | Creates a file. Returns a blob URL to upload to.
@@ -216,6 +218,130 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | An Empty 200. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphorae_access_controls_get_organisation_rules**
+> list[OrganisationAccessRule] amphorae_access_controls_get_organisation_rules(id, x_amphoradata_version=x_amphoradata_version)
+
+Get's the list of access rules applied to organisations.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Amphora Id.
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    # Get's the list of access rules applied to organisations.
+    api_response = api_instance.amphorae_access_controls_get_organisation_rules(id, x_amphoradata_version=x_amphoradata_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_access_controls_get_organisation_rules: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Amphora Id. | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+[**list[OrganisationAccessRule]**](OrganisationAccessRule.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of rules. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphorae_access_controls_get_user_rules**
+> list[UserAccessRule] amphorae_access_controls_get_user_rules(id, x_amphoradata_version=x_amphoradata_version)
+
+Get's the list of access rules applied to users.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Amphora Id.
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    # Get's the list of access rules applied to users.
+    api_response = api_instance.amphorae_access_controls_get_user_rules(id, x_amphoradata_version=x_amphoradata_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_access_controls_get_user_rules: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Amphora Id. | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+[**list[UserAccessRule]**](UserAccessRule.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of rules. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

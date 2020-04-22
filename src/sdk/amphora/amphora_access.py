@@ -6,6 +6,13 @@ class AmphoraAccess(Base):
         self._id = amphora_id
         Base.__init__(self, apiClient)
 
+    def get_organisation_rules(self):
+        """
+        Returns a list of access rules applied to this Amphora.
+        returns:
+            
+        """
+
      # Access Rules
     def create_organisation_rule(self, organisation_id: str, allow_or_deny: str = 'Deny', priority: int = 100) -> api.OrganisationAccessRule:
         """
