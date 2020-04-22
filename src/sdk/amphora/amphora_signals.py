@@ -166,11 +166,11 @@ class AmphoraSignals(Base):
             bool                        True if a signal exists with that property.
         """
         try:
-            signal = self.amphoraeApi.amphorae_signals_get_signal(self._id, _property=_property)
+            signal = self.amphoraeApi.amphorae_signals_get_signal(
+                self._id, _property=_property)
             return signal is not None
         except ApiException as e:
             return False
-
 
     def pull(self,
              date_time_range: api.DateTimeRange = None,
