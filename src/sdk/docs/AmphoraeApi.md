@@ -16,7 +16,8 @@ Method | HTTP request | Description
 [**amphorae_files_download_file**](AmphoraeApi.md#amphorae_files_download_file) | **GET** /api/amphorae/{id}/files/{file} | Get&#39;s the contents of a file. Returns application/octet-stream.
 [**amphorae_files_list_files**](AmphoraeApi.md#amphorae_files_list_files) | **GET** /api/amphorae/{id}/files | Get&#39;s a list of an Amphora&#39;s files.
 [**amphorae_files_write_file_metadata**](AmphoraeApi.md#amphorae_files_write_file_metadata) | **POST** /api/amphorae/{id}/files/{file}/meta | 
-[**amphorae_read**](AmphoraeApi.md#amphorae_read) | **GET** /api/amphorae/{id} | Get&#39;s details of an Amphora by Id.
+[**amphorae_list**](AmphoraeApi.md#amphorae_list) | **GET** /api/amphorae | Gets a list of Amphora for yourself or your org, created or purchased by you (or organisation).
+[**amphorae_read**](AmphoraeApi.md#amphorae_read) | **GET** /api/amphorae/{id} | Gets details of an Amphora by Id.
 [**amphorae_signals_create_signal**](AmphoraeApi.md#amphorae_signals_create_signal) | **POST** /api/amphorae/{id}/signals | Associates a signal with an Amphora. Signal is created if not existing.
 [**amphorae_signals_get_signal**](AmphoraeApi.md#amphorae_signals_get_signal) | **GET** /api/amphorae/{id}/signals/{property} | Get&#39;s the signals associated with an Amphora.
 [**amphorae_signals_get_signals**](AmphoraeApi.md#amphorae_signals_get_signals) | **GET** /api/amphorae/{id}/signals | Get&#39;s the signals associated with an Amphora.
@@ -790,10 +791,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **amphorae_list**
+> list[DetailedAmphora] amphorae_list(scope=scope, access_type=access_type, x_amphoradata_version=x_amphoradata_version)
+
+Gets a list of Amphora for yourself or your org, created or purchased by you (or organisation).
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
+scope = 'self' # str | 'self' or 'organisation'. Defaults to self. (optional) (default to 'self')
+access_type = 'created' # str | 'created' or 'purchased'. Defaults to created. (optional) (default to 'created')
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    # Gets a list of Amphora for yourself or your org, created or purchased by you (or organisation).
+    api_response = api_instance.amphorae_list(scope=scope, access_type=access_type, x_amphoradata_version=x_amphoradata_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scope** | **str**| &#39;self&#39; or &#39;organisation&#39;. Defaults to self. | [optional] [default to &#39;self&#39;]
+ **access_type** | **str**| &#39;created&#39; or &#39;purchased&#39;. Defaults to created. | [optional] [default to &#39;created&#39;]
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+[**list[DetailedAmphora]**](DetailedAmphora.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of Amphora. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **amphorae_read**
 > DetailedAmphora amphorae_read(id, x_amphoradata_version=x_amphoradata_version)
 
-Get's details of an Amphora by Id.
+Gets details of an Amphora by Id.
 
 ### Example
 
@@ -818,7 +883,7 @@ id = 'id_example' # str | Amphora Id.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
-    # Get's details of an Amphora by Id.
+    # Gets details of an Amphora by Id.
     api_response = api_instance.amphorae_read(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
