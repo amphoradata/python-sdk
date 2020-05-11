@@ -4,5 +4,6 @@ rm src/sdk/docs
 rm src/sdk/dist
 docker-compose run generator
 
-echo "numpy" >> src/sdk/requirements.txt
-echo "pandas" >> src/sdk/requirements.txt
+echo "numpy" | out-file -append -encoding UTF8 src/sdk/requirements.txt 
+echo "pandas" | out-file -append -encoding UTF8 src/sdk/requirements.txt 
+
