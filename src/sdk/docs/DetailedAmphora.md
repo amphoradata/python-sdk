@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | 
 **lat** | **float** |  | [optional] 
 **lon** | **float** |  | [optional] 
-**terms_and_conditions_id** | **str** |  | [optional] 
+**terms_of_use_id** | **str** |  | [optional] 
 **file_attributes** | [**dict(str, AttributeStore)**](AttributeStore.md) |  | [optional] 
 **organisation_id** | **str** |  | [optional] 
 **purchase_count** | **int** |  | [optional] 

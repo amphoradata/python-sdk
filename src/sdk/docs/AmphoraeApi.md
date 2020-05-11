@@ -4,9 +4,13 @@ All URIs are relative to *https://app.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**amphora_quality_get**](AmphoraeApi.md#amphora_quality_get) | **GET** /api/amphorae/{id}/quality | Creates an Access Control rule on this Amphora.
+[**amphora_quality_set**](AmphoraeApi.md#amphora_quality_set) | **POST** /api/amphorae/{id}/quality | Creates an Access Control rule on this Amphora.
+[**amphorae_access_controls_create_for_all**](AmphoraeApi.md#amphorae_access_controls_create_for_all) | **POST** /api/amphorae/{id}/AccessControls/ForAll | Creates an Access Control Rule for all on this Amphora.
 [**amphorae_access_controls_create_for_organisation**](AmphoraeApi.md#amphorae_access_controls_create_for_organisation) | **POST** /api/amphorae/{id}/AccessControls/ForOrganisation | Creates an Access Control Rule on this Amphora.
 [**amphorae_access_controls_create_for_user**](AmphoraeApi.md#amphorae_access_controls_create_for_user) | **POST** /api/amphorae/{id}/AccessControls/ForUser | Creates an Access Control rule on this Amphora.
 [**amphorae_access_controls_delete**](AmphoraeApi.md#amphorae_access_controls_delete) | **DELETE** /api/amphorae/{id}/AccessControls/{ruleId} | Deletes an Access Control on this Amphora.
+[**amphorae_access_controls_get_for_all_rule**](AmphoraeApi.md#amphorae_access_controls_get_for_all_rule) | **GET** /api/amphorae/{id}/AccessControls/ForAll | Get&#39;s the &#39;for all&#39; rule, if it exists, else an empty 200.
 [**amphorae_access_controls_get_organisation_rules**](AmphoraeApi.md#amphorae_access_controls_get_organisation_rules) | **GET** /api/amphorae/{id}/AccessControls/ForOrganisation | Get&#39;s the list of access rules applied to organisations.
 [**amphorae_access_controls_get_user_rules**](AmphoraeApi.md#amphorae_access_controls_get_user_rules) | **GET** /api/amphorae/{id}/AccessControls/ForUser | Get&#39;s the list of access rules applied to users.
 [**amphorae_create**](AmphoraeApi.md#amphorae_create) | **POST** /api/amphorae | Creates a new empty Amphora in the user&#39;s organisation.
@@ -29,6 +33,196 @@ Method | HTTP request | Description
 [**amphorae_update**](AmphoraeApi.md#amphorae_update) | **PUT** /api/amphorae/{id} | Updates the details of an Amphora by Id.
 [**purchases_purchase**](AmphoraeApi.md#purchases_purchase) | **POST** /api/Amphorae/{id}/Purchases | Purchases an Amphora as the logged in user.
 
+
+# **amphora_quality_get**
+> Quality amphora_quality_get(id, x_amphoradata_version=x_amphoradata_version)
+
+Creates an Access Control rule on this Amphora.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Amphora Id.
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    # Creates an Access Control rule on this Amphora.
+    api_response = api_instance.amphora_quality_get(id, x_amphoradata_version=x_amphoradata_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphora_quality_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Amphora Id. | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+[**Quality**](Quality.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The rule. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphora_quality_set**
+> Quality amphora_quality_set(id, quality, x_amphoradata_version=x_amphoradata_version)
+
+Creates an Access Control rule on this Amphora.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Amphora Id.
+quality = amphora_api_client.Quality() # Quality | The data quality metrics.
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    # Creates an Access Control rule on this Amphora.
+    api_response = api_instance.amphora_quality_set(id, quality, x_amphoradata_version=x_amphoradata_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphora_quality_set: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Amphora Id. | 
+ **quality** | [**Quality**](Quality.md)| The data quality metrics. | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+[**Quality**](Quality.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The rule. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphorae_access_controls_create_for_all**
+> AllAccessRule amphorae_access_controls_create_for_all(id, all_access_rule, x_amphoradata_version=x_amphoradata_version)
+
+Creates an Access Control Rule for all on this Amphora.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Amphora Id.
+all_access_rule = amphora_api_client.AllAccessRule() # AllAccessRule | The rule to create.
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    # Creates an Access Control Rule for all on this Amphora.
+    api_response = api_instance.amphorae_access_controls_create_for_all(id, all_access_rule, x_amphoradata_version=x_amphoradata_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_access_controls_create_for_all: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Amphora Id. | 
+ **all_access_rule** | [**AllAccessRule**](AllAccessRule.md)| The rule to create. | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+[**AllAccessRule**](AllAccessRule.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The same rule. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_access_controls_create_for_organisation**
 > UserAccessRule amphorae_access_controls_create_for_organisation(id, organisation_access_rule, x_amphoradata_version=x_amphoradata_version)
@@ -219,6 +413,68 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | An Empty 200. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **amphorae_access_controls_get_for_all_rule**
+> AllAccessRule amphorae_access_controls_get_for_all_rule(id, x_amphoradata_version=x_amphoradata_version)
+
+Get's the 'for all' rule, if it exists, else an empty 200.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Amphora Id.
+x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+
+try:
+    # Get's the 'for all' rule, if it exists, else an empty 200.
+    api_response = api_instance.amphorae_access_controls_get_for_all_rule(id, x_amphoradata_version=x_amphoradata_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AmphoraeApi->amphorae_access_controls_get_for_all_rule: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Amphora Id. | 
+ **x_amphoradata_version** | **str**| API Version Number | [optional] 
+
+### Return type
+
+[**AllAccessRule**](AllAccessRule.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A rule, if it exists. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
