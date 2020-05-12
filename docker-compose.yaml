@@ -1,7 +1,7 @@
 version: "3"
 services:
   generator:
-    image: flanagan89/openapi-generator-cli-python:latest
+    image: flanagan89/openapi-generator-cli-python:release-4.2.2
     volumes: 
       - ./src:/local
     environment: 

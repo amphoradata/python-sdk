@@ -11,7 +11,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "amphoradata"
-VERSION = "0.10.0.dev1"
+VERSION = "0.10.0.dev2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -24,7 +24,8 @@ REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 setup(name=NAME,
       version=VERSION,
       description="Amphora Data",
-      author_email="",
+      author="OpenAPI Generator community",
+      author_email="team@openapitools.org",
       url="",
       keywords=["OpenAPI", "OpenAPI-Generator", "Amphora Data"],
       install_requires=REQUIRES,

@@ -193,7 +193,7 @@ class SearchApi(object):
             **kwargs)  # noqa: E501
 
     def search_search_amphorae_by_location_with_http_info(
-        self, **kwargs):  # noqa: E501
+            self, **kwargs):  # noqa: E501
         """Searches for Amphorae by loction.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -314,7 +314,7 @@ class SearchApi(object):
             **kwargs)  # noqa: E501
 
     def search_search_amphorae_by_organisation_with_http_info(
-        self, **kwargs):  # noqa: E501
+            self, **kwargs):  # noqa: E501
         """Searches for Amphorae in an Organisation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

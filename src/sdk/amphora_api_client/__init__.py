@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.10.0.dev1"
+__version__ = "0.10.0.dev2"
 
 # import apis into sdk package
 from amphora_api_client.api.amphorae_api import AmphoraeApi

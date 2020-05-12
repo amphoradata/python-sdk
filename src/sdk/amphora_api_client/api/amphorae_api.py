@@ -292,7 +292,7 @@ class AmphoraeApi(object):
             id, all_access_rule, **kwargs)  # noqa: E501
 
     def amphorae_access_controls_create_for_all_with_http_info(
-        self, id, all_access_rule, **kwargs):  # noqa: E501
+            self, id, all_access_rule, **kwargs):  # noqa: E501
         """Creates an Access Control Rule for all on this Amphora.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -392,7 +392,7 @@ class AmphoraeApi(object):
             collection_formats=collection_formats)
 
     def amphorae_access_controls_create_for_organisation(
-        self, id, organisation_access_rule, **kwargs):  # noqa: E501
+            self, id, organisation_access_rule, **kwargs):  # noqa: E501
         """Creates an Access Control Rule on this Amphora.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -420,7 +420,7 @@ class AmphoraeApi(object):
             id, organisation_access_rule, **kwargs)  # noqa: E501
 
     def amphorae_access_controls_create_for_organisation_with_http_info(
-        self, id, organisation_access_rule, **kwargs):  # noqa: E501
+            self, id, organisation_access_rule, **kwargs):  # noqa: E501
         """Creates an Access Control Rule on this Amphora.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -552,7 +552,7 @@ class AmphoraeApi(object):
             id, user_access_rule, **kwargs)  # noqa: E501
 
     def amphorae_access_controls_create_for_user_with_http_info(
-        self, id, user_access_rule, **kwargs):  # noqa: E501
+            self, id, user_access_rule, **kwargs):  # noqa: E501
         """Creates an Access Control rule on this Amphora.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -795,7 +795,7 @@ class AmphoraeApi(object):
             id, **kwargs)  # noqa: E501
 
     def amphorae_access_controls_get_for_all_rule_with_http_info(
-        self, id, **kwargs):  # noqa: E501
+            self, id, **kwargs):  # noqa: E501
         """Get's the 'for all' rule, if it exists, else an empty 200.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -880,7 +880,7 @@ class AmphoraeApi(object):
             collection_formats=collection_formats)
 
     def amphorae_access_controls_get_organisation_rules(
-        self, id, **kwargs):  # noqa: E501
+            self, id, **kwargs):  # noqa: E501
         """Get's the list of access rules applied to organisations.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -907,7 +907,7 @@ class AmphoraeApi(object):
             id, **kwargs)  # noqa: E501
 
     def amphorae_access_controls_get_organisation_rules_with_http_info(
-        self, id, **kwargs):  # noqa: E501
+            self, id, **kwargs):  # noqa: E501
         """Get's the list of access rules applied to organisations.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1019,7 +1019,7 @@ class AmphoraeApi(object):
             id, **kwargs)  # noqa: E501
 
     def amphorae_access_controls_get_user_rules_with_http_info(
-        self, id, **kwargs):  # noqa: E501
+            self, id, **kwargs):  # noqa: E501
         """Get's the list of access rules applied to users.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1359,7 +1359,7 @@ class AmphoraeApi(object):
             id, file, **kwargs)  # noqa: E501
 
     def amphorae_files_create_file_request_with_http_info(
-        self, id, file, **kwargs):  # noqa: E501
+            self, id, file, **kwargs):  # noqa: E501
         """Creates a file. Returns a blob URL to upload to.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1819,7 +1819,7 @@ class AmphoraeApi(object):
             id, file, request_body, **kwargs)  # noqa: E501
 
     def amphorae_files_write_file_metadata_with_http_info(
-        self, id, file, request_body, **kwargs):  # noqa: E501
+            self, id, file, request_body, **kwargs):  # noqa: E501
         """amphorae_files_write_file_metadata  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2917,7 +2917,7 @@ class AmphoraeApi(object):
             id, request_body, **kwargs)  # noqa: E501
 
     def amphorae_signals_upload_signal_batch_with_http_info(
-        self, id, request_body, **kwargs):  # noqa: E501
+            self, id, request_body, **kwargs):  # noqa: E501
         """amphorae_signals_upload_signal_batch  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3045,7 +3045,7 @@ class AmphoraeApi(object):
             id, request_body, **kwargs)  # noqa: E501
 
     def amphorae_signals_upload_signal_batch2_with_http_info(
-        self, id, request_body, **kwargs):  # noqa: E501
+            self, id, request_body, **kwargs):  # noqa: E501
         """amphorae_signals_upload_signal_batch2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
