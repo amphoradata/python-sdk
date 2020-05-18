@@ -47,3 +47,6 @@ Feel free to open an issue if you have feature requests, or are experiencing bug
 
 We also use [gitter](https://gitter.im/amphoradata/community).
 
+# Updating
+
+To update the SDK, do a `git pull` to get the latest code on your computer. Then update `config.yaml` to include the name of the latest version. Then do `./generate.ps1` and push back to GitHub
