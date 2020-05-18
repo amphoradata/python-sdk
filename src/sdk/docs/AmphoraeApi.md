@@ -4,8 +4,8 @@ All URIs are relative to *https://app.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**amphora_quality_get**](AmphoraeApi.md#amphora_quality_get) | **GET** /api/amphorae/{id}/quality | Creates an Access Control rule on this Amphora.
-[**amphora_quality_set**](AmphoraeApi.md#amphora_quality_set) | **POST** /api/amphorae/{id}/quality | Creates an Access Control rule on this Amphora.
+[**amphora_quality_get**](AmphoraeApi.md#amphora_quality_get) | **GET** /api/amphorae/{id}/quality | Gets the data quality metrics for this Amphora.
+[**amphora_quality_set**](AmphoraeApi.md#amphora_quality_set) | **POST** /api/amphorae/{id}/quality | Sets the data quality metrics for this Amphora.
 [**amphorae_access_controls_create_for_all**](AmphoraeApi.md#amphorae_access_controls_create_for_all) | **POST** /api/amphorae/{id}/AccessControls/ForAll | Creates an Access Control Rule for all on this Amphora.
 [**amphorae_access_controls_create_for_organisation**](AmphoraeApi.md#amphorae_access_controls_create_for_organisation) | **POST** /api/amphorae/{id}/AccessControls/ForOrganisation | Creates an Access Control Rule on this Amphora.
 [**amphorae_access_controls_create_for_user**](AmphoraeApi.md#amphorae_access_controls_create_for_user) | **POST** /api/amphorae/{id}/AccessControls/ForUser | Creates an Access Control rule on this Amphora.
@@ -37,7 +37,7 @@ Method | HTTP request | Description
 # **amphora_quality_get**
 > Quality amphora_quality_get(id, x_amphoradata_version=x_amphoradata_version)
 
-Creates an Access Control rule on this Amphora.
+Gets the data quality metrics for this Amphora.
 
 ### Example
 
@@ -62,7 +62,7 @@ id = 'id_example' # str | Amphora Id.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
-    # Creates an Access Control rule on this Amphora.
+    # Gets the data quality metrics for this Amphora.
     api_response = api_instance.amphora_quality_get(id, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
@@ -92,14 +92,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The rule. |  -  |
+**200** | The quality metrics. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphora_quality_set**
 > Quality amphora_quality_set(id, quality, x_amphoradata_version=x_amphoradata_version)
 
-Creates an Access Control rule on this Amphora.
+Sets the data quality metrics for this Amphora.
 
 ### Example
 
@@ -125,7 +125,7 @@ quality = amphora_api_client.Quality() # Quality | The data quality metrics.
 x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
-    # Creates an Access Control rule on this Amphora.
+    # Sets the data quality metrics for this Amphora.
     api_response = api_instance.amphora_quality_set(id, quality, x_amphoradata_version=x_amphoradata_version)
     pprint(api_response)
 except ApiException as e:
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The rule. |  -  |
+**200** | The quality metrics. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

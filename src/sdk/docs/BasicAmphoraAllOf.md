@@ -1,5 +1,6 @@
 # BasicAmphoraAllOf
 
+The basic metadata of an Amphora.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

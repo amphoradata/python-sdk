@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from amphora_api_client.api.activities_api import ActivitiesApi
 from amphora_api_client.api.amphorae_api import AmphoraeApi
 from amphora_api_client.api.authentication_api import AuthenticationApi
 from amphora_api_client.api.identity_api import IdentityApi
