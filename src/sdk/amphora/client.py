@@ -100,3 +100,18 @@ class AmphoraDataRepositoryClient(Base):
         """
         usersApi = api.UsersApi(self.apiClient)
         return usersApi.users_read_self()
+    
+    def get_your_amphorae(self):
+        # self is client
+
+        # credentials = Credentials(username=username, password=password)
+        # client = AmphoraDataRepositoryClient(credentials)   
+
+        try:
+            queryApi = api.AmphoraeApi(self.apiClient)
+            your_amphora_list = queryApi.amphorae_list()
+            print('Got the list of your Amphorae')
+        except:
+            print('Something went wrong, couldnt get the list of your Amphorae')
+
+        return your_amphora_list
