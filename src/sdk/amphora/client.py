@@ -104,14 +104,63 @@ class AmphoraDataRepositoryClient(Base):
     def get_your_amphorae(self):
         # self is client
 
-        # credentials = Credentials(username=username, password=password)
-        # client = AmphoraDataRepositoryClient(credentials)   
-
         try:
             queryApi = api.AmphoraeApi(self.apiClient)
             your_amphora_list = queryApi.amphorae_list()
             print('Got the list of your Amphorae')
         except:
             print('Something went wrong, couldnt get the list of your Amphorae')
+
+        return your_amphora_list
+
+    def search_for_amphorae(self, **kwargs):
+        """
+        Get a list of amphora matching a search
+        params:
+            lat: float = kwargs["lat"] if "lat" in kwargs else None
+            lon: float = kwargs["lon"] if "lon" in kwargs else None
+            dist: float = kwargs["distance"] if "distance" in kwargs else None
+            term: str = kwargs["term"] if "term" in kwargs else None
+            labels: [str] = kwargs["labels"] if "labels" in kwargs else []
+
+        """
+        lat: float = kwargs["lat"] if "lat" in kwargs else None
+        lon: float = kwargs["lon"] if "lon" in kwargs else None
+        dist: float = kwargs["dist"] if "dist" in kwargs else 20
+        term: str = kwargs["term"] if "term" in kwargs else None
+        labels: [str] = kwargs["labels"] if "labels" in kwargs else []
+        
+        your_amphora_list = []
+        
+        sep = " "
+        area = lat
+                   
+            
+        if lat is not None:
+            print(sep.join(['Searching for Amphoras near',str(lat),str(lon)]))
+            try:
+                queryApi = api.SearchApi(self.apiClient)
+                your_amphora_list.append(queryApi.search_search_amphorae(lat = lat, lon = lon, dist = dist))
+                print('Got the list of your Amphorae')
+            except:
+                print('Something went wrong, couldnt get the list of your Amphorae')
+
+        if term is not None:
+            print(sep.join(['Searching for Amphoras containing',term]))
+            try:
+                queryApi = api.SearchApi(self.apiClient)
+                your_amphora_list.append(queryApi.search_search_amphorae(term = term))
+                print('Got the list of your Amphorae')
+            except:
+                print('Something went wrong, couldnt get the list of your Amphorae')
+            
+        if len(labels) > 0:
+            print(sep.join(['Searching for Amphoras with labels',labels]))
+            try:
+                queryApi = api.SearchApi(self.apiClient)
+                your_amphora_list.append(queryApi.search_search_amphorae(labels = labels))
+                print('Got the list of your Amphorae')
+            except:
+                print('Something went wrong, couldnt get the list of your Amphorae')
 
         return your_amphora_list
