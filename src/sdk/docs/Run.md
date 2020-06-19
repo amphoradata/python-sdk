@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**version_info** | [**OneOfVersionInfo**](OneOfVersionInfo.md) |  | [optional] 
 **started_by** | **str** |  | [optional] 
 **success** | **bool** |  | [optional] 
 **start_time** | **datetime** |  | [optional] 
