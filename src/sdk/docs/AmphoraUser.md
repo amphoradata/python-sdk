@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number** | **str** |  | [optional] 
 **about** | **str** |  | [optional] 
-**full_name** | **str** |  | 
+**full_name** | **str** |  | [optional] 
 **user_name** | **str** |  | 
 **id** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
