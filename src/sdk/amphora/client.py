@@ -29,8 +29,11 @@ class Credentials:
     def __init__(self,
                  username: str,
                  password: str,
-                 host="https://app.amphoradata.com"):
+                 host="https://app.amphoradata.com",
+                 verify_ssl = True):
         configuration = api.Configuration(host=host)
+        print(host)
+        configuration.verify_ssl = verify_ssl
         authApi = api.AuthenticationApi(api.ApiClient(configuration))
         details = api.LoginRequest(username=username, password=password)
         self.token = authApi.authentication_request_token(
@@ -60,7 +63,7 @@ class AmphoraDataRepositoryClient(Base):
                 price: float                    a monthly fee (in AUD)
                 lat: float                      latitude
                 lon: float                      longitude
-                terms_and_conditions_id: str    id reference of the terms and conditions to apply
+                terms_of_use_id: str            id reference of the terms of use to apply
                 labels: [str]                   a list (max 5) of labels
         returns:
             amphora.Amphora
@@ -68,14 +71,14 @@ class AmphoraDataRepositoryClient(Base):
         price = kwargs["price"] if "price" in kwargs else 0
         lat: float = kwargs["lat"] if "lat" in kwargs else None
         lon: float = kwargs["lon"] if "lon" in kwargs else None
-        terms_and_conditions_id: str = kwargs[
-            "terms_and_conditions_id"] if "terms_and_conditions_id" in kwargs else None
+        terms_of_use_id: str = kwargs[
+            "terms_of_use_id"] if "terms_of_use_id" in kwargs else None
         labels: [str] = kwargs["labels"] if "labels" in kwargs else []
         model = api.CreateAmphora(
             name=name,
             description=description,
             price=price,
-            terms_and_conditions_id=terms_and_conditions_id,
+            terms_of_use_id=terms_of_use_id,
             labels=",".join(labels),
             lat=lat,
             lon=lon)

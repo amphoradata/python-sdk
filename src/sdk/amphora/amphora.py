@@ -1,6 +1,7 @@
 from logging import getLogger
 logger = getLogger('amphora.py')
 
+from typing import Dict
 import amphora_api_client as api
 from amphora.base import Base
 from amphora.amphora_access import AmphoraAccess
@@ -46,7 +47,7 @@ class Amphora(Base):
                 price: float                    a monthly fee (in AUD)
                 lat: float                      latitude
                 lon: float                      longitude
-                terms_and_conditions_id: str    id reference of the terms and conditions to apply
+                terms_of_use_id: str            id reference of the terms of use to apply
                 labels: [str]                   a list (max 5) of labels
         returns:
             amphora.Amphora
@@ -59,8 +60,8 @@ class Amphora(Base):
         model.price = kwargs["price"] if "price" in kwargs else model.price
         model.lat: float = kwargs["lat"] if "lat" in kwargs else model.lat
         model.lon: float = kwargs["lon"] if "lon" in kwargs else model.lon
-        model.terms_and_conditions_id: str = kwargs[
-            "terms_and_conditions_id"] if "terms_and_conditions_id" in kwargs else model.terms_and_conditions_id
+        model.terms_of_use_id: str = kwargs[
+            "terms_of_use_id"] if "terms_of_use_id" in kwargs else model.terms_of_use_id
         model.labels: [
             str
         ] = ",".join(kwargs["labels"]) if "labels" in kwargs else model.labels
@@ -70,13 +71,21 @@ class Amphora(Base):
     def delete(self):
         self.amphoraeApi.amphorae_delete(self._id)
 
-    def get_files(self) -> [AmphoraFile]:
+    def get_files(self, take=None, skip=None, order_by=None, attributes=None, all_attributes=False, prefix=None) -> [AmphoraFile]:
         """
         Gets a list of files in this Amphora
+        params:
+            take: int                   How many files to return
+            skip: int                   How many files to skip (for paging) before returning.
+            order_by: str               Can be Alphabetical or LastModified
+            attributes: dict(str,str)   Filter files by attributes
+            all_attributes: boolean     Whether all attributes must be present on the files.
+            prefix: str                 A prefix filter for filenames.
         returns:
             [amphora.AmphoraFile]
         """
-        file_names = self.amphoraeApi.amphorae_files_list_files(self._id)
+        file_query_options = api.FileQueryOptions(take=take, skip=skip, order_by=order_by, prefix=prefix, attributes=attributes, all_attributes=all_attributes)
+        file_names = self.amphoraeApi.amphorae_files_query_files(self._id, file_query_options=file_query_options)
         res = []
         for f in file_names:
             res.append(AmphoraFile(self._apiClient, self._id, f))
@@ -94,7 +103,7 @@ class Amphora(Base):
         else:
             raise errors.AmphoraFileNotFoundError()
 
-    def push_file(self, file_path: str, file_name: str = None):
+    def push_file(self, file_path: str, file_name: str = None, attributes: Dict[str, str] = None):
         """
         Uploads a file to the Data Repository for this Amphora
         params:
@@ -116,11 +125,13 @@ class Amphora(Base):
         response = self.amphoraeApi.api_client.rest_client.PUT(file_req.url,
                                                                hdrs,
                                                                body=body)
-        if (response.status == 201):
+        if response.status == 201:
             logger.info("Successfully uploaded")
         else:
             logger.error("Error uploading")
             raise errors.ApiError(response.data)
+        if attributes is not None:
+            attributes = self.amphoraeApi.amphorae_files_write_file_attributes(self.amphora_id, file_name, attributes)
 
     def pull_file(self, file_name: str, download_path: str):
         """
