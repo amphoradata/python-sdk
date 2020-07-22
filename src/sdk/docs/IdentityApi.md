@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **identity_get**
-> file identity_get(x_amphoradata_version=x_amphoradata_version)
+> file identity_get()
 
 
 
@@ -31,20 +31,16 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.IdentityApi(amphora_api_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
-    api_response = api_instance.identity_get(x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.identity_get()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IdentityApi->identity_get: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 

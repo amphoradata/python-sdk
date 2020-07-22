@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **geo_lookup_location**
-> FuzzySearchResponse geo_lookup_location(query=query, x_amphoradata_version=x_amphoradata_version)
+> FuzzySearchResponse geo_lookup_location(query=query)
 
 Executes a fuzzy location search.
 
@@ -32,11 +32,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.GeoApi(amphora_api_client.ApiClient(configuration))
 query = 'query_example' # str | Search Text. (optional)
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Executes a fuzzy location search.
-    api_response = api_instance.geo_lookup_location(query=query, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.geo_lookup_location(query=query)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GeoApi->geo_lookup_location: %s\n" % e)
@@ -47,7 +46,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| Search Text. | [optional] 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **applications_create_application**
-> Application applications_create_application(create_application, x_amphoradata_version=x_amphoradata_version)
+> Application applications_create_application(create_application)
 
 Creates a new application. Applications are external websites that Amphora users can sign in to.
 
@@ -35,11 +35,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.ApplicationsApi(amphora_api_client.ApiClient(configuration))
 create_application = amphora_api_client.CreateApplication() # CreateApplication | An application to create.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new application. Applications are external websites that Amphora users can sign in to.
-    api_response = api_instance.applications_create_application(create_application, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.applications_create_application(create_application)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->applications_create_application: %s\n" % e)
@@ -50,7 +49,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_application** | [**CreateApplication**](CreateApplication.md)| An application to create. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -73,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **applications_delete_application**
-> Application applications_delete_application(id, x_amphoradata_version=x_amphoradata_version)
+> Application applications_delete_application(id)
 
 Deletes an application. Must be done by an Organisation administrator.
 
@@ -97,11 +95,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.ApplicationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The application id to delete.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Deletes an application. Must be done by an Organisation administrator.
-    api_response = api_instance.applications_delete_application(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.applications_delete_application(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->applications_delete_application: %s\n" % e)
@@ -112,7 +109,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The application id to delete. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -135,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **applications_read_application**
-> Application applications_read_application(id, x_amphoradata_version=x_amphoradata_version)
+> Application applications_read_application(id)
 
 Gets an application by Id, if it exists.
 
@@ -159,11 +155,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.ApplicationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The id of the application to get.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Gets an application by Id, if it exists.
-    api_response = api_instance.applications_read_application(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.applications_read_application(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->applications_read_application: %s\n" % e)
@@ -174,7 +169,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The id of the application to get. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -197,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **applications_update_application**
-> Application applications_update_application(id, update_application, x_amphoradata_version=x_amphoradata_version)
+> Application applications_update_application(id, update_application)
 
 Updates an application by Id, if it exists.
 
@@ -222,11 +216,10 @@ configuration.host = "https://app.amphoradata.com"
 api_instance = amphora_api_client.ApplicationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The id of the application to update.
 update_application = amphora_api_client.UpdateApplication() # UpdateApplication | The information to update (old locations will be deleted).
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Updates an application by Id, if it exists.
-    api_response = api_instance.applications_update_application(id, update_application, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.applications_update_application(id, update_application)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->applications_update_application: %s\n" % e)
@@ -238,7 +231,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The id of the application to update. | 
  **update_application** | [**UpdateApplication**](UpdateApplication.md)| The information to update (old locations will be deleted). | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

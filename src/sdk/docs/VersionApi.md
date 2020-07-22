@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **version_get_current_version**
-> str version_get_current_version(x_amphoradata_version=x_amphoradata_version)
+> str version_get_current_version()
 
 Get's the current server version.
 
@@ -31,21 +31,17 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.VersionApi(amphora_api_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's the current server version.
-    api_response = api_instance.version_get_current_version(x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.version_get_current_version()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VersionApi->version_get_current_version: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 

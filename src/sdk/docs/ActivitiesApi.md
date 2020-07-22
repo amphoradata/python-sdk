@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **activities_create_activity**
-> Activity activities_create_activity(create_activity, x_amphoradata_version=x_amphoradata_version)
+> Activity activities_create_activity(create_activity)
 
 Creates a new activity.
 
@@ -37,11 +37,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.ActivitiesApi(amphora_api_client.ApiClient(configuration))
 create_activity = amphora_api_client.CreateActivity() # CreateActivity | Metadata of the new activity.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new activity.
-    api_response = api_instance.activities_create_activity(create_activity, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.activities_create_activity(create_activity)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActivitiesApi->activities_create_activity: %s\n" % e)
@@ -52,7 +51,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_activity** | [**CreateActivity**](CreateActivity.md)| Metadata of the new activity. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -75,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activities_delete_activity**
-> file activities_delete_activity(id, x_amphoradata_version=x_amphoradata_version)
+> file activities_delete_activity(id)
 
 Deletes an activity.
 
@@ -99,11 +97,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.ActivitiesApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The activity Id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Deletes an activity.
-    api_response = api_instance.activities_delete_activity(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.activities_delete_activity(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActivitiesApi->activities_delete_activity: %s\n" % e)
@@ -114,7 +111,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The activity Id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -137,7 +133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activities_read_activity**
-> Activity activities_read_activity(id, x_amphoradata_version=x_amphoradata_version)
+> Activity activities_read_activity(id)
 
 Gets the metadata of an activity.
 
@@ -161,11 +157,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.ActivitiesApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The activity Id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Gets the metadata of an activity.
-    api_response = api_instance.activities_read_activity(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.activities_read_activity(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActivitiesApi->activities_read_activity: %s\n" % e)
@@ -176,7 +171,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The activity Id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -199,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activities_reference_amphora**
-> AmphoraReference activities_reference_amphora(id, run_id, amphora_id, amphora_reference, x_amphoradata_version=x_amphoradata_version)
+> AmphoraReference activities_reference_amphora(id, run_id, amphora_id, amphora_reference)
 
 References an Amphora during a run.
 
@@ -226,11 +220,10 @@ id = 'id_example' # str | The activity Id.
 run_id = 'run_id_example' # str | The run Id.
 amphora_id = 'amphora_id_example' # str | The Id of the Amphora to reference.
 amphora_reference = amphora_api_client.AmphoraReference() # AmphoraReference | Information about the reference.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # References an Amphora during a run.
-    api_response = api_instance.activities_reference_amphora(id, run_id, amphora_id, amphora_reference, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.activities_reference_amphora(id, run_id, amphora_id, amphora_reference)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActivitiesApi->activities_reference_amphora: %s\n" % e)
@@ -244,7 +237,6 @@ Name | Type | Description  | Notes
  **run_id** | **str**| The run Id. | 
  **amphora_id** | **str**| The Id of the Amphora to reference. | 
  **amphora_reference** | [**AmphoraReference**](AmphoraReference.md)| Information about the reference. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -267,7 +259,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activities_start_run**
-> Run activities_start_run(id, x_amphoradata_version=x_amphoradata_version)
+> Run activities_start_run(id)
 
 Starts a new run of an activity.
 
@@ -291,11 +283,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.ActivitiesApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The activity id in which to start a run.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Starts a new run of an activity.
-    api_response = api_instance.activities_start_run(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.activities_start_run(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActivitiesApi->activities_start_run: %s\n" % e)
@@ -306,7 +297,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The activity id in which to start a run. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -329,7 +319,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activities_update_run**
-> Run activities_update_run(id, run_id, update_run, x_amphoradata_version=x_amphoradata_version)
+> Run activities_update_run(id, run_id, update_run)
 
 Updates and completes a run.
 
@@ -355,11 +345,10 @@ api_instance = amphora_api_client.ActivitiesApi(amphora_api_client.ApiClient(con
 id = 'id_example' # str | The activity Id.
 run_id = 'run_id_example' # str | The run Id.
 update_run = amphora_api_client.UpdateRun() # UpdateRun | Information about the update.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Updates and completes a run.
-    api_response = api_instance.activities_update_run(id, run_id, update_run, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.activities_update_run(id, run_id, update_run)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActivitiesApi->activities_update_run: %s\n" % e)
@@ -372,7 +361,6 @@ Name | Type | Description  | Notes
  **id** | **str**| The activity Id. | 
  **run_id** | **str**| The run Id. | 
  **update_run** | [**UpdateRun**](UpdateRun.md)| Information about the update. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

@@ -39,3 +39,12 @@ class AmphoraFile(Base):
         f = open(path, "wb")
         f.write(httpResponse.data)
         f.close()
+    
+    def delete(self):
+        """
+        Deletes this file in the Amphora
+        """
+        try:
+            self.amphoraeApi.amphorae_files_delete_file(self._id, self._file_name)
+        except:
+            print(f'Deletion of file {self._file_name} was attempted.')

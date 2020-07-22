@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **permission_get_permissions**
-> PermissionsResponse permission_get_permissions(permissions_request, x_amphoradata_version=x_amphoradata_version)
+> PermissionsResponse permission_get_permissions(permissions_request)
 
 The permission level for each object id in the request.
 
@@ -32,11 +32,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.PermissionApi(amphora_api_client.ApiClient(configuration))
 permissions_request = amphora_api_client.PermissionsRequest() # PermissionsRequest | A request object containing the list of ids to check.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # The permission level for each object id in the request.
-    api_response = api_instance.permission_get_permissions(permissions_request, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.permission_get_permissions(permissions_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PermissionApi->permission_get_permissions: %s\n" % e)
@@ -47,7 +46,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **permissions_request** | [**PermissionsRequest**](PermissionsRequest.md)| A request object containing the list of ids to check. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

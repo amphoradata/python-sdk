@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **time_series_query_time_series**
-> QueryResultPage time_series_query_time_series(query_request, x_amphoradata_version=x_amphoradata_version)
+> QueryResultPage time_series_query_time_series(query_request)
 
 Updates the details of an Amphora by Id.
 
@@ -32,11 +32,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.TimeSeriesApi(amphora_api_client.ApiClient(configuration))
 query_request = amphora_api_client.QueryRequest() # QueryRequest | Time Series query. See https://github.com/microsoft/tsiclient/blob/master/docs/Server.md#functions .
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Updates the details of an Amphora by Id.
-    api_response = api_instance.time_series_query_time_series(query_request, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.time_series_query_time_series(query_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TimeSeriesApi->time_series_query_time_series: %s\n" % e)
@@ -47,7 +46,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query_request** | [**QueryRequest**](QueryRequest.md)| Time Series query. See https://github.com/microsoft/tsiclient/blob/master/docs/Server.md#functions . | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

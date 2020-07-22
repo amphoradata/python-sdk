@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **terms_of_use_accept**
-> file terms_of_use_accept(id, x_amphoradata_version=x_amphoradata_version)
+> file terms_of_use_accept(id)
 
 Accepts a Terms of Use.
 
@@ -36,11 +36,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.TermsOfUseApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The Terms of Use id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Accepts a Terms of Use.
-    api_response = api_instance.terms_of_use_accept(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.terms_of_use_accept(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TermsOfUseApi->terms_of_use_accept: %s\n" % e)
@@ -51,7 +50,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The Terms of Use id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -74,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terms_of_use_create**
-> TermsOfUse terms_of_use_create(create_terms_of_use, x_amphoradata_version=x_amphoradata_version)
+> TermsOfUse terms_of_use_create(create_terms_of_use)
 
 Creates a Terms of Use object.
 
@@ -98,11 +96,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.TermsOfUseApi(amphora_api_client.ApiClient(configuration))
 create_terms_of_use = amphora_api_client.CreateTermsOfUse() # CreateTermsOfUse | The terms of use to create.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a Terms of Use object.
-    api_response = api_instance.terms_of_use_create(create_terms_of_use, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.terms_of_use_create(create_terms_of_use)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TermsOfUseApi->terms_of_use_create: %s\n" % e)
@@ -113,7 +110,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_terms_of_use** | [**CreateTermsOfUse**](CreateTermsOfUse.md)| The terms of use to create. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -136,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terms_of_use_delete**
-> file terms_of_use_delete(id, x_amphoradata_version=x_amphoradata_version)
+> file terms_of_use_delete(id)
 
 Deletes a Terms of Use object.
 
@@ -160,11 +156,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.TermsOfUseApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The terms of use id to delete.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Deletes a Terms of Use object.
-    api_response = api_instance.terms_of_use_delete(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.terms_of_use_delete(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TermsOfUseApi->terms_of_use_delete: %s\n" % e)
@@ -175,7 +170,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The terms of use id to delete. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -198,7 +192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terms_of_use_list**
-> list[TermsOfUse] terms_of_use_list(x_amphoradata_version=x_amphoradata_version)
+> list[TermsOfUse] terms_of_use_list(take=take, skip=skip)
 
 Returns all Terms of Use.
 
@@ -221,11 +215,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.TermsOfUseApi(amphora_api_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
+take = 56 # int | Gets or sets how many files to return. Defaults to 64. (optional)
+skip = 56 # int | Gets or sets how many files to skip before returning. Defaults to 0. (optional)
 
 try:
     # Returns all Terms of Use.
-    api_response = api_instance.terms_of_use_list(x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.terms_of_use_list(take=take, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TermsOfUseApi->terms_of_use_list: %s\n" % e)
@@ -235,7 +230,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
+ **take** | **int**| Gets or sets how many files to return. Defaults to 64. | [optional] 
+ **skip** | **int**| Gets or sets how many files to skip before returning. Defaults to 0. | [optional] 
 
 ### Return type
 
@@ -258,7 +254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terms_of_use_read**
-> TermsOfUse terms_of_use_read(id, x_amphoradata_version=x_amphoradata_version)
+> TermsOfUse terms_of_use_read(id)
 
 Returns all Terms of Use.
 
@@ -282,11 +278,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.TermsOfUseApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | 
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Returns all Terms of Use.
-    api_response = api_instance.terms_of_use_read(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.terms_of_use_read(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TermsOfUseApi->terms_of_use_read: %s\n" % e)
@@ -297,7 +292,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

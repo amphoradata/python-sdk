@@ -97,8 +97,10 @@ class Amphora(Base):
         returns:
             amphora.AmphoraFile
         """
-        files = self.amphoraeApi.amphorae_files_list_files(self._id)
-        if file_name in files:
+        file_query_options = api.FileQueryOptions(prefix=file_name)
+        file_names = self.amphoraeApi.amphorae_files_query_files(self._id, file_query_options=file_query_options)
+        # files = self.amphoraeApi.amphorae_files_list_files(self._id)
+        if file_name in file_names:
             return AmphoraFile(self._apiClient, self._id, file_name)
         else:
             raise errors.AmphoraFileNotFoundError()

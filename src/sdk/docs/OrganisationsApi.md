@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **account_get_plan**
-> PlanInformation account_get_plan(id, x_amphoradata_version=x_amphoradata_version)
+> PlanInformation account_get_plan(id)
 
 Get's an Organisation's plan information.
 
@@ -39,11 +39,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's an Organisation's plan information.
-    api_response = api_instance.account_get_plan(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.account_get_plan(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->account_get_plan: %s\n" % e)
@@ -54,7 +53,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -77,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **account_read**
-> Account account_read(id, x_amphoradata_version=x_amphoradata_version)
+> Account account_read(id)
 
 Get's an Organisation's account information.
 
@@ -101,11 +99,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's an Organisation's account information.
-    api_response = api_instance.account_read(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.account_read(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->account_read: %s\n" % e)
@@ -116,7 +113,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -139,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_create**
-> Organisation organisations_create(organisation, x_amphoradata_version=x_amphoradata_version)
+> Organisation organisations_create(organisation)
 
 Creates a new Organisation. This will assign the logged in user to the organisation.
 
@@ -163,11 +159,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 organisation = amphora_api_client.Organisation() # Organisation | Information of the new Organisation.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new Organisation. This will assign the logged in user to the organisation.
-    api_response = api_instance.organisations_create(organisation, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.organisations_create(organisation)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_create: %s\n" % e)
@@ -178,7 +173,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisation** | [**Organisation**](Organisation.md)| Information of the new Organisation. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -201,7 +195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_delete**
-> str organisations_delete(id, x_amphoradata_version=x_amphoradata_version)
+> str organisations_delete(id)
 
 Deletes an organisation.
 
@@ -225,11 +219,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Deletes an organisation.
-    api_response = api_instance.organisations_delete(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.organisations_delete(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_delete: %s\n" % e)
@@ -240,7 +233,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -263,7 +255,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_read**
-> Organisation organisations_read(id, x_amphoradata_version=x_amphoradata_version)
+> Organisation organisations_read(id)
 
 Gets an organisation's details.
 
@@ -287,11 +279,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Gets an organisation's details.
-    api_response = api_instance.organisations_read(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.organisations_read(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_read: %s\n" % e)
@@ -302,7 +293,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -325,7 +315,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_read_invitations**
-> list[Invitation] organisations_read_invitations(id, x_amphoradata_version=x_amphoradata_version)
+> list[Invitation] organisations_read_invitations(id)
 
 Gets an organisation's invitations.
 
@@ -349,11 +339,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Gets an organisation's invitations.
-    api_response = api_instance.organisations_read_invitations(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.organisations_read_invitations(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_read_invitations: %s\n" % e)
@@ -364,7 +353,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -387,7 +375,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_terms_of_use_read**
-> list[TermsOfUse] organisations_terms_of_use_read(id, x_amphoradata_version=x_amphoradata_version)
+> list[TermsOfUse] organisations_terms_of_use_read(id)
 
 Get's a list of an Organisation's Terms of Use.
 
@@ -411,11 +399,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | The Id of the Organisation.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's a list of an Organisation's Terms of Use.
-    api_response = api_instance.organisations_terms_of_use_read(id, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.organisations_terms_of_use_read(id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_terms_of_use_read: %s\n" % e)
@@ -426,7 +413,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The Id of the Organisation. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -449,7 +435,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organisations_update**
-> file organisations_update(id, organisation, x_amphoradata_version=x_amphoradata_version)
+> file organisations_update(id, organisation)
 
 Updates an organisation.
 
@@ -474,11 +460,10 @@ configuration.host = "https://app.amphoradata.com"
 api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
 id = 'id_example' # str | Organisation Id.
 organisation = amphora_api_client.Organisation() # Organisation | Organisation Information. All fields are updated.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Updates an organisation.
-    api_response = api_instance.organisations_update(id, organisation, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.organisations_update(id, organisation)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganisationsApi->organisations_update: %s\n" % e)
@@ -490,7 +475,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Organisation Id. | 
  **organisation** | [**Organisation**](Organisation.md)| Organisation Information. All fields are updated. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 

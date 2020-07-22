@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **users_create**
-> AmphoraUser users_create(create_amphora_user, x_amphoradata_version=x_amphoradata_version)
+> AmphoraUser users_create(create_amphora_user)
 
 Creates a new User. Returns the password.
 
@@ -33,11 +33,10 @@ configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.UsersApi(amphora_api_client.ApiClient(configuration))
 create_amphora_user = amphora_api_client.CreateAmphoraUser() # CreateAmphoraUser | User parameters.
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Creates a new User. Returns the password.
-    api_response = api_instance.users_create(create_amphora_user, x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.users_create(create_amphora_user)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->users_create: %s\n" % e)
@@ -48,7 +47,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_amphora_user** | [**CreateAmphoraUser**](CreateAmphoraUser.md)| User parameters. | 
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
 
 ### Return type
 
@@ -71,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **users_read_self**
-> AmphoraUser users_read_self(x_amphoradata_version=x_amphoradata_version)
+> AmphoraUser users_read_self()
 
 Get's logged in users information.
 
@@ -94,21 +92,17 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.UsersApi(amphora_api_client.ApiClient(configuration))
-x_amphoradata_version = 'x_amphoradata_version_example' # str | API Version Number (optional)
 
 try:
     # Get's logged in users information.
-    api_response = api_instance.users_read_self(x_amphoradata_version=x_amphoradata_version)
+    api_response = api_instance.users_read_self()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->users_read_self: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_amphoradata_version** | **str**| API Version Number | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
