@@ -42,4 +42,4 @@ file_reference = amphora.get_file("husky.jpg")
 file_reference.pull(NEW_FILE_NAME)  # downloads the file to your local machine
 
 # TODO: enable file deletion
-# file_reference.delete()
+file_reference.delete()
