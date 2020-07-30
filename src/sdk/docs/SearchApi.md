@@ -5,13 +5,11 @@ All URIs are relative to *https://app.amphoradata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**search_search_amphorae**](SearchApi.md#search_search_amphorae) | **GET** /api/search/amphorae | Searches for Amphorae.
-[**search_search_amphorae_by_location**](SearchApi.md#search_search_amphorae_by_location) | **GET** /api/search/amphorae/byLocation | Searches for Amphorae by loction.
-[**search_search_amphorae_by_organisation**](SearchApi.md#search_search_amphorae_by_organisation) | **GET** /api/search/amphorae/byOrganisation | Searches for Amphorae in an Organisation.
 [**search_search_organisations**](SearchApi.md#search_search_organisations) | **GET** /api/search/organisations | Searches for Organisations with fuzzy search.
 
 
 # **search_search_amphorae**
-> list[BasicAmphora] search_search_amphorae(term=term, labels=labels, lat=lat, lon=lon, dist=dist)
+> list[BasicAmphora] search_search_amphorae(term=term, labels=labels, org_id=org_id, lat=lat, lon=lon, dist=dist, take=take, skip=skip)
 
 Searches for Amphorae.
 
@@ -34,15 +32,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.SearchApi(amphora_api_client.ApiClient(configuration))
-term = 'term_example' # str | General search term for text comparison. (optional)
-labels = 'labels_example' # str | Comma separated labels that must be included in results. (optional)
-lat = 3.4 # float | Latitude (center of search area). (optional)
-lon = 3.4 # float | Longitude (center of search area). (optional)
-dist = 3.4 # float | Distance from center of search area (describing a circle). (optional)
+term = 'term_example' # str | Gets or sets the free text search term. (optional)
+labels = 'labels_example' # str | Gets or sets the comma separated labels that must be included in results. (optional)
+org_id = 'org_id_example' # str | Gets or sets the Organisation ID for the Amphora. (optional)
+lat = 3.4 # float | Gets or sets the latitude (center of search area). (optional)
+lon = 3.4 # float | Gets or sets the longitude (center of search area). (optional)
+dist = 3.4 # float | Gets or sets the distance from center of search area (describing a circle). (optional)
+take = 56 # int | Gets or sets how many files to return. Defaults to 64. (optional)
+skip = 56 # int | Gets or sets how many files to skip before returning. Defaults to 0. (optional)
 
 try:
     # Searches for Amphorae.
-    api_response = api_instance.search_search_amphorae(term=term, labels=labels, lat=lat, lon=lon, dist=dist)
+    api_response = api_instance.search_search_amphorae(term=term, labels=labels, org_id=org_id, lat=lat, lon=lon, dist=dist, take=take, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->search_search_amphorae: %s\n" % e)
@@ -52,135 +53,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **term** | **str**| General search term for text comparison. | [optional] 
- **labels** | **str**| Comma separated labels that must be included in results. | [optional] 
- **lat** | **float**| Latitude (center of search area). | [optional] 
- **lon** | **float**| Longitude (center of search area). | [optional] 
- **dist** | **float**| Distance from center of search area (describing a circle). | [optional] 
-
-### Return type
-
-[**list[BasicAmphora]**](BasicAmphora.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A collection of Amphora.  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_search_amphorae_by_location**
-> list[BasicAmphora] search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist)
-
-Searches for Amphorae by loction.
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import amphora_api_client
-from amphora_api_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_api_client.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to https://app.amphoradata.com
-configuration.host = "https://app.amphoradata.com"
-# Create an instance of the API class
-api_instance = amphora_api_client.SearchApi(amphora_api_client.ApiClient(configuration))
-lat = 3.4 # float | Latitude. (optional)
-lon = 3.4 # float | Longitude. (optional)
-dist = 10.0 # float | Distance from Latitude and Longitude in which to search. (optional) (default to 10.0)
-
-try:
-    # Searches for Amphorae by loction.
-    api_response = api_instance.search_search_amphorae_by_location(lat=lat, lon=lon, dist=dist)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SearchApi->search_search_amphorae_by_location: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | **float**| Latitude. | [optional] 
- **lon** | **float**| Longitude. | [optional] 
- **dist** | **float**| Distance from Latitude and Longitude in which to search. | [optional] [default to 10.0]
-
-### Return type
-
-[**list[BasicAmphora]**](BasicAmphora.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A collection of Amphora. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_search_amphorae_by_organisation**
-> list[BasicAmphora] search_search_amphorae_by_organisation(org_id=org_id)
-
-Searches for Amphorae in an Organisation.
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import amphora_api_client
-from amphora_api_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_api_client.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to https://app.amphoradata.com
-configuration.host = "https://app.amphoradata.com"
-# Create an instance of the API class
-api_instance = amphora_api_client.SearchApi(amphora_api_client.ApiClient(configuration))
-org_id = 'org_id_example' # str | Organisation Id. (optional)
-
-try:
-    # Searches for Amphorae in an Organisation.
-    api_response = api_instance.search_search_amphorae_by_organisation(org_id=org_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SearchApi->search_search_amphorae_by_organisation: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **org_id** | **str**| Organisation Id. | [optional] 
+ **term** | **str**| Gets or sets the free text search term. | [optional] 
+ **labels** | **str**| Gets or sets the comma separated labels that must be included in results. | [optional] 
+ **org_id** | **str**| Gets or sets the Organisation ID for the Amphora. | [optional] 
+ **lat** | **float**| Gets or sets the latitude (center of search area). | [optional] 
+ **lon** | **float**| Gets or sets the longitude (center of search area). | [optional] 
+ **dist** | **float**| Gets or sets the distance from center of search area (describing a circle). | [optional] 
+ **take** | **int**| Gets or sets how many files to return. Defaults to 64. | [optional] 
+ **skip** | **int**| Gets or sets how many files to skip before returning. Defaults to 0. | [optional] 
 
 ### Return type
 

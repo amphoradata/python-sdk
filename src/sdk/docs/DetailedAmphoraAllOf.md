@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organisation_id** | **str** |  | [optional] 
 **purchase_count** | **int** |  | [optional] 
 **signal_count** | **int** |  | [optional] 
 

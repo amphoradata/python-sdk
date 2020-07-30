@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **is_deleted** | **bool** |  | [optional] 
 **created_date** | **datetime** |  | [optional] 
+**organisation_id** | **str** | Gets or sets the owner&#39;s organisation Id. Will be set by the server upon creation. | [optional] 
 **name** | **str** |  | 
 **price** | **float** |  | 
 **labels** | **str** |  | [optional] 
@@ -13,7 +14,6 @@ Name | Type | Description | Notes
 **lat** | **float** |  | [optional] 
 **lon** | **float** |  | [optional] 
 **terms_of_use_id** | **str** |  | [optional] 
-**organisation_id** | **str** |  | [optional] 
 **purchase_count** | **int** |  | [optional] 
 **signal_count** | **int** |  | [optional] 
 
