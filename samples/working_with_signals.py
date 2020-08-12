@@ -23,10 +23,11 @@ df = signals.pull(date_time_range=dt_range,
                   include_wt=True,
                   tsi_api="GetEvents").to_pandas()
 
-print(df)
-
+print(df.describe())
+temp=df['temperature']
+print(f'Maximum temperature: {temp.max()}')
 # update a signal
 temperature_signal = signals['temperature']
 
 # update the temperature's units
-temperature_signal.update_attributes({"units": "c"})
+# temperature_signal.update_attributes({"units": "c"})

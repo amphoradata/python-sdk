@@ -92,9 +92,9 @@ class AmphoraSignal(Base):
     '''
     Downloads the data to a local object
     params:
-        date_time_range [UTC] (default to 1 day)                    amphora_api_client.DateTimeRange
-        include_wt (default TRUE)                                   bool, includes the Write Time (wt)
-        tsi_api (options: GetSeries, GetEvents, AggregateSeries)    str
+        date_time_range [UTC] (default to 1 day)                                        amphora_api_client.DateTimeRange
+        include_wt (default TRUE)                                                       bool, includes the Write Time (wt)
+        tsi_api (default: GetEvents, options: GetEvents, GetSeries, AggregateSeries)   str
     returns:
         amphora.SignalData
     '''
@@ -102,7 +102,7 @@ class AmphoraSignal(Base):
     def pull(self,
              date_time_range: api.DateTimeRange = None,
              include_wt: bool = False,
-             tsi_api: str = "GetSeries") -> SignalData:
+             tsi_api: str = "GetEvents") -> SignalData:
         validate_tsi_api_options(tsi_api)
         signals = self.amphoraeApi.amphorae_signals_get_signals(self._id)
         signal = utils.filter_by_id(signals,
@@ -229,7 +229,8 @@ def get_inline_variables(signals: [api.Signal], include_wt: bool) -> {}:
         if (signal.value_type == 'Numeric'):
             variable = api.NumericVariable(
                 kind="numeric",
-                value=api.Tsx(tsx=f'$event.{signal._property}'),
+                # https://docs.microsoft.com/en-us/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions
+                value=api.Tsx(tsx=f'coalesce($event.{signal._property}.Double, toDouble($event.{signal._property}.Long))'),
                 aggregation=api.Tsx(tsx="it doesn't matter"))
             variables[signal._property] = variable
         else:
