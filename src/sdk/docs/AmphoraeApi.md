@@ -93,6 +93,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The quality metrics. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -155,6 +156,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The quality metrics. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -217,6 +219,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The same rule. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -279,6 +282,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The same rule. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -341,11 +345,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The rule. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_access_controls_delete**
-> file amphorae_access_controls_delete(id, rule_id)
+> Response amphorae_access_controls_delete(id, rule_id)
 
 Deletes an Access Control on this Amphora.
 
@@ -388,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -397,12 +402,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | An Empty 200. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -463,6 +469,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A rule, if it exists. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -522,6 +529,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**400** |  |  -  |
 **200** | A list of rules. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -583,6 +591,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of rules. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -765,11 +774,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | An object with a blob URL. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_files_delete_file**
-> file amphorae_files_delete_file(id, file)
+> Response amphorae_files_delete_file(id, file)
 
 Get's the contents of a file. Returns application/octet-stream.
 
@@ -812,7 +822,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -821,7 +831,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -883,12 +893,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The file contents. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -957,6 +968,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of file names. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1019,6 +1031,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of file names. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1081,6 +1094,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The attributes. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1144,6 +1158,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1332,6 +1347,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Signal metadata. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1454,6 +1470,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A collection of signals. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1518,11 +1535,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Signal metadata. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_signals_upload_signal**
-> amphorae_signals_upload_signal(id, request_body)
+> dict(str, object) amphorae_signals_upload_signal(id, request_body)
 
 
 
@@ -1549,7 +1567,8 @@ id = 'id_example' # str |
 request_body = None # dict(str, object) | 
 
 try:
-    api_instance.amphorae_signals_upload_signal(id, request_body)
+    api_response = api_instance.amphorae_signals_upload_signal(id, request_body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_signals_upload_signal: %s\n" % e)
 ```
@@ -1563,7 +1582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**dict(str, object)**
 
 ### Authorization
 
@@ -1583,7 +1602,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_signals_upload_signal2**
-> amphorae_signals_upload_signal2(id, request_body)
+> dict(str, object) amphorae_signals_upload_signal2(id, request_body)
 
 
 
@@ -1610,7 +1629,8 @@ id = 'id_example' # str |
 request_body = None # dict(str, object) | 
 
 try:
-    api_instance.amphorae_signals_upload_signal2(id, request_body)
+    api_response = api_instance.amphorae_signals_upload_signal2(id, request_body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_signals_upload_signal2: %s\n" % e)
 ```
@@ -1624,7 +1644,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**dict(str, object)**
 
 ### Authorization
 
@@ -1644,7 +1664,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_signals_upload_signal_batch**
-> amphorae_signals_upload_signal_batch(id, request_body)
+> dict(str, object) amphorae_signals_upload_signal_batch(id, request_body)
 
 
 
@@ -1671,7 +1691,8 @@ id = 'id_example' # str |
 request_body = None # list[dict(str, object)] | 
 
 try:
-    api_instance.amphorae_signals_upload_signal_batch(id, request_body)
+    api_response = api_instance.amphorae_signals_upload_signal_batch(id, request_body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_signals_upload_signal_batch: %s\n" % e)
 ```
@@ -1685,7 +1706,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**dict(str, object)**
 
 ### Authorization
 
@@ -1705,7 +1726,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_signals_upload_signal_batch2**
-> amphorae_signals_upload_signal_batch2(id, request_body)
+> dict(str, object) amphorae_signals_upload_signal_batch2(id, request_body)
 
 
 
@@ -1732,7 +1753,8 @@ id = 'id_example' # str |
 request_body = None # list[dict(str, object)] | 
 
 try:
-    api_instance.amphorae_signals_upload_signal_batch2(id, request_body)
+    api_response = api_instance.amphorae_signals_upload_signal_batch2(id, request_body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AmphoraeApi->amphorae_signals_upload_signal_batch2: %s\n" % e)
 ```
@@ -1746,7 +1768,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**dict(str, object)**
 
 ### Authorization
 
@@ -1828,7 +1850,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **purchases_purchase**
-> str purchases_purchase(id)
+> Response purchases_purchase(id)
 
 Purchases an Amphora as the logged in user.
 
@@ -1869,7 +1891,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**Response**](Response.md)
 
 ### Authorization
 
@@ -1883,7 +1905,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A Message. |  -  |
+**200** | A Response with a message. |  -  |
+**0** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

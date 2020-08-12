@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **terms_of_use_accept**
-> file terms_of_use_accept(id)
+> terms_of_use_accept(id)
 
 Accepts a Terms of Use.
 
@@ -39,8 +39,7 @@ id = 'id_example' # str | The Terms of Use id.
 
 try:
     # Accepts a Terms of Use.
-    api_response = api_instance.terms_of_use_accept(id)
-    pprint(api_response)
+    api_instance.terms_of_use_accept(id)
 except ApiException as e:
     print("Exception when calling TermsOfUseApi->terms_of_use_accept: %s\n" % e)
 ```
@@ -53,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+void (empty response body)
 
 ### Authorization
 
@@ -62,12 +61,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | 200 if accepted.  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -128,11 +127,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The terms of use object.  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terms_of_use_delete**
-> file terms_of_use_delete(id)
+> terms_of_use_delete(id)
 
 Deletes a Terms of Use object.
 
@@ -159,8 +159,7 @@ id = 'id_example' # str | The terms of use id to delete.
 
 try:
     # Deletes a Terms of Use object.
-    api_response = api_instance.terms_of_use_delete(id)
-    pprint(api_response)
+    api_instance.terms_of_use_delete(id)
 except ApiException as e:
     print("Exception when calling TermsOfUseApi->terms_of_use_delete: %s\n" % e)
 ```
@@ -173,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file**
+void (empty response body)
 
 ### Authorization
 
@@ -182,12 +181,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | 200 if successful.  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -250,6 +249,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A collection of Terms of Use. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -310,6 +310,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A collection of Terms of Use. |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

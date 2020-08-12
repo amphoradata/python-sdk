@@ -4,75 +4,17 @@ All URIs are relative to *https://app.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**account_get_plan**](OrganisationsApi.md#account_get_plan) | **GET** /api/Organisations/{id}/Account/Plan | Get&#39;s an Organisation&#39;s plan information.
 [**account_read**](OrganisationsApi.md#account_read) | **GET** /api/Organisations/{id}/Account | Get&#39;s an Organisation&#39;s account information.
+[**account_read2**](OrganisationsApi.md#account_read2) | **GET** /api/Account | Get&#39;s an Organisation&#39;s account information.
 [**organisations_create**](OrganisationsApi.md#organisations_create) | **POST** /api/Organisations | Creates a new Organisation. This will assign the logged in user to the organisation.
 [**organisations_delete**](OrganisationsApi.md#organisations_delete) | **DELETE** /api/Organisations/{id} | Deletes an organisation.
 [**organisations_read**](OrganisationsApi.md#organisations_read) | **GET** /api/Organisations/{id} | Gets an organisation&#39;s details.
 [**organisations_read_invitations**](OrganisationsApi.md#organisations_read_invitations) | **GET** /api/Organisations/{id}/Invitations | Gets an organisation&#39;s invitations.
 [**organisations_terms_of_use_read**](OrganisationsApi.md#organisations_terms_of_use_read) | **GET** /api/Organisations/{id}/TermsOfUse | Get&#39;s a list of an Organisation&#39;s Terms of Use.
 [**organisations_update**](OrganisationsApi.md#organisations_update) | **PUT** /api/Organisations/{id} | Updates an organisation.
+[**plan_get_plan**](OrganisationsApi.md#plan_get_plan) | **GET** /api/Organisations/{id}/Account/Plan | Get&#39;s an Organisation&#39;s plan information.
+[**plan_get_plan2**](OrganisationsApi.md#plan_get_plan2) | **GET** /api/Account/Plan | Get&#39;s an Organisation&#39;s plan information.
 
-
-# **account_get_plan**
-> PlanInformation account_get_plan(id)
-
-Get's an Organisation's plan information.
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import amphora_api_client
-from amphora_api_client.rest import ApiException
-from pprint import pprint
-configuration = amphora_api_client.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# Defining host is optional and default to https://app.amphoradata.com
-configuration.host = "https://app.amphoradata.com"
-# Create an instance of the API class
-api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | Organisation Id.
-
-try:
-    # Get's an Organisation's plan information.
-    api_response = api_instance.account_get_plan(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->account_get_plan: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id. | 
-
-### Return type
-
-[**PlanInformation**](PlanInformation.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | An Organisation&#39;s plan.  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **account_read**
 > Account account_read(id)
@@ -131,6 +73,68 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | An Organisation&#39;s account metadata.  |  -  |
+**400** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **account_read2**
+> Account account_read2(id)
+
+Get's an Organisation's account information.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Organisation Id.
+
+try:
+    # Get's an Organisation's account information.
+    api_response = api_instance.account_read2(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganisationsApi->account_read2: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organisation Id. | 
+
+### Return type
+
+[**Account**](Account.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | An Organisation&#39;s account metadata.  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -493,6 +497,128 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The organisation metadaa.  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **plan_get_plan**
+> PlanInformation plan_get_plan(id)
+
+Get's an Organisation's plan information.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Organisation Id.
+
+try:
+    # Get's an Organisation's plan information.
+    api_response = api_instance.plan_get_plan(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganisationsApi->plan_get_plan: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organisation Id. | 
+
+### Return type
+
+[**PlanInformation**](PlanInformation.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | An Organisation&#39;s plan.  |  -  |
+**400** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **plan_get_plan2**
+> PlanInformation plan_get_plan2(id)
+
+Get's an Organisation's plan information.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.OrganisationsApi(amphora_api_client.ApiClient(configuration))
+id = 'id_example' # str | Organisation Id.
+
+try:
+    # Get's an Organisation's plan information.
+    api_response = api_instance.plan_get_plan2(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganisationsApi->plan_get_plan2: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organisation Id. | 
+
+### Return type
+
+[**PlanInformation**](PlanInformation.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | An Organisation&#39;s plan.  |  -  |
+**400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
