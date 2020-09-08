@@ -5,7 +5,7 @@ All URIs are relative to *https://app.amphoradata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**users_create**](UsersApi.md#users_create) | **POST** /api/users | Creates a new User. Returns the password.
-[**users_read_self**](UsersApi.md#users_read_self) | **GET** /api/users/self | Get&#39;s logged in users information.
+[**users_read_self**](UsersApi.md#users_read_self) | **GET** /api/users/self | Gets logged in users information.
 
 
 # **users_create**
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 # **users_read_self**
 > AmphoraUser users_read_self()
 
-Get's logged in users information.
+Gets logged in users information.
 
 ### Example
 
@@ -94,7 +94,7 @@ configuration.host = "https://app.amphoradata.com"
 api_instance = amphora_api_client.UsersApi(amphora_api_client.ApiClient(configuration))
 
 try:
-    # Get's logged in users information.
+    # Gets logged in users information.
     api_response = api_instance.users_read_self()
     pprint(api_response)
 except ApiException as e:

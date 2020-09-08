@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **filter** | [**OneOfTsx**](OneOfTsx.md) |  | [optional] 
 **projected_variables** | **list[str]** |  | [optional] 
 **inline_variables** | [**dict(str, Variable)**](Variable.md) |  | [optional] 
+**take** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

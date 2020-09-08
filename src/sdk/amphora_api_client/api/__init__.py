@@ -8,6 +8,7 @@ from amphora_api_client.api.activities_api import ActivitiesApi
 from amphora_api_client.api.amphorae_api import AmphoraeApi
 from amphora_api_client.api.applications_api import ApplicationsApi
 from amphora_api_client.api.authentication_api import AuthenticationApi
+from amphora_api_client.api.feeds_api import FeedsApi
 from amphora_api_client.api.geo_api import GeoApi
 from amphora_api_client.api.identity_api import IdentityApi
 from amphora_api_client.api.invitations_api import InvitationsApi

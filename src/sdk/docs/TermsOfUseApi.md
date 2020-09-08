@@ -214,8 +214,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.TermsOfUseApi(amphora_api_client.ApiClient(configuration))
-take = 56 # int | Gets or sets how many files to return. Defaults to 64. (optional)
-skip = 56 # int | Gets or sets how many files to skip before returning. Defaults to 0. (optional)
+take = 56 # int | Gets or sets how many items to return. Defaults to 64. (optional)
+skip = 56 # int | Gets or sets how many items to skip before returning. Defaults to 0. (optional)
 
 try:
     # Returns all Terms of Use.
@@ -229,8 +229,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **take** | **int**| Gets or sets how many files to return. Defaults to 64. | [optional] 
- **skip** | **int**| Gets or sets how many files to skip before returning. Defaults to 0. | [optional] 
+ **take** | **int**| Gets or sets how many items to return. Defaults to 64. | [optional] 
+ **skip** | **int**| Gets or sets how many items to skip before returning. Defaults to 0. | [optional] 
 
 ### Return type
 

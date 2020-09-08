@@ -4,13 +4,13 @@ All URIs are relative to *https://app.amphoradata.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**version_get_current_version**](VersionApi.md#version_get_current_version) | **GET** /api/version | Get&#39;s the current server version.
+[**version_get_current_version**](VersionApi.md#version_get_current_version) | **GET** /api/version | Gets the current server version.
 
 
 # **version_get_current_version**
 > str version_get_current_version()
 
-Get's the current server version.
+Gets the current server version.
 
 ### Example
 
@@ -33,7 +33,7 @@ configuration.host = "https://app.amphoradata.com"
 api_instance = amphora_api_client.VersionApi(amphora_api_client.ApiClient(configuration))
 
 try:
-    # Get's the current server version.
+    # Gets the current server version.
     api_response = api_instance.version_get_current_version()
     pprint(api_response)
 except ApiException as e:

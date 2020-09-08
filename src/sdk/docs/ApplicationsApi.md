@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**applications_create_application**](ApplicationsApi.md#applications_create_application) | **POST** /api/applications | Creates a new application. Applications are external websites that Amphora users can sign in to.
 [**applications_delete_application**](ApplicationsApi.md#applications_delete_application) | **DELETE** /api/applications/{id} | Deletes an application. Must be done by an Organisation administrator.
+[**applications_get_applications**](ApplicationsApi.md#applications_get_applications) | **GET** /api/applications | Gets all applications a user has access to.
 [**applications_read_application**](ApplicationsApi.md#applications_read_application) | **GET** /api/applications/{id} | Gets an application by Id, if it exists.
 [**applications_update_application**](ApplicationsApi.md#applications_update_application) | **PUT** /api/applications/{id} | Updates an application by Id, if it exists.
 
@@ -128,6 +129,62 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | 200 if successful. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **applications_get_applications**
+> CollectionResponseOfApplication applications_get_applications()
+
+Gets all applications a user has access to.
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import amphora_api_client
+from amphora_api_client.rest import ApiException
+from pprint import pprint
+configuration = amphora_api_client.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to https://app.amphoradata.com
+configuration.host = "https://app.amphoradata.com"
+# Create an instance of the API class
+api_instance = amphora_api_client.ApplicationsApi(amphora_api_client.ApiClient(configuration))
+
+try:
+    # Gets all applications a user has access to.
+    api_response = api_instance.applications_get_applications()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationsApi->applications_get_applications: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CollectionResponseOfApplication**](CollectionResponseOfApplication.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The Application information. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

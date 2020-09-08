@@ -1,4 +1,4 @@
-# Account
+# AccountInformation
 
 ## Properties
 Name | Type | Description | Notes

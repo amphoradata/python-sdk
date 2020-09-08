@@ -10,23 +10,23 @@ Method | HTTP request | Description
 [**amphorae_access_controls_create_for_organisation**](AmphoraeApi.md#amphorae_access_controls_create_for_organisation) | **POST** /api/amphorae/{id}/AccessControls/ForOrganisation | Creates an Access Control Rule on this Amphora.
 [**amphorae_access_controls_create_for_user**](AmphoraeApi.md#amphorae_access_controls_create_for_user) | **POST** /api/amphorae/{id}/AccessControls/ForUser | Creates an Access Control rule on this Amphora.
 [**amphorae_access_controls_delete**](AmphoraeApi.md#amphorae_access_controls_delete) | **DELETE** /api/amphorae/{id}/AccessControls/{ruleId} | Deletes an Access Control on this Amphora.
-[**amphorae_access_controls_get_for_all_rule**](AmphoraeApi.md#amphorae_access_controls_get_for_all_rule) | **GET** /api/amphorae/{id}/AccessControls/ForAll | Get&#39;s the &#39;for all&#39; rule, if it exists, else an empty 200.
-[**amphorae_access_controls_get_organisation_rules**](AmphoraeApi.md#amphorae_access_controls_get_organisation_rules) | **GET** /api/amphorae/{id}/AccessControls/ForOrganisation | Get&#39;s the list of access rules applied to organisations.
-[**amphorae_access_controls_get_user_rules**](AmphoraeApi.md#amphorae_access_controls_get_user_rules) | **GET** /api/amphorae/{id}/AccessControls/ForUser | Get&#39;s the list of access rules applied to users.
+[**amphorae_access_controls_get_for_all_rule**](AmphoraeApi.md#amphorae_access_controls_get_for_all_rule) | **GET** /api/amphorae/{id}/AccessControls/ForAll | Gets the &#39;for all&#39; rule, if it exists, else an empty 200.
+[**amphorae_access_controls_get_organisation_rules**](AmphoraeApi.md#amphorae_access_controls_get_organisation_rules) | **GET** /api/amphorae/{id}/AccessControls/ForOrganisation | Gets the list of access rules applied to organisations.
+[**amphorae_access_controls_get_user_rules**](AmphoraeApi.md#amphorae_access_controls_get_user_rules) | **GET** /api/amphorae/{id}/AccessControls/ForUser | Gets the list of access rules applied to users.
 [**amphorae_create**](AmphoraeApi.md#amphorae_create) | **POST** /api/amphorae | Creates a new empty Amphora in the user&#39;s organisation.
 [**amphorae_delete**](AmphoraeApi.md#amphorae_delete) | **DELETE** /api/amphorae/{id} | Deletes an Amphora.
 [**amphorae_files_create_file_request**](AmphoraeApi.md#amphorae_files_create_file_request) | **POST** /api/amphorae/{id}/files/{file} | Creates a file. Returns a blob URL to upload to.
-[**amphorae_files_delete_file**](AmphoraeApi.md#amphorae_files_delete_file) | **DELETE** /api/amphorae/{id}/files/{file} | Get&#39;s the contents of a file. Returns application/octet-stream.
-[**amphorae_files_download_file**](AmphoraeApi.md#amphorae_files_download_file) | **GET** /api/amphorae/{id}/files/{file} | Get&#39;s the contents of a file. Returns application/octet-stream.
+[**amphorae_files_delete_file**](AmphoraeApi.md#amphorae_files_delete_file) | **DELETE** /api/amphorae/{id}/files/{file} | Gets the contents of a file. Returns application/octet-stream.
+[**amphorae_files_download_file**](AmphoraeApi.md#amphorae_files_download_file) | **GET** /api/amphorae/{id}/files/{file} | Gets the contents of a file. Returns application/octet-stream.
 [**amphorae_files_list_files**](AmphoraeApi.md#amphorae_files_list_files) | **GET** /api/amphorae/{id}/files | Lists an Amphora&#39;s files.
 [**amphorae_files_query_files**](AmphoraeApi.md#amphorae_files_query_files) | **POST** /api/amphorae/{id}/files | Queries an Amphora&#39;s files.
-[**amphorae_files_read_file_attributes**](AmphoraeApi.md#amphorae_files_read_file_attributes) | **GET** /api/amphorae/{id}/files/{file}/attributes | Get&#39;s the attributes of a file.
+[**amphorae_files_read_file_attributes**](AmphoraeApi.md#amphorae_files_read_file_attributes) | **GET** /api/amphorae/{id}/files/{file}/attributes | Gets the attributes of a file.
 [**amphorae_files_write_file_attributes**](AmphoraeApi.md#amphorae_files_write_file_attributes) | **POST** /api/amphorae/{id}/files/{file}/attributes | 
 [**amphorae_list**](AmphoraeApi.md#amphorae_list) | **GET** /api/amphorae | Gets a list of Amphora for yourself or your org, created or purchased by you (or organisation).
 [**amphorae_read**](AmphoraeApi.md#amphorae_read) | **GET** /api/amphorae/{id} | Gets details of an Amphora by Id.
 [**amphorae_signals_create_signal**](AmphoraeApi.md#amphorae_signals_create_signal) | **POST** /api/amphorae/{id}/signals | Associates a signal with an Amphora. Signal is created if not existing.
-[**amphorae_signals_get_signal**](AmphoraeApi.md#amphorae_signals_get_signal) | **GET** /api/amphorae/{id}/signals/{property} | Get&#39;s the signals associated with an Amphora.
-[**amphorae_signals_get_signals**](AmphoraeApi.md#amphorae_signals_get_signals) | **GET** /api/amphorae/{id}/signals | Get&#39;s the signals associated with an Amphora.
+[**amphorae_signals_get_signal**](AmphoraeApi.md#amphorae_signals_get_signal) | **GET** /api/amphorae/{id}/signals/{property} | Gets the signals associated with an Amphora.
+[**amphorae_signals_get_signals**](AmphoraeApi.md#amphorae_signals_get_signals) | **GET** /api/amphorae/{id}/signals | Gets the signals associated with an Amphora.
 [**amphorae_signals_update_signal**](AmphoraeApi.md#amphorae_signals_update_signal) | **PUT** /api/amphorae/{id}/signals/{signalId} | Associates a signal with an Amphora. Signal is created if not existing.
 [**amphorae_signals_upload_signal**](AmphoraeApi.md#amphorae_signals_upload_signal) | **POST** /api/amphorae/{id}/signals/values | 
 [**amphorae_signals_upload_signal2**](AmphoraeApi.md#amphorae_signals_upload_signal2) | **POST** /api/amphorae/{id}/signalValues | 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 # **amphorae_access_controls_get_for_all_rule**
 > AllAccessRule amphorae_access_controls_get_for_all_rule(id)
 
-Get's the 'for all' rule, if it exists, else an empty 200.
+Gets the 'for all' rule, if it exists, else an empty 200.
 
 ### Example
 
@@ -439,7 +439,7 @@ api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(confi
 id = 'id_example' # str | Amphora Id.
 
 try:
-    # Get's the 'for all' rule, if it exists, else an empty 200.
+    # Gets the 'for all' rule, if it exists, else an empty 200.
     api_response = api_instance.amphorae_access_controls_get_for_all_rule(id)
     pprint(api_response)
 except ApiException as e:
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 # **amphorae_access_controls_get_organisation_rules**
 > list[OrganisationAccessRule] amphorae_access_controls_get_organisation_rules(id)
 
-Get's the list of access rules applied to organisations.
+Gets the list of access rules applied to organisations.
 
 ### Example
 
@@ -500,7 +500,7 @@ api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(confi
 id = 'id_example' # str | Amphora Id.
 
 try:
-    # Get's the list of access rules applied to organisations.
+    # Gets the list of access rules applied to organisations.
     api_response = api_instance.amphorae_access_controls_get_organisation_rules(id)
     pprint(api_response)
 except ApiException as e:
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 # **amphorae_access_controls_get_user_rules**
 > list[UserAccessRule] amphorae_access_controls_get_user_rules(id)
 
-Get's the list of access rules applied to users.
+Gets the list of access rules applied to users.
 
 ### Example
 
@@ -561,7 +561,7 @@ api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(confi
 id = 'id_example' # str | Amphora Id.
 
 try:
-    # Get's the list of access rules applied to users.
+    # Gets the list of access rules applied to users.
     api_response = api_instance.amphorae_access_controls_get_user_rules(id)
     pprint(api_response)
 except ApiException as e:
@@ -781,7 +781,7 @@ Name | Type | Description  | Notes
 # **amphorae_files_delete_file**
 > Response amphorae_files_delete_file(id, file)
 
-Get's the contents of a file. Returns application/octet-stream.
+Gets the contents of a file. Returns application/octet-stream.
 
 ### Example
 
@@ -806,7 +806,7 @@ id = 'id_example' # str | Amphora Id.
 file = 'file_example' # str | The name of the file.
 
 try:
-    # Get's the contents of a file. Returns application/octet-stream.
+    # Gets the contents of a file. Returns application/octet-stream.
     api_response = api_instance.amphorae_files_delete_file(id, file)
     pprint(api_response)
 except ApiException as e:
@@ -843,7 +843,7 @@ Name | Type | Description  | Notes
 # **amphorae_files_download_file**
 > file amphorae_files_download_file(id, file)
 
-Get's the contents of a file. Returns application/octet-stream.
+Gets the contents of a file. Returns application/octet-stream.
 
 ### Example
 
@@ -868,7 +868,7 @@ id = 'id_example' # str | Amphora Id.
 file = 'file_example' # str | The name of the file.
 
 try:
-    # Get's the contents of a file. Returns application/octet-stream.
+    # Gets the contents of a file. Returns application/octet-stream.
     api_response = api_instance.amphorae_files_download_file(id, file)
     pprint(api_response)
 except ApiException as e:
@@ -930,8 +930,8 @@ api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(confi
 id = 'id_example' # str | Amphora Id.
 order_by = 'order_by_example' # str | Gets or sets the the orderBy parameter. Options are Alphabetical or LastModified. (optional)
 prefix = 'prefix_example' # str | Gets or sets a prefix filter for all file names. Is case sensitive. (optional)
-take = 56 # int | Gets or sets how many files to return. Defaults to 64. (optional)
-skip = 56 # int | Gets or sets how many files to skip before returning. Defaults to 0. (optional)
+take = 56 # int | Gets or sets how many items to return. Defaults to 64. (optional)
+skip = 56 # int | Gets or sets how many items to skip before returning. Defaults to 0. (optional)
 
 try:
     # Lists an Amphora's files.
@@ -948,8 +948,8 @@ Name | Type | Description  | Notes
  **id** | **str**| Amphora Id. | 
  **order_by** | **str**| Gets or sets the the orderBy parameter. Options are Alphabetical or LastModified. | [optional] 
  **prefix** | **str**| Gets or sets a prefix filter for all file names. Is case sensitive. | [optional] 
- **take** | **int**| Gets or sets how many files to return. Defaults to 64. | [optional] 
- **skip** | **int**| Gets or sets how many files to skip before returning. Defaults to 0. | [optional] 
+ **take** | **int**| Gets or sets how many items to return. Defaults to 64. | [optional] 
+ **skip** | **int**| Gets or sets how many items to skip before returning. Defaults to 0. | [optional] 
 
 ### Return type
 
@@ -1038,7 +1038,7 @@ Name | Type | Description  | Notes
 # **amphorae_files_read_file_attributes**
 > dict(str, str) amphorae_files_read_file_attributes(id, file)
 
-Get's the attributes of a file.
+Gets the attributes of a file.
 
 ### Example
 
@@ -1063,7 +1063,7 @@ id = 'id_example' # str | Amphora Id.
 file = 'file_example' # str | The name of the file.
 
 try:
-    # Get's the attributes of a file.
+    # Gets the attributes of a file.
     api_response = api_instance.amphorae_files_read_file_attributes(id, file)
     pprint(api_response)
 except ApiException as e:
@@ -1188,8 +1188,8 @@ configuration.host = "https://app.amphoradata.com"
 api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
 scope = 'self' # str | 'self' or 'organisation'. Defaults to self. (optional) (default to 'self')
 access_type = 'created' # str | 'created' or 'purchased'. Defaults to created. (optional) (default to 'created')
-take = 56 # int | Gets or sets how many files to return. Defaults to 64. (optional)
-skip = 56 # int | Gets or sets how many files to skip before returning. Defaults to 0. (optional)
+take = 56 # int | Gets or sets how many items to return. Defaults to 64. (optional)
+skip = 56 # int | Gets or sets how many items to skip before returning. Defaults to 0. (optional)
 
 try:
     # Gets a list of Amphora for yourself or your org, created or purchased by you (or organisation).
@@ -1205,8 +1205,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scope** | **str**| &#39;self&#39; or &#39;organisation&#39;. Defaults to self. | [optional] [default to &#39;self&#39;]
  **access_type** | **str**| &#39;created&#39; or &#39;purchased&#39;. Defaults to created. | [optional] [default to &#39;created&#39;]
- **take** | **int**| Gets or sets how many files to return. Defaults to 64. | [optional] 
- **skip** | **int**| Gets or sets how many files to skip before returning. Defaults to 0. | [optional] 
+ **take** | **int**| Gets or sets how many items to return. Defaults to 64. | [optional] 
+ **skip** | **int**| Gets or sets how many items to skip before returning. Defaults to 0. | [optional] 
 
 ### Return type
 
@@ -1354,7 +1354,7 @@ Name | Type | Description  | Notes
 # **amphorae_signals_get_signal**
 > Signal amphorae_signals_get_signal(id, _property)
 
-Get's the signals associated with an Amphora.
+Gets the signals associated with an Amphora.
 
 ### Example
 
@@ -1379,7 +1379,7 @@ id = 'id_example' # str | Amphora Id.
 _property = '_property_example' # str | The name or id of the signal property.
 
 try:
-    # Get's the signals associated with an Amphora.
+    # Gets the signals associated with an Amphora.
     api_response = api_instance.amphorae_signals_get_signal(id, _property)
     pprint(api_response)
 except ApiException as e:
@@ -1416,7 +1416,7 @@ Name | Type | Description  | Notes
 # **amphorae_signals_get_signals**
 > list[Signal] amphorae_signals_get_signals(id)
 
-Get's the signals associated with an Amphora.
+Gets the signals associated with an Amphora.
 
 ### Example
 
@@ -1440,7 +1440,7 @@ api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(confi
 id = 'id_example' # str | Amphora Id.
 
 try:
-    # Get's the signals associated with an Amphora.
+    # Gets the signals associated with an Amphora.
     api_response = api_instance.amphorae_signals_get_signals(id)
     pprint(api_response)
 except ApiException as e:

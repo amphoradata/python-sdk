@@ -5,14 +5,14 @@ All URIs are relative to *https://app.amphoradata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**account_invitations_invitations**](AccountApi.md#account_invitations_invitations) | **GET** /api/Account/Invitations | Gets a list of invitations to the organisation.
-[**account_read**](AccountApi.md#account_read) | **GET** /api/Organisations/{id}/Account | Get&#39;s an Organisation&#39;s account information.
-[**account_read2**](AccountApi.md#account_read2) | **GET** /api/Account | Get&#39;s an Organisation&#39;s account information.
+[**account_read**](AccountApi.md#account_read) | **GET** /api/Organisations/{id}/Account | Gets an Organisation&#39;s account information.
+[**account_read2**](AccountApi.md#account_read2) | **GET** /api/Account | Gets an Organisation&#39;s account information.
 [**invoices_create_invoice**](AccountApi.md#invoices_create_invoice) | **POST** /api/account/invoices | Creates a new invoice. Restricted to global administrators.
 [**invoices_download_invoice**](AccountApi.md#invoices_download_invoice) | **GET** /api/account/invoices/{id}/download | Downloads an invoice in a specified format.
 [**invoices_get_invoices**](AccountApi.md#invoices_get_invoices) | **GET** /api/account/invoices | Returns a list of invoices as items.
-[**membership_get_memberships**](AccountApi.md#membership_get_memberships) | **GET** /api/account/memberships | Returns a list of invoices as items.
-[**plan_get_plan**](AccountApi.md#plan_get_plan) | **GET** /api/Organisations/{id}/Account/Plan | Get&#39;s an Organisation&#39;s plan information.
-[**plan_get_plan2**](AccountApi.md#plan_get_plan2) | **GET** /api/Account/Plan | Get&#39;s an Organisation&#39;s plan information.
+[**membership_get_memberships**](AccountApi.md#membership_get_memberships) | **GET** /api/account/memberships | Returns a collection of members of an organisational account.
+[**plan_get_plan**](AccountApi.md#plan_get_plan) | **GET** /api/Account/Plan | Gets an Organisation&#39;s plan information.
+[**plan_set_plan**](AccountApi.md#plan_set_plan) | **POST** /api/Account/Plan | Set&#39;s an Organisation&#39;s plan.
 [**transactions_get_transactions**](AccountApi.md#transactions_get_transactions) | **GET** /api/Account/Transactions | Gets the most recent transactions of the account. Defaults to the first 50 debits and 50 credits.
 
 
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **account_read**
-> Account account_read(id)
+> AccountInformation account_read(id)
 
-Get's an Organisation's account information.
+Gets an Organisation's account information.
 
 ### Example
 
@@ -104,7 +104,7 @@ api_instance = amphora_api_client.AccountApi(amphora_api_client.ApiClient(config
 id = 'id_example' # str | Organisation Id.
 
 try:
-    # Get's an Organisation's account information.
+    # Gets an Organisation's account information.
     api_response = api_instance.account_read(id)
     pprint(api_response)
 except ApiException as e:
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Account**](Account.md)
+[**AccountInformation**](AccountInformation.md)
 
 ### Authorization
 
@@ -139,9 +139,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **account_read2**
-> Account account_read2(id)
+> AccountInformation account_read2(id)
 
-Get's an Organisation's account information.
+Gets an Organisation's account information.
 
 ### Example
 
@@ -165,7 +165,7 @@ api_instance = amphora_api_client.AccountApi(amphora_api_client.ApiClient(config
 id = 'id_example' # str | Organisation Id.
 
 try:
-    # Get's an Organisation's account information.
+    # Gets an Organisation's account information.
     api_response = api_instance.account_read2(id)
     pprint(api_response)
 except ApiException as e:
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Account**](Account.md)
+[**AccountInformation**](AccountInformation.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invoices_download_invoice**
-> CollectionResponseOfInvoice invoices_download_invoice(id, format=format)
+> file invoices_download_invoice(id, format=format)
 
 Downloads an invoice in a specified format.
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CollectionResponseOfInvoice**](CollectionResponseOfInvoice.md)
+**file**
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -383,7 +383,7 @@ This endpoint does not need any parameter.
 # **membership_get_memberships**
 > CollectionResponseOfMembership membership_get_memberships(id=id)
 
-Returns a list of invoices as items.
+Returns a collection of members of an organisational account.
 
 ### Example
 
@@ -407,7 +407,7 @@ api_instance = amphora_api_client.AccountApi(amphora_api_client.ApiClient(config
 id = 'id_example' # str | Organisation Id. Defaults to your org. (optional)
 
 try:
-    # Returns a list of invoices as items.
+    # Returns a collection of members of an organisational account.
     api_response = api_instance.membership_get_memberships(id=id)
     pprint(api_response)
 except ApiException as e:
@@ -436,15 +436,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A list of invoices. |  -  |
+**200** | A collection response of memberships. |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **plan_get_plan**
-> PlanInformation plan_get_plan(id)
+> PlanInformation plan_get_plan()
 
-Get's an Organisation's plan information.
+Gets an Organisation's plan information.
 
 ### Example
 
@@ -465,21 +465,17 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.AccountApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | Organisation Id.
 
 try:
-    # Get's an Organisation's plan information.
-    api_response = api_instance.plan_get_plan(id)
+    # Gets an Organisation's plan information.
+    api_response = api_instance.plan_get_plan()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->plan_get_plan: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -497,15 +493,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | An Organisation&#39;s plan.  |  -  |
+**200** | The user&#39;s Organisation&#39;s plan.  |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **plan_get_plan2**
-> PlanInformation plan_get_plan2(id)
+# **plan_set_plan**
+> PlanInformation plan_set_plan(plan_type=plan_type)
 
-Get's an Organisation's plan information.
+Set's an Organisation's plan.
 
 ### Example
 
@@ -526,21 +522,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.AccountApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | Organisation Id.
+plan_type = 'plan_type_example' # str | The Plan Type. Should be PAYG or Glaze. (optional)
 
 try:
-    # Get's an Organisation's plan information.
-    api_response = api_instance.plan_get_plan2(id)
+    # Set's an Organisation's plan.
+    api_response = api_instance.plan_set_plan(plan_type=plan_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountApi->plan_get_plan2: %s\n" % e)
+    print("Exception when calling AccountApi->plan_set_plan: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Organisation Id. | 
+ **plan_type** | **str**| The Plan Type. Should be PAYG or Glaze. | [optional] 
 
 ### Return type
 
