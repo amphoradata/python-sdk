@@ -21,17 +21,17 @@ Method | HTTP request | Description
 [**amphorae_files_list_files**](AmphoraeApi.md#amphorae_files_list_files) | **GET** /api/amphorae/{id}/files | Lists an Amphora&#39;s files.
 [**amphorae_files_query_files**](AmphoraeApi.md#amphorae_files_query_files) | **POST** /api/amphorae/{id}/files | Queries an Amphora&#39;s files.
 [**amphorae_files_read_file_attributes**](AmphoraeApi.md#amphorae_files_read_file_attributes) | **GET** /api/amphorae/{id}/files/{file}/attributes | Gets the attributes of a file.
-[**amphorae_files_write_file_attributes**](AmphoraeApi.md#amphorae_files_write_file_attributes) | **POST** /api/amphorae/{id}/files/{file}/attributes | 
+[**amphorae_files_write_file_attributes**](AmphoraeApi.md#amphorae_files_write_file_attributes) | **POST** /api/amphorae/{id}/files/{file}/attributes | Gets the attributes of a file.
 [**amphorae_list**](AmphoraeApi.md#amphorae_list) | **GET** /api/amphorae | Gets a list of Amphora for yourself or your org, created or purchased by you (or organisation).
 [**amphorae_read**](AmphoraeApi.md#amphorae_read) | **GET** /api/amphorae/{id} | Gets details of an Amphora by Id.
 [**amphorae_signals_create_signal**](AmphoraeApi.md#amphorae_signals_create_signal) | **POST** /api/amphorae/{id}/signals | Associates a signal with an Amphora. Signal is created if not existing.
 [**amphorae_signals_get_signal**](AmphoraeApi.md#amphorae_signals_get_signal) | **GET** /api/amphorae/{id}/signals/{property} | Gets the signals associated with an Amphora.
 [**amphorae_signals_get_signals**](AmphoraeApi.md#amphorae_signals_get_signals) | **GET** /api/amphorae/{id}/signals | Gets the signals associated with an Amphora.
 [**amphorae_signals_update_signal**](AmphoraeApi.md#amphorae_signals_update_signal) | **PUT** /api/amphorae/{id}/signals/{signalId} | Associates a signal with an Amphora. Signal is created if not existing.
-[**amphorae_signals_upload_signal**](AmphoraeApi.md#amphorae_signals_upload_signal) | **POST** /api/amphorae/{id}/signals/values | 
-[**amphorae_signals_upload_signal2**](AmphoraeApi.md#amphorae_signals_upload_signal2) | **POST** /api/amphorae/{id}/signalValues | 
-[**amphorae_signals_upload_signal_batch**](AmphoraeApi.md#amphorae_signals_upload_signal_batch) | **POST** /api/amphorae/{id}/signals/batchvalues | 
-[**amphorae_signals_upload_signal_batch2**](AmphoraeApi.md#amphorae_signals_upload_signal_batch2) | **POST** /api/amphorae/{id}/batchSignalValues | 
+[**amphorae_signals_upload_signal**](AmphoraeApi.md#amphorae_signals_upload_signal) | **POST** /api/amphorae/{id}/signals/values | Uploads values to an Amphora signal(s).
+[**amphorae_signals_upload_signal2**](AmphoraeApi.md#amphorae_signals_upload_signal2) | **POST** /api/amphorae/{id}/signalValues | Uploads values to an Amphora signal(s).
+[**amphorae_signals_upload_signal_batch**](AmphoraeApi.md#amphorae_signals_upload_signal_batch) | **POST** /api/amphorae/{id}/signals/batchvalues | Uploads values in batch to an Amphora signal(s).
+[**amphorae_signals_upload_signal_batch2**](AmphoraeApi.md#amphorae_signals_upload_signal_batch2) | **POST** /api/amphorae/{id}/batchSignalValues | Uploads values in batch to an Amphora signal(s).
 [**amphorae_update**](AmphoraeApi.md#amphorae_update) | **PUT** /api/amphorae/{id} | Updates the details of an Amphora by Id.
 [**purchases_purchase**](AmphoraeApi.md#purchases_purchase) | **POST** /api/Amphorae/{id}/Purchases | Purchases an Amphora as the logged in user.
 
@@ -1101,7 +1101,7 @@ Name | Type | Description  | Notes
 # **amphorae_files_write_file_attributes**
 > dict(str, str) amphorae_files_write_file_attributes(id, file, request_body)
 
-
+Gets the attributes of a file.
 
 ### Example
 
@@ -1122,11 +1122,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | 
-file = 'file_example' # str | 
-request_body = {'key': 'request_body_example'} # dict(str, str) | 
+id = 'id_example' # str | Amphora Id.
+file = 'file_example' # str | The name of the file.
+request_body = {'key': 'request_body_example'} # dict(str, str) | A dict containing attributes for the file.
 
 try:
+    # Gets the attributes of a file.
     api_response = api_instance.amphorae_files_write_file_attributes(id, file, request_body)
     pprint(api_response)
 except ApiException as e:
@@ -1137,9 +1138,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **file** | **str**|  | 
- **request_body** | [**dict(str, str)**](str.md)|  | 
+ **id** | **str**| Amphora Id. | 
+ **file** | **str**| The name of the file. | 
+ **request_body** | [**dict(str, str)**](str.md)| A dict containing attributes for the file. | 
 
 ### Return type
 
@@ -1157,7 +1158,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | The attributes. |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1542,7 +1543,7 @@ Name | Type | Description  | Notes
 # **amphorae_signals_upload_signal**
 > dict(str, object) amphorae_signals_upload_signal(id, request_body)
 
-
+Uploads values to an Amphora signal(s).
 
 ### Example
 
@@ -1563,10 +1564,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | 
-request_body = None # dict(str, object) | 
+id = 'id_example' # str | Amphora Id.
+request_body = None # dict(str, object) | Signal Values.
 
 try:
+    # Uploads values to an Amphora signal(s).
     api_response = api_instance.amphorae_signals_upload_signal(id, request_body)
     pprint(api_response)
 except ApiException as e:
@@ -1577,8 +1579,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **request_body** | [**dict(str, object)**](object.md)|  | 
+ **id** | **str**| Amphora Id. | 
+ **request_body** | [**dict(str, object)**](object.md)| Signal Values. | 
 
 ### Return type
 
@@ -1596,7 +1598,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | The signal values. |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1604,7 +1606,7 @@ Name | Type | Description  | Notes
 # **amphorae_signals_upload_signal2**
 > dict(str, object) amphorae_signals_upload_signal2(id, request_body)
 
-
+Uploads values to an Amphora signal(s).
 
 ### Example
 
@@ -1625,10 +1627,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | 
-request_body = None # dict(str, object) | 
+id = 'id_example' # str | Amphora Id.
+request_body = None # dict(str, object) | Signal Values.
 
 try:
+    # Uploads values to an Amphora signal(s).
     api_response = api_instance.amphorae_signals_upload_signal2(id, request_body)
     pprint(api_response)
 except ApiException as e:
@@ -1639,8 +1642,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **request_body** | [**dict(str, object)**](object.md)|  | 
+ **id** | **str**| Amphora Id. | 
+ **request_body** | [**dict(str, object)**](object.md)| Signal Values. | 
 
 ### Return type
 
@@ -1658,7 +1661,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | The signal values. |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1666,7 +1669,7 @@ Name | Type | Description  | Notes
 # **amphorae_signals_upload_signal_batch**
 > dict(str, object) amphorae_signals_upload_signal_batch(id, request_body)
 
-
+Uploads values in batch to an Amphora signal(s).
 
 ### Example
 
@@ -1687,10 +1690,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | 
-request_body = None # list[dict(str, object)] | 
+id = 'id_example' # str | Amphora Id.
+request_body = None # list[dict(str, object)] | Signal Values.
 
 try:
+    # Uploads values in batch to an Amphora signal(s).
     api_response = api_instance.amphorae_signals_upload_signal_batch(id, request_body)
     pprint(api_response)
 except ApiException as e:
@@ -1701,8 +1705,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **request_body** | [**list[dict(str, object)]**](dict.md)|  | 
+ **id** | **str**| Amphora Id. | 
+ **request_body** | [**list[dict(str, object)]**](dict.md)| Signal Values. | 
 
 ### Return type
 
@@ -1720,7 +1724,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | A collection of signal values. |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1728,7 +1732,7 @@ Name | Type | Description  | Notes
 # **amphorae_signals_upload_signal_batch2**
 > dict(str, object) amphorae_signals_upload_signal_batch2(id, request_body)
 
-
+Uploads values in batch to an Amphora signal(s).
 
 ### Example
 
@@ -1749,10 +1753,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "https://app.amphoradata.com"
 # Create an instance of the API class
 api_instance = amphora_api_client.AmphoraeApi(amphora_api_client.ApiClient(configuration))
-id = 'id_example' # str | 
-request_body = None # list[dict(str, object)] | 
+id = 'id_example' # str | Amphora Id.
+request_body = None # list[dict(str, object)] | Signal Values.
 
 try:
+    # Uploads values in batch to an Amphora signal(s).
     api_response = api_instance.amphorae_signals_upload_signal_batch2(id, request_body)
     pprint(api_response)
 except ApiException as e:
@@ -1763,8 +1768,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **request_body** | [**list[dict(str, object)]**](dict.md)|  | 
+ **id** | **str**| Amphora Id. | 
+ **request_body** | [**list[dict(str, object)]**](dict.md)| Signal Values. | 
 
 ### Return type
 
@@ -1782,7 +1787,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** |  |  -  |
+**200** | A collection of signal values. |  -  |
 **400** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
