@@ -132,66 +132,27 @@ class AmphoraDataRepositoryClient(Base):
 
         return your_amphora_list
 
-    def search_for_amphorae(self, **kwargs):
+    def search_amphora(self, **kwargs):
         """
-        Get a list of amphora matching a search
+        Return: SearchResponseOfBasicAmphora
         params:
-            lat: float = kwargs["lat"] if "lat" in kwargs else None
-            lon: float = kwargs["lon"] if "lon" in kwargs else None
-            dist: float = kwargs["distance"] if "distance" in kwargs else None
-            term: str = kwargs["term"] if "term" in kwargs else None
-            labels: [str] = kwargs["labels"] if "labels" in kwargs else []
+            term: str, the free text search term
+            lat: float, center of search area latitde
+            lon: float, center of search area longitude
+            dist: float, distance from center (lat,lon)
+            labels: str, comma separated list of labels
+            skip: int, number to skip
+            take: int, number to take
 
         """
         lat: float = kwargs["lat"] if "lat" in kwargs else None
         lon: float = kwargs["lon"] if "lon" in kwargs else None
-        dist: float = kwargs["dist"] if "dist" in kwargs else 20
+        dist: float = kwargs["dist"] if "dist" in kwargs else None
         term: str = kwargs["term"] if "term" in kwargs else None
-        labels: [str] = kwargs["labels"] if "labels" in kwargs else []
-        search_type: str = kwargs["search_type"] if "search_type" in kwargs else 'AND'
-        
-        your_amphora_list = []
-        
-        sep = " "
-        
-        if search_type == 'AND':         
-            try:
-                queryApi = api.SearchApi(self.apiClient)
-                your_amphora_list.append(queryApi.search_search_amphorae(lat = lat, lon = lon, dist = dist,term = term, labels = labels))
-                print('Got the list of your Amphora')
-            except:
-                print('Something went wrong, couldnt get the list of your Amphorae')
-        elif search_type == 'OR':    
-            if lat is not None:
-                print(sep.join(['Searching for Amphoras near',str(lat),str(lon)]))
-                try:
-                    queryApi = api.SearchApi(self.apiClient)
-                    your_amphora_list.append(queryApi.search_search_amphorae(lat = lat, lon = lon, dist = dist))
-                    print(len(your_amphora_list[0]))
-                    print('Got the list of your Amphorae')
-                except:
-                    print('Something went wrong, couldnt get the list of your Amphorae')
-        
-            if term is not None:
-                print(sep.join(['Searching for Amphoras containing',term]))
-                try:
-                    queryApi = api.SearchApi(self.apiClient)
-                    your_amphora_list.append(queryApi.search_search_amphorae(term = term))
-                    print(len(your_amphora_list[0]))
-                    print('Got the list of your Amphorae')
-                except:
-                    print('Something went wrong, couldnt get the list of your Amphorae')
-                
-            if len(labels) > 0:
-                print(sep.join(['Searching for Amphoras with labels',labels]))
-                try:
-                    queryApi = api.SearchApi(self.apiClient)
-                    your_amphora_list.append(queryApi.search_search_amphorae(labels = labels))
-                    print(len(your_amphora_list[0]))
-                    print('Got the list of your Amphorae')
-                except:
-                    print('Something went wrong, couldnt get the list of your Amphorae')
-        else:
-            print('Couldnt determine search type')
+        labels: [str] = kwargs["labels"] if "labels" in kwargs else None
+        org_id: [str] = kwargs["org_id"] if "org_id" in kwargs else None
+        take: int = kwargs["take"] if "take" in kwargs else None
+        skip: int = kwargs["skip"] if "skip" in kwargs else 0
 
-        return your_amphora_list
+        queryApi = api.SearchApi(self.apiClient)
+        return queryApi.search_search_amphora(term=term, labels=labels, org_id=org_id, lat = lat, lon = lon, dist = dist, skip=skip, take=take)

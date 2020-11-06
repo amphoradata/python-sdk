@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filter** | [**OneOfTsx**](OneOfTsx.md) |  | [optional] 
-**kind** | **str** |  | 
 **value** | [**OneOfTsx**](OneOfTsx.md) |  | [optional] 
 **interpolation** | [**OneOfInterpolation**](OneOfInterpolation.md) |  | [optional] 
 **aggregation** | [**OneOfTsx**](OneOfTsx.md) |  | [optional] 
