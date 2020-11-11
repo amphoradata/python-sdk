@@ -151,7 +151,7 @@ class AmphoraDataRepositoryClient(Base):
         term: str = kwargs["term"] if "term" in kwargs else None
         labels: [str] = kwargs["labels"] if "labels" in kwargs else None
         org_id: [str] = kwargs["org_id"] if "org_id" in kwargs else None
-        take: int = kwargs["take"] if "take" in kwargs else None
+        take: int = kwargs["take"] if "take" in kwargs else 64
         skip: int = kwargs["skip"] if "skip" in kwargs else 0
 
         queryApi = api.SearchApi(self.apiClient)
