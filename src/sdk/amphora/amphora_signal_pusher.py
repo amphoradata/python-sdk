@@ -22,8 +22,7 @@ class AmphoraSignalPusher(Base):
         for d in dictionaries:
             validate_dictionary(signals, d)
 
-        self.amphoraeApi.amphorae_signals_upload_signal_batch2(
-            self._id, dictionaries)
+        self.amphoraeApi.amphorae_signals_upload_signal_batch(self._id, dictionaries)
 
 
 def validate_dictionary(signals: [api.Signal], dictionary: dict):

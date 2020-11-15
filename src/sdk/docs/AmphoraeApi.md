@@ -30,8 +30,8 @@ Method | HTTP request | Description
 [**amphorae_signals_update_signal**](AmphoraeApi.md#amphorae_signals_update_signal) | **PUT** /api/amphorae/{id}/signals/{signalId} | Associates a signal with an Amphora. Signal is created if not existing.
 [**amphorae_signals_upload_signal**](AmphoraeApi.md#amphorae_signals_upload_signal) | **POST** /api/amphorae/{id}/signals/values | Uploads values to an Amphora signal(s).
 [**amphorae_signals_upload_signal2**](AmphoraeApi.md#amphorae_signals_upload_signal2) | **POST** /api/amphorae/{id}/signalValues | Uploads values to an Amphora signal(s).
-[**amphorae_signals_upload_signal_batch**](AmphoraeApi.md#amphorae_signals_upload_signal_batch) | **POST** /api/amphorae/{id}/signals/batchvalues | Uploads values in batch to an Amphora signal(s).
-[**amphorae_signals_upload_signal_batch2**](AmphoraeApi.md#amphorae_signals_upload_signal_batch2) | **POST** /api/amphorae/{id}/batchSignalValues | Uploads values in batch to an Amphora signal(s).
+[**amphorae_signals_upload_signal_batch**](AmphoraeApi.md#amphorae_signals_upload_signal_batch) | **POST** /api/amphorae/{id}/batchSignalValues | Uploads values in batch to an Amphora signal(s).
+[**amphorae_signals_upload_signal_batch_all**](AmphoraeApi.md#amphorae_signals_upload_signal_batch_all) | **POST** /api/amphorae/{id}/signals/batchvalues | Uploads values in batch to an Amphora signal(s).
 [**amphorae_update**](AmphoraeApi.md#amphorae_update) | **PUT** /api/amphorae/{id} | Updates the details of an Amphora by Id.
 [**purchases_purchase**](AmphoraeApi.md#purchases_purchase) | **POST** /api/Amphorae/{id}/Purchases | Purchases an Amphora as the logged in user.
 
@@ -1667,7 +1667,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amphorae_signals_upload_signal_batch**
-> dict(str, object) amphorae_signals_upload_signal_batch(id, request_body)
+> list[dict(str, object)] amphorae_signals_upload_signal_batch(id, request_body)
 
 Uploads values in batch to an Amphora signal(s).
 
@@ -1710,7 +1710,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**dict(str, object)**
+**list[dict(str, object)]**
 
 ### Authorization
 
@@ -1729,8 +1729,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **amphorae_signals_upload_signal_batch2**
-> dict(str, object) amphorae_signals_upload_signal_batch2(id, request_body)
+# **amphorae_signals_upload_signal_batch_all**
+> list[dict(str, object)] amphorae_signals_upload_signal_batch_all(id, request_body)
 
 Uploads values in batch to an Amphora signal(s).
 
@@ -1758,10 +1758,10 @@ request_body = None # list[dict(str, object)] | Signal Values.
 
 try:
     # Uploads values in batch to an Amphora signal(s).
-    api_response = api_instance.amphorae_signals_upload_signal_batch2(id, request_body)
+    api_response = api_instance.amphorae_signals_upload_signal_batch_all(id, request_body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AmphoraeApi->amphorae_signals_upload_signal_batch2: %s\n" % e)
+    print("Exception when calling AmphoraeApi->amphorae_signals_upload_signal_batch_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -1773,7 +1773,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**dict(str, object)**
+**list[dict(str, object)]**
 
 ### Authorization
 
