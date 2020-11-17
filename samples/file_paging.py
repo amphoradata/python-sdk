@@ -17,3 +17,7 @@ files = amphora.get_files(skip=90, take=30)
 
 print(f'The client returned a list with {len(files)} names')
 print(f'The first file name is {files[0].name}')
+
+# download a file
+name = files[0].name
+files[0].pull(f'./data/{name}')
