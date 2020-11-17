@@ -19,5 +19,11 @@ print(f'The client returned a list with {len(files)} names')
 print(f'The first file name is {files[0].name}')
 
 # download a file
-name = files[0].name
-files[0].pull(f'./data/{name}')
+f1 = files[0]
+print(f'The first file name is {f1.name}')
+f1.pull(f'./data/{f1.name}')
+
+# alternate way to download the file
+f2 = amphora.get_file(files[1].name)
+print(f2.name)
+f2.pull(f'./data/{f2.name}')
