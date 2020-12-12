@@ -120,17 +120,18 @@ class AmphoraDataRepositoryClient(Base):
             buyAmphora = "Something went wrong, Amphora couldn't be purchased"
         return buyAmphora
     
-    def get_your_amphorae(self):
-        # self is client
+    def list_amphora(self, scope, access_type, take = 64, skip = 0):
+        """
+        :param async_req bool: execute request asynchronously 
+        :param str scope: 'self' or 'organisation'. Defaults to self. 
+        :param str access_type: 'created' or 'purchased'. Defaults to created. 
+        :param int take: Gets or sets how many items to return. Defaults to 64. 
+        :param int skip: Gets or sets how many items to skip before returning. Defaults to 0.
+        returns [DetailedAmphora]
+        """
 
-        try:
-            queryApi = api.AmphoraeApi(self.apiClient)
-            your_amphora_list = queryApi.amphorae_list()
-            print('Got the list of your Amphorae')
-        except:
-            print('Something went wrong, couldnt get the list of your Amphorae')
-
-        return your_amphora_list
+        amphoraApi = api.AmphoraeApi(self.apiClient)
+        return amphoraApi.amphorae_list(scope=scope, access_type=access_type, skip=skip, take=take)
 
     def search_amphora(self, **kwargs):
         """
